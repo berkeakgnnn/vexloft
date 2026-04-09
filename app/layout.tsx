@@ -16,6 +16,9 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  icons: {
+    icon: "/favicon.svg",
+  },
   title: "Vexloft | Yazilim ile Geleceği Sekillendiriyoruz",
   description:
     "Mobil uygulama, web platformu, CRM, E-Ticaret, QR Menu ve dijital altyapı çözümleri. Antalya merkezli yazılım ajansı.",

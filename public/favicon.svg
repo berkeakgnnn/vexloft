@@ -1,0 +1,20 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="512" height="512" rx="96" fill="#0a0f1e"/>
+  <defs>
+    <linearGradient id="vGrad" x1="128" y1="80" x2="384" y2="400" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#6366f1"/>
+      <stop offset="50%" stop-color="#7c3aed"/>
+      <stop offset="100%" stop-color="#a855f7"/>
+    </linearGradient>
+  </defs>
+  <!-- Left arm of V — sharp, angular -->
+  <path d="M128 100 L200 100 L256 340 L220 340 Z" fill="url(#vGrad)"/>
+  <!-- Right arm of V — sharp, angular -->
+  <path d="M384 100 L312 100 L256 340 L292 340 Z" fill="url(#vGrad)"/>
+  <!-- Left wing tip — extends outward -->
+  <path d="M128 100 L88 140 L190 260 L200 100 Z" fill="url(#vGrad)" opacity="0.7"/>
+  <!-- Right wing tip — extends outward -->
+  <path d="M384 100 L424 140 L322 260 L312 100 Z" fill="url(#vGrad)" opacity="0.7"/>
+  <!-- Center overlap diamond -->
+  <path d="M230 180 L256 240 L282 180 L256 140 Z" fill="#0a0f1e" opacity="0.4"/>
+</svg>
