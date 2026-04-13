@@ -17,6 +17,7 @@ const showcaseItems: ShowcaseItem[] = [
     alt: "Takim calisma ortami",
     title: "Web Platformlari",
     subtitle: "Kurumsal siteler, admin paneller ve dashboard cozumleri",
+    link: "/web-projelerimiz",
   },
   {
     src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1200&q=80",
@@ -90,25 +91,47 @@ export function ShowcaseSection(): React.ReactElement {
 
         <div className="space-y-8">
           {/* First item — full width */}
-          <div className="group relative overflow-hidden rounded-2xl aspect-[16/9] md:aspect-[21/9]">
-            <Image
-              src={showcaseItems[0].src}
-              alt={showcaseItems[0].alt}
-              fill
-              sizes="(max-width: 768px) 100vw, 1200px"
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent transition-colors duration-500 group-hover:from-black/85" />
-            <div className="absolute bottom-0 left-0 p-8 md:p-12">
-              <h3
-                className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-2"
-                style={{ fontFamily: "var(--font-plus-jakarta), system-ui, sans-serif" }}
-              >
-                {showcaseItems[0].title}
-              </h3>
-              <p className="text-lg text-gray-300">{showcaseItems[0].subtitle}</p>
-            </div>
-          </div>
+          {(() => {
+            const item = showcaseItems[0];
+            const inner = (
+              <>
+                <Image
+                  src={item.src}
+                  alt={item.alt}
+                  fill
+                  sizes="(max-width: 768px) 100vw, 1200px"
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent transition-colors duration-500 group-hover:from-black/85" />
+                <div className="absolute bottom-0 left-0 p-8 md:p-12">
+                  <h3
+                    className="text-2xl md:text-4xl lg:text-5xl font-bold text-white mb-2"
+                    style={{ fontFamily: "var(--font-plus-jakarta), system-ui, sans-serif" }}
+                  >
+                    {item.title}
+                  </h3>
+                  <p className="text-lg text-gray-300">{item.subtitle}</p>
+                </div>
+              </>
+            );
+
+            if (item.link) {
+              return (
+                <Link
+                  href={item.link}
+                  className="group relative overflow-hidden rounded-2xl aspect-[16/9] md:aspect-[21/9] block"
+                >
+                  {inner}
+                </Link>
+              );
+            }
+
+            return (
+              <div className="group relative overflow-hidden rounded-2xl aspect-[16/9] md:aspect-[21/9]">
+                {inner}
+              </div>
+            );
+          })()}
 
           {/* Two-column row */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
