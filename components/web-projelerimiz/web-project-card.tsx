@@ -117,6 +117,8 @@ export function WebProjectCard({
           backgroundSize: "40px 40px",
         }}
       />
+      {/* Radial glow */}
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,rgba(99,102,241,0.15),transparent_60%)]" />
       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-colors duration-500" />
 
       <div className="absolute top-4 left-4 text-[10px] font-semibold tracking-[3px] text-white/25">
@@ -135,8 +137,8 @@ export function WebProjectCard({
         {project.badge}
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 p-5 flex items-end justify-between">
-        <div>
+      <div className="absolute bottom-0 left-0 right-0 p-5 flex items-end justify-between gap-4">
+        <div className="min-w-0">
           <h2
             className="text-xl font-extrabold text-white leading-tight mb-1"
             style={{ fontFamily: "var(--font-plus-jakarta), system-ui, sans-serif" }}
@@ -145,8 +147,20 @@ export function WebProjectCard({
           </h2>
           <p className="text-xs text-white/60">{project.description}</p>
         </div>
-        <div className="text-[10px] font-semibold tracking-[2px] text-white/0 group-hover:text-white/90 group-hover:tracking-[3px] transition-all duration-300 flex-shrink-0 ml-4">
-          İNCELE &rarr;
+        <div className="flex flex-col items-end gap-2 flex-shrink-0">
+          <div className="flex flex-wrap justify-end gap-1.5">
+            {project.tags.map((tag) => (
+              <span
+                key={tag}
+                className="text-[9px] tracking-[1.5px] uppercase px-2 py-0.5 rounded-full bg-white/5 text-white/50 border border-white/10"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+          <div className="text-[10px] font-semibold tracking-[2px] text-white/0 group-hover:text-white/90 group-hover:tracking-[3px] transition-all duration-300">
+            İNCELE &rarr;
+          </div>
         </div>
       </div>
     </Link>
