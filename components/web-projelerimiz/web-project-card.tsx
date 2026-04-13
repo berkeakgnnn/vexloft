@@ -102,10 +102,12 @@ export function WebProjectCard({
               ))}
             </div>
 
-            {/* İncele arrow — visible on hover */}
-            <div className="text-[10px] font-semibold tracking-[2px] text-white/0 group-hover:text-white/90 group-hover:tracking-[3px] transition-all duration-300">
-              İNCELE &rarr;
-            </div>
+            {/* İncele arrow — visible on hover, only when navigable */}
+            {isNavigable && (
+              <div className="text-[10px] font-semibold tracking-[2px] text-white/0 group-hover:text-white/90 group-hover:tracking-[3px] transition-all duration-300">
+                İNCELE &rarr;
+              </div>
+            )}
           </div>
         </div>
       </Wrapper>
@@ -165,9 +167,11 @@ export function WebProjectCard({
               </span>
             ))}
           </div>
-          <div className="text-[10px] font-semibold tracking-[2px] text-white/0 group-hover:text-white/90 group-hover:tracking-[3px] transition-all duration-300">
-            İNCELE &rarr;
-          </div>
+          {isNavigable && (
+            <div className="text-[10px] font-semibold tracking-[2px] text-white/0 group-hover:text-white/90 group-hover:tracking-[3px] transition-all duration-300">
+              İNCELE &rarr;
+            </div>
+          )}
         </div>
       </div>
     </Wrapper>
