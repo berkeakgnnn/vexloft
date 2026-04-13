@@ -1,3 +1,4 @@
+import type { ReactNode } from "react";
 import Link from "next/link";
 
 export interface WebProject {
@@ -22,12 +23,21 @@ export function WebProjectCard({
 }: WebProjectCardProps): React.ReactElement {
   const numberLabel = String(index + 1).padStart(2, "0");
 
+  // Render as div when href is a placeholder to avoid broken scroll-to-top UX
+  const isNavigable = project.href && project.href !== "#";
+  const Wrapper = isNavigable
+    ? ({ children, className }: { children: ReactNode; className: string }) => (
+        <Link href={project.href} className={className}>
+          {children}
+        </Link>
+      )
+    : ({ children, className }: { children: ReactNode; className: string }) => (
+        <div className={className}>{children}</div>
+      );
+
   if (featured) {
     return (
-      <Link
-        href={project.href}
-        className="group relative overflow-hidden rounded-2xl aspect-[16/9] md:aspect-[21/9] block"
-      >
+      <Wrapper className="group relative overflow-hidden rounded-2xl aspect-[16/9] md:aspect-[21/9] block">
         {/* Gradient background */}
         <div className="absolute inset-0 bg-gradient-to-br from-indigo-950 via-violet-950 to-indigo-900" />
 
@@ -98,16 +108,13 @@ export function WebProjectCard({
             </div>
           </div>
         </div>
-      </Link>
+      </Wrapper>
     );
   }
 
   // Regular (non-featured) card
   return (
-    <Link
-      href={project.href}
-      className="group relative overflow-hidden rounded-2xl aspect-[4/3] block"
-    >
+    <Wrapper className="group relative overflow-hidden rounded-2xl aspect-[4/3] block">
       <div className="absolute inset-0 bg-gradient-to-br from-indigo-950 via-violet-950 to-indigo-900" />
       <div
         className="absolute inset-0 opacity-[0.04]"
@@ -163,6 +170,6 @@ export function WebProjectCard({
           </div>
         </div>
       </div>
-    </Link>
+    </Wrapper>
   );
 }
