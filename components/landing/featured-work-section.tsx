@@ -36,6 +36,26 @@ const animyst: FeaturedProject = {
   cta: "AniMyst'i Keşfet",
 };
 
+const astra: FeaturedProject = {
+  name: "ASTRA",
+  category: "Mobil Oyun",
+  description:
+    "2-5 dakikalık sinerji roguelike: 5×5 gökyüzüne semboller bırakın, takımyıldızlar kurun, Kozmik Yasalarla kombolar zincirleyin. Günlük ortak gökyüzü, seri ve liderlik tablosuyla iOS'a geliyor.",
+  tags: ["React Native", "Expo", "Roguelike", "Günlük Mod"],
+  href: "https://astra.vexloft.com",
+  cta: "ASTRA'yı Keşfet",
+};
+
+const pacopilot: FeaturedProject = {
+  name: "PA Copilot",
+  category: "Mobil Uygulama",
+  description:
+    "Pilotlar için anons yardımcısı: uçuş bilgisini bir kez girin, kabin anonsunu İngilizce, Türkçe ve Almanca okumaya hazır alın. Teleprompter, deyim rehberi ve cihaz üstü sesli pratik — tamamen çevrimdışı.",
+  tags: ["React Native", "Expo", "3 Dil", "%100 Offline"],
+  href: "https://pacopilot.vexloft.com",
+  cta: "PA Copilot'u Keşfet",
+};
+
 function ProjectText({ project }: { project: FeaturedProject }): React.ReactElement {
   return (
     <div>
@@ -185,6 +205,80 @@ export function FeaturedWorkSection(): React.ReactElement {
                 <Image
                   src="/projects/animyst-hero.jpg"
                   alt="AniMyst oyunundan gizemli kart sahnesi"
+                  width={563}
+                  height={1000}
+                  sizes="(max-width: 640px) 44vw, 260px"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </a>
+          </Reveal>
+        </div>
+
+        {/* ASTRA: staggered app-art duo left, text right */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center mt-28 lg:mt-36">
+          <Reveal className="lg:col-span-7">
+            <a
+              href={astra.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="ASTRA web sitesi"
+              className="group flex items-end justify-center gap-4 sm:gap-6"
+            >
+              <div className="relative w-[44%] max-w-[260px] rounded-3xl overflow-hidden border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.5)] transition-transform duration-500 group-hover:-translate-y-2">
+                <Image
+                  src="/projects/astra-home.png"
+                  alt="ASTRA oyunundan giriş ekranı — yeni bir gökyüzü"
+                  width={563}
+                  height={1000}
+                  sizes="(max-width: 640px) 44vw, 260px"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <div className="relative w-[44%] max-w-[260px] rounded-3xl overflow-hidden border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.5)] mb-10 transition-transform duration-500 group-hover:translate-y-2">
+                <Image
+                  src="/projects/astra-gameplay.png"
+                  alt="ASTRA oyunundan takımyıldız hizalama sahnesi"
+                  width={563}
+                  height={1000}
+                  sizes="(max-width: 640px) 44vw, 260px"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </a>
+          </Reveal>
+          <Reveal delay={0.15} className="lg:col-span-5">
+            <ProjectText project={astra} />
+          </Reveal>
+        </div>
+
+        {/* PA Copilot: text left, staggered app-art duo right */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center mt-28 lg:mt-36">
+          <Reveal delay={0.15} className="lg:col-span-5 order-2 lg:order-1">
+            <ProjectText project={pacopilot} />
+          </Reveal>
+          <Reveal className="lg:col-span-7 order-1 lg:order-2">
+            <a
+              href={pacopilot.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="PA Copilot web sitesi"
+              className="group flex items-end justify-center gap-4 sm:gap-6"
+            >
+              <div className="relative w-[44%] max-w-[260px] rounded-3xl overflow-hidden border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.5)] transition-transform duration-500 group-hover:-translate-y-2">
+                <Image
+                  src="/projects/pacopilot-onetap.png"
+                  alt="PA Copilot — anonsunuz tek dokunuş uzağınızda"
+                  width={563}
+                  height={1000}
+                  sizes="(max-width: 640px) 44vw, 260px"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <div className="relative w-[44%] max-w-[260px] rounded-3xl overflow-hidden border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.5)] mb-10 transition-transform duration-500 group-hover:translate-y-2">
+                <Image
+                  src="/projects/pacopilot-teleprompter.png"
+                  alt="PA Copilot teleprompter ekranı"
                   width={563}
                   height={1000}
                   sizes="(max-width: 640px) 44vw, 260px"
