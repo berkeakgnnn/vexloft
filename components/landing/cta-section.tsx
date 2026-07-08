@@ -32,13 +32,13 @@ export function CtaSection(): React.ReactElement {
 
         <AnimateOnScroll delay={300} className="space-y-6">
           <a
-            href="mailto:iletisim@vexloft.com"
+            href="mailto:vexloftstudio@gmail.com"
             className="inline-block text-2xl sm:text-3xl md:text-4xl font-bold gradient-text hover:opacity-80 transition-opacity duration-300"
             style={{
               fontFamily: "var(--font-plus-jakarta), system-ui, sans-serif",
             }}
           >
-            iletisim@vexloft.com
+            vexloftstudio@gmail.com
           </a>
 
           <div>

@@ -18,7 +18,8 @@ const webProjects: WebProject[] = [
       "Çok dilli içerik yönetim sistemi — sayfalar, hizmetler, projeler ve medya yönetimi tek panelden.",
     badge: "CMS",
     tags: ["Next.js", "Multi-language", "Admin Panel", "REST API"],
-    href: "#",
+    href: "https://alkorcephesistemleri.com/tr",
+    image: "/projects/alkor-cms.jpg",
   },
 ];
 

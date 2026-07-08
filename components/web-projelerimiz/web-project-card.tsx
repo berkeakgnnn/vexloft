@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 export interface WebProject {
@@ -8,6 +9,7 @@ export interface WebProject {
   badge: string;
   tags: string[];
   href: string;
+  image?: string;
 }
 
 interface WebProjectCardProps {
@@ -25,34 +27,61 @@ export function WebProjectCard({
 
   // Render as div when href is a placeholder to avoid broken scroll-to-top UX
   const isNavigable = project.href && project.href !== "#";
-  const Wrapper = isNavigable
-    ? ({ children, className }: { children: ReactNode; className: string }) => (
-        <Link href={project.href} className={className}>
-          {children}
-        </Link>
-      )
-    : ({ children, className }: { children: ReactNode; className: string }) => (
-        <div className={className}>{children}</div>
-      );
+  const isExternal = /^https?:\/\//.test(project.href);
+
+  // Wrap in a Link when navigable (external links open in a new tab),
+  // otherwise a plain div to avoid broken scroll-to-top UX on placeholders.
+  const wrap = (className: string, children: ReactNode): React.ReactElement =>
+    isNavigable ? (
+      <Link
+        href={project.href}
+        className={className}
+        {...(isExternal ? { target: "_blank", rel: "noopener noreferrer" } : {})}
+      >
+        {children}
+      </Link>
+    ) : (
+      <div className={className}>{children}</div>
+    );
 
   if (featured) {
-    return (
-      <Wrapper className="group relative overflow-hidden rounded-2xl aspect-[16/9] md:aspect-[21/9] block">
-        {/* Gradient background */}
-        <div className="absolute inset-0 bg-gradient-to-br from-indigo-950 via-violet-950 to-indigo-900" />
+    return wrap(
+      "group relative overflow-hidden rounded-2xl aspect-[16/9] md:aspect-[21/9] block",
+      <>
+        {project.image ? (
+          <>
+            {/* Project image */}
+            <Image
+              src={project.image}
+              alt={`${project.name} projesi`}
+              fill
+              sizes="(max-width: 1280px) 100vw, 1280px"
+              className="object-cover transition-transform duration-700 group-hover:scale-105"
+            />
+            {/* Legibility gradient — darken toward bottom for text */}
+            <div className="absolute inset-0 bg-gradient-to-t from-[#060a14] via-[#060a14]/55 to-[#060a14]/10" />
+            {/* Brand tint */}
+            <div className="absolute inset-0 bg-gradient-to-br from-indigo-950/40 to-transparent mix-blend-multiply" />
+          </>
+        ) : (
+          <>
+            {/* Gradient background */}
+            <div className="absolute inset-0 bg-gradient-to-br from-indigo-950 via-violet-950 to-indigo-900" />
 
-        {/* Subtle grid pattern */}
-        <div
-          className="absolute inset-0 opacity-[0.04]"
-          style={{
-            backgroundImage:
-              "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)",
-            backgroundSize: "40px 40px",
-          }}
-        />
+            {/* Subtle grid pattern */}
+            <div
+              className="absolute inset-0 opacity-[0.04]"
+              style={{
+                backgroundImage:
+                  "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)",
+                backgroundSize: "40px 40px",
+              }}
+            />
 
-        {/* Radial glow */}
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,rgba(99,102,241,0.15),transparent_60%)]" />
+            {/* Radial glow */}
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,rgba(99,102,241,0.15),transparent_60%)]" />
+          </>
+        )}
 
         {/* Hover darkening overlay */}
         <div className="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-colors duration-500" />
@@ -110,24 +139,41 @@ export function WebProjectCard({
             )}
           </div>
         </div>
-      </Wrapper>
+      </>,
     );
   }
 
   // Regular (non-featured) card
-  return (
-    <Wrapper className="group relative overflow-hidden rounded-2xl aspect-[4/3] block">
-      <div className="absolute inset-0 bg-gradient-to-br from-indigo-950 via-violet-950 to-indigo-900" />
-      <div
-        className="absolute inset-0 opacity-[0.04]"
-        style={{
-          backgroundImage:
-            "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)",
-          backgroundSize: "40px 40px",
-        }}
-      />
-      {/* Radial glow */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,rgba(99,102,241,0.15),transparent_60%)]" />
+  return wrap(
+    "group relative overflow-hidden rounded-2xl aspect-[4/3] block",
+    <>
+      {project.image ? (
+        <>
+          <Image
+            src={project.image}
+            alt={`${project.name} projesi`}
+            fill
+            sizes="(max-width: 768px) 100vw, 33vw"
+            className="object-cover transition-transform duration-700 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-[#060a14] via-[#060a14]/55 to-[#060a14]/10" />
+          <div className="absolute inset-0 bg-gradient-to-br from-indigo-950/40 to-transparent mix-blend-multiply" />
+        </>
+      ) : (
+        <>
+          <div className="absolute inset-0 bg-gradient-to-br from-indigo-950 via-violet-950 to-indigo-900" />
+          <div
+            className="absolute inset-0 opacity-[0.04]"
+            style={{
+              backgroundImage:
+                "linear-gradient(rgba(255,255,255,1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,1) 1px, transparent 1px)",
+              backgroundSize: "40px 40px",
+            }}
+          />
+          {/* Radial glow */}
+          <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_30%_50%,rgba(99,102,241,0.15),transparent_60%)]" />
+        </>
+      )}
       <div className="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-colors duration-500" />
 
       <div className="absolute top-4 left-4 text-[10px] font-semibold tracking-[3px] text-white/25">
@@ -174,6 +220,6 @@ export function WebProjectCard({
           )}
         </div>
       </div>
-    </Wrapper>
+    </>,
   );
 }

@@ -48,11 +48,11 @@ export default function IletisimPage(): React.ReactElement {
                   E-POSTA
                 </p>
                 <a
-                  href="mailto:iletisim@vexloft.com"
+                  href="mailto:vexloftstudio@gmail.com"
                   className="text-xl font-semibold gradient-text hover:opacity-80 transition-opacity"
                   style={{ fontFamily: "var(--font-plus-jakarta), system-ui, sans-serif" }}
                 >
-                  iletisim@vexloft.com
+                  vexloftstudio@gmail.com
                 </a>
               </div>
 
