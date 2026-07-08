@@ -78,23 +78,52 @@ body {
   animation: float-medium 16s ease-in-out infinite;
 }
 
-/* Scroll indicator */
-@keyframes scroll-line {
-  0% { transform: scaleY(0); transform-origin: top; }
-  50% { transform: scaleY(1); transform-origin: top; }
-  51% { transform: scaleY(1); transform-origin: bottom; }
-  100% { transform: scaleY(0); transform-origin: bottom; }
-}
-
-.scroll-indicator-line {
-  animation: scroll-line 2s ease-in-out infinite;
-}
-
 /* Counter number style */
 .counter-number {
   font-family: var(--font-plus-jakarta), system-ui, sans-serif;
   font-weight: 800;
   font-variant-numeric: tabular-nums;
+}
+
+/* Primary gradient pill button */
+.btn-gradient {
+  background: linear-gradient(135deg, #4338ca, #7c3aed);
+  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 8px 32px rgba(99, 102, 241, 0.25);
+}
+
+.btn-gradient:hover {
+  box-shadow: 0 12px 40px rgba(124, 58, 237, 0.35);
+}
+
+.btn-gradient:active {
+  transform: translateY(1px) scale(0.98);
+}
+
+/* Soft card surface on dark bg */
+.card-surface {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.card-surface:hover {
+  border-color: rgba(129, 140, 248, 0.35);
+}
+
+/* Reduced motion: kill ambient loops and reveal transitions, keep content visible */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .blob-float-slow,
+  .blob-float-medium {
+    animation: none;
+  }
+
+  .animate-on-scroll {
+    transition: none !important;
+  }
 }
 
 /* Loading screen animations */

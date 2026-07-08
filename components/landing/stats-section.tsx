@@ -1,15 +1,52 @@
 "use client";
 
-const stats = [
-  { value: "50+", label: "PROJE" },
-  { value: "30+", label: "MUSTERI" },
-  { value: "3+", label: "YIL DENEYIM" },
-  { value: "7/24", label: "DESTEK" },
+import { useEffect, useRef, useState } from "react";
+import { animate, useInView, useReducedMotion } from "framer-motion";
+
+interface Stat {
+  value: number | null; // null renders the raw label without a counter
+  raw?: string;
+  suffix?: string;
+  label: string;
+}
+
+const stats: Stat[] = [
+  { value: 50, suffix: "+", label: "PROJE" },
+  { value: 30, suffix: "+", label: "MÜŞTERİ" },
+  { value: 3, suffix: "+", label: "YIL DENEYİM" },
+  { value: null, raw: "7/24", label: "DESTEK" },
 ];
+
+function CountUp({ target, suffix }: { target: number; suffix: string }): React.ReactElement {
+  const ref = useRef<HTMLSpanElement>(null);
+  const inView = useInView(ref, { once: true, margin: "-60px" });
+  const reduceMotion = useReducedMotion();
+  const [display, setDisplay] = useState(0);
+
+  useEffect(() => {
+    if (!inView) return;
+    // Reduced motion: jump straight to the final value (duration 0)
+    const controls = animate(0, target, {
+      duration: reduceMotion ? 0 : 1.6,
+      ease: [0.16, 1, 0.3, 1],
+      onUpdate: (v) => setDisplay(Math.round(v)),
+      // Guarantee the final value lands even when duration is 0
+      onComplete: () => setDisplay(target),
+    });
+    return () => controls.stop();
+  }, [inView, target, reduceMotion]);
+
+  return (
+    <span ref={ref} className="counter-number">
+      {display}
+      {suffix}
+    </span>
+  );
+}
 
 export function StatsSection(): React.ReactElement {
   return (
-    <section className="py-32 lg:py-40" style={{ backgroundColor: "#060a14" }}>
+    <section className="py-28 lg:py-40" style={{ backgroundColor: "#060a14" }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="gradient-line mb-20" />
 
@@ -22,9 +59,13 @@ export function StatsSection(): React.ReactElement {
                   fontFamily: "var(--font-plus-jakarta), system-ui, sans-serif",
                 }}
               >
-                {stat.value}
+                {stat.value !== null ? (
+                  <CountUp target={stat.value} suffix={stat.suffix ?? ""} />
+                ) : (
+                  stat.raw
+                )}
               </div>
-              <div className="text-sm text-gray-500 font-medium uppercase tracking-widest">
+              <div className="text-sm text-gray-400 font-medium uppercase tracking-widest">
                 {stat.label}
               </div>
             </div>

@@ -57,20 +57,6 @@ export default function IletisimPage(): React.ReactElement {
               </div>
 
               <div>
-                <p className="text-xs font-semibold tracking-[6px] uppercase text-gray-500 mb-3">
-                  WHATSAPP
-                </p>
-                <a
-                  href="https://wa.me/905001234567"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-lg text-gray-300 hover:text-white transition-colors border-b border-gray-700 hover:border-gray-400 pb-0.5"
-                >
-                  Hızlı mesaj gönderin →
-                </a>
-              </div>
-
-              <div>
                 <p className="text-xs font-semibold tracking-[6px] uppercase text-gray-500 mb-4">
                   HİZMETLERİMİZ
                 </p>

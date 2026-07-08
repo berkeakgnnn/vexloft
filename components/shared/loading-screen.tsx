@@ -4,10 +4,21 @@ import { useState, useEffect } from "react";
 
 export function LoadingScreen(): React.ReactElement | null {
   const [phase, setPhase] = useState<"logo" | "reveal" | "done">("logo");
+  const [reduceMotion, setReduceMotion] = useState(false);
 
   useEffect(() => {
-    const t1 = setTimeout(() => setPhase("reveal"), 1200);
-    const t2 = setTimeout(() => setPhase("done"), 2200);
+    // Reduced motion: animasyonsuz, kısa bir marka anı ve hemen içerik
+    const rm = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    const t1 = setTimeout(() => setPhase("reveal"), rm ? 300 : 1200);
+    const t2 = setTimeout(() => setPhase("done"), rm ? 400 : 2200);
+    if (rm) {
+      const raf = requestAnimationFrame(() => setReduceMotion(true));
+      return () => {
+        cancelAnimationFrame(raf);
+        clearTimeout(t1);
+        clearTimeout(t2);
+      };
+    }
     return () => {
       clearTimeout(t1);
       clearTimeout(t2);
@@ -26,9 +37,10 @@ export function LoadingScreen(): React.ReactElement | null {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        ...(phase === "reveal"
+        ...(phase === "reveal" && !reduceMotion
           ? { animation: "circularReveal 0.8s ease-in-out forwards" }
           : {}),
+        ...(phase === "reveal" && reduceMotion ? { opacity: 0 } : {}),
       }}
     >
       <div
@@ -37,11 +49,17 @@ export function LoadingScreen(): React.ReactElement | null {
           flexDirection: "column",
           alignItems: "center",
           gap: "1.5rem",
-          transition: "opacity 0.3s ease-out",
+          transition: reduceMotion ? "none" : "opacity 0.3s ease-out",
           opacity: phase === "reveal" ? 0 : 1,
         }}
       >
-        <div style={{ animation: "loadingLogoIn 0.6s ease-out forwards" }}>
+        <div
+          style={
+            reduceMotion
+              ? undefined
+              : { animation: "loadingLogoIn 0.6s ease-out forwards" }
+          }
+        >
           <svg
             width="80"
             height="80"
@@ -73,8 +91,12 @@ export function LoadingScreen(): React.ReactElement | null {
         </div>
         <div
           style={{
-            animation: "loadingTextIn 0.5s ease-out 0.3s forwards",
-            opacity: 0,
+            ...(reduceMotion
+              ? { opacity: 1 }
+              : {
+                  animation: "loadingTextIn 0.5s ease-out 0.3s forwards",
+                  opacity: 0,
+                }),
             fontFamily: "var(--font-plus-jakarta), system-ui, sans-serif",
             fontSize: "0.875rem",
             fontWeight: 600,

@@ -2,36 +2,53 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { motion, AnimatePresence } from "framer-motion";
+import {
+  motion,
+  AnimatePresence,
+  useScroll,
+  useMotionValueEvent,
+  useReducedMotion,
+} from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Logo } from "@/components/logo";
 
 const navLinks = [
+  { href: "/#projeler", label: "Projeler" },
   { href: "/hizmetler", label: "Hizmetler" },
-  { href: "/hakkimizda", label: "Hakkimizda" },
-  { href: "/iletisim", label: "Iletisim" },
+  { href: "/hakkimizda", label: "Hakkımızda" },
 ];
+
+// Tek iletişim girişi: her yerde aynı etiket ("Bize Ulaşın")
+const contactLink = { href: "/iletisim", label: "Bize Ulaşın" };
+
+const mobileLinks = [...navLinks, contactLink];
 
 export function Navbar(): React.ReactElement {
   const [scrolled, setScrolled] = useState<boolean>(false);
   const [mobileOpen, setMobileOpen] = useState<boolean>(false);
+  const { scrollY } = useScroll();
+  const reduceMotion = useReducedMotion();
+
+  useMotionValueEvent(scrollY, "change", (y) => {
+    setScrolled(y > 50);
+  });
 
   useEffect(() => {
-    const handleScroll = (): void => {
-      setScrolled(window.scrollY > 50);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => {
-    if (mobileOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
+    if (!mobileOpen) {
       document.body.style.overflow = "";
+      return;
     }
+
+    document.body.style.overflow = "hidden";
+
+    const onKeyDown = (e: KeyboardEvent): void => {
+      if (e.key === "Escape") setMobileOpen(false);
+    };
+    document.addEventListener("keydown", onKeyDown);
+
     return () => {
       document.body.style.overflow = "";
+      document.removeEventListener("keydown", onKeyDown);
     };
   }, [mobileOpen]);
 
@@ -40,7 +57,7 @@ export function Navbar(): React.ReactElement {
       <motion.header
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.5, ease: "easeOut" }}
+        transition={reduceMotion ? { duration: 0 } : { duration: 0.5, ease: "easeOut" }}
         className="fixed top-0 left-0 right-0 z-50 transition-all duration-300"
         style={{
           backgroundColor: scrolled
@@ -60,7 +77,7 @@ export function Navbar(): React.ReactElement {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="text-sm font-medium text-white/70 hover:text-white transition-colors duration-200"
+                  className="inline-flex items-center min-h-[44px] text-sm font-medium text-white/70 hover:text-white transition-colors duration-200"
                 >
                   {link.label}
                 </Link>
@@ -69,17 +86,19 @@ export function Navbar(): React.ReactElement {
 
             <div className="hidden md:block">
               <Link
-                href="/iletisim"
-                className="text-sm font-medium text-white/70 hover:text-white transition-colors duration-200 border-b border-white/30 hover:border-white pb-0.5"
+                href={contactLink.href}
+                className="inline-flex items-center min-h-[44px] text-sm font-medium text-white/70 hover:text-white transition-colors duration-200 border-b border-white/30 hover:border-white"
               >
-                Bize Ulasin
+                {contactLink.label}
               </Link>
             </div>
 
             <button
-              className="md:hidden p-2 text-white/80 hover:text-white transition-colors"
+              className="md:hidden p-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-white/80 hover:text-white transition-colors"
               onClick={() => setMobileOpen(true)}
-              aria-label="Menuyu ac"
+              aria-label="Menüyü aç"
+              aria-expanded={mobileOpen}
+              aria-controls="mobil-menu"
             >
               <Menu size={24} />
             </button>
@@ -90,35 +109,44 @@ export function Navbar(): React.ReactElement {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
+            id="mobil-menu"
+            role="dialog"
+            aria-modal="true"
+            aria-label="Gezinme menüsü"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.2 }}
+            transition={reduceMotion ? { duration: 0 } : { duration: 0.2 }}
             className="fixed inset-0 z-[100] bg-[#060a14]"
           >
             <div className="flex justify-between items-center px-4 sm:px-6 h-16">
               <Logo variant="light" />
               <button
-                className="p-2 text-white/80 hover:text-white transition-colors"
+                autoFocus
+                className="p-2 min-w-[44px] min-h-[44px] flex items-center justify-center text-white/80 hover:text-white transition-colors"
                 onClick={() => setMobileOpen(false)}
-                aria-label="Menuyu kapat"
+                aria-label="Menüyü kapat"
               >
                 <X size={24} />
               </button>
             </div>
 
             <motion.nav
-              initial={{ opacity: 0, y: 20 }}
+              initial={reduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.1, duration: 0.3 }}
-              className="flex flex-col items-center justify-center gap-10 h-[calc(100vh-64px)]"
+              transition={reduceMotion ? { duration: 0 } : { delay: 0.1, duration: 0.3 }}
+              className="flex flex-col items-center justify-center gap-10 h-[calc(100dvh-64px)]"
             >
-              {navLinks.map((link, i) => (
+              {mobileLinks.map((link, i) => (
                 <motion.div
                   key={link.href}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={reduceMotion ? { opacity: 1 } : { opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.1 + i * 0.07, duration: 0.3 }}
+                  transition={
+                    reduceMotion
+                      ? { duration: 0 }
+                      : { delay: 0.1 + i * 0.07, duration: 0.3 }
+                  }
                 >
                   <Link
                     href={link.href}
