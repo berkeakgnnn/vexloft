@@ -12,6 +12,16 @@ export const metadata: Metadata = {
 
 const webProjects: WebProject[] = [
   {
+    id: "velora",
+    name: "Velora Chocolate",
+    description:
+      "Premium çikolata markası için 3D önizlemeli kutu tasarım konfigüratörü, kurumsal hediye çözümleri ve çok dilli katalog.",
+    badge: "E-Ticaret",
+    tags: ["Next.js", "Three.js", ".NET", "3D Configurator", "Multi-language"],
+    href: "https://velorachocos.com",
+    image: "/projects/velora.jpg",
+  },
+  {
     id: "alkor-cms",
     name: "Alkor CMS",
     description:
