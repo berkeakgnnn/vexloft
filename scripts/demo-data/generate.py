@@ -919,6 +919,325 @@ def _excel_executive(d: dict[str, Any]) -> None:
     _finish(wb, "executive")
 
 
+# ======================================================================================
+# 5. FINANCIAL — Northwind Foods
+# ======================================================================================
+def build_financial() -> dict[str, Any]:
+    rng = random.Random(505)
+    season = [0.9, 0.88, 0.96, 0.98, 1.02, 1.05, 1.0, 0.99, 1.05, 1.08, 1.14, 1.2]
+    revenue = [round(880_000 * s * rng.uniform(0.97, 1.03)) for s in season]
+    cogs = [round(r * rng.uniform(0.52, 0.58)) for r in revenue]
+    opex = [round(r * rng.uniform(0.20, 0.26)) for r in revenue]
+    ebitda = [revenue[i] - cogs[i] - opex[i] for i in range(12)]
+    cash_in = [round(revenue[i] * rng.uniform(0.9, 1.05)) for i in range(12)]
+    cash_out = [round((cogs[i] + opex[i]) * rng.uniform(0.95, 1.08)) for i in range(12)]
+    cash_net = [cash_in[i] - cash_out[i] for i in range(12)]
+    total_rev = sum(revenue)
+    gross = total_rev - sum(cogs)
+    total_ebitda = sum(ebitda)
+    net_cash = sum(cash_net)
+    cash_balance = 1_450_000 + net_cash
+    monthly_burn = max(1, round(sum(cash_out) / 12 - sum(cash_in) / 12))
+    runway = cash_balance / (abs(monthly_burn) if monthly_burn > 0 else 1)
+    expense = [
+        {"name": "COGS", "value": sum(cogs)},
+        {"name": "Payroll", "value": round(sum(opex) * 0.52)},
+        {"name": "Marketing", "value": round(sum(opex) * 0.22)},
+        {"name": "Operations", "value": round(sum(opex) * 0.16)},
+        {"name": "R&D", "value": round(sum(opex) * 0.10)},
+    ]
+    depts = ["Production", "Sales", "Logistics", "Admin"]
+    budget_actual = []
+    for d in depts:
+        b = round(total_rev * rng.uniform(0.06, 0.16))
+        a = round(b * rng.uniform(0.88, 1.12))
+        budget_actual.append({"name": d, "budget": b, "actual": a})
+
+    pos = sum(1 for c in cash_net if c > 0)
+    kpis = [
+        {"label": "Annual Revenue", "value": eurk(total_rev), "accent": GREEN, "delta": "+11.3%", "deltaUp": True, "sub": "YoY"},
+        {"label": "Gross Margin", "value": pct(gross / total_rev * 100), "accent": INDIGO, "delta": "+1.4 pts", "deltaUp": True, "sub": "blended"},
+        {"label": "EBITDA", "value": eurk(total_ebitda), "accent": VIOLET, "delta": pct(total_ebitda / total_rev * 100), "deltaUp": True, "sub": "margin"},
+        {"label": "Net Cash Flow", "value": eurk(net_cash), "accent": CYAN, "delta": f"{pos}/12 mo +", "deltaUp": True, "sub": "full year"},
+        {"label": "Cash Balance", "value": eurk(cash_balance), "accent": AMBER, "delta": f"{eurk(net_cash)} net", "deltaUp": True, "sub": "end of period"},
+    ]
+    data = {
+        "id": "financial", "slug": "financial", "company": "Northwind Foods",
+        "title": "Financial & Cash Flow Dashboard", "currency": "€", "period": "FY 2025",
+        "months": MONTHS, "kpis": kpis,
+        "series": {
+            "revenueByMonth": revenue, "ebitdaByMonth": ebitda,
+            "cashInByMonth": cash_in, "cashOutByMonth": cash_out, "cashNetByMonth": cash_net,
+            "expenseBreakdown": expense, "budgetVsActual": budget_actual,
+        },
+    }
+    _excel_generic(data, "financial", GREEN, [
+        ("combo", "Revenue vs EBITDA by Month", "revenueByMonth", "ebitdaByMonth", MONTHS),
+        ("doughnut", "Expense Breakdown", "expenseBreakdown", None, None),
+        ("bar", "Net Cash Flow by Month", "cashNetByMonth", None, MONTHS),
+    ], ("Budget vs Actual", ["Department", "Budget (€)", "Actual (€)", "Variance (€)"],
+        [[b["name"], b["budget"], b["actual"], b["actual"] - b["budget"]] for b in budget_actual], [1, 2, 3], 3))
+    return data
+
+
+# ======================================================================================
+# 6. MARKETING — Pulse Media
+# ======================================================================================
+def build_marketing() -> dict[str, Any]:
+    rng = random.Random(606)
+    chans = ["Google Ads", "Meta", "LinkedIn", "TikTok", "Email"]
+    weights = {"Google Ads": 0.34, "Meta": 0.26, "LinkedIn": 0.16, "TikTok": 0.14, "Email": 0.10}
+    total_spend = 420_000
+    channels = []
+    for c in chans:
+        spend = round(total_spend * weights[c] * rng.uniform(0.9, 1.1))
+        roas = rng.uniform(2.1, 6.5) if c != "Email" else rng.uniform(5.0, 9.0)
+        revenue = round(spend * roas)
+        leads = round(spend / rng.uniform(18, 55))
+        customers = max(1, round(leads * rng.uniform(0.08, 0.2)))
+        cac = round(spend / customers)
+        channels.append({"name": c, "spend": spend, "revenue": revenue,
+                         "roas": round(roas, 2), "leads": leads, "cac": cac})
+    tot_spend = sum(c["spend"] for c in channels)
+    tot_rev = sum(c["revenue"] for c in channels)
+    tot_leads = sum(c["leads"] for c in channels)
+    # gentle, readable funnel taper (visitor-based) — reads cleanly on a dashboard
+    visitors = round(tot_leads / 0.40)
+    funnel = [
+        {"name": "Visitors", "value": visitors},
+        {"name": "Leads", "value": round(visitors * 0.40)},
+        {"name": "MQLs", "value": round(visitors * 0.22)},
+        {"name": "SQLs", "value": round(visitors * 0.11)},
+        {"name": "Customers", "value": round(visitors * 0.045)},
+    ]
+    customers = funnel[-1]["value"]
+    season = [0.85, 0.9, 0.95, 1.0, 1.05, 1.02, 0.98, 1.0, 1.08, 1.12, 1.2, 1.25]
+    leads_month = [round(tot_leads / 12 * s) for s in season]
+    kpis = [
+        {"label": "Marketing Spend", "value": eurk(tot_spend), "accent": VIOLET, "delta": "YTD", "deltaUp": True, "sub": "all channels"},
+        {"label": "Blended ROAS", "value": f"{tot_rev / tot_spend:.1f}x", "accent": GREEN, "delta": "+0.4x", "deltaUp": True, "sub": "on ad spend"},
+        {"label": "Avg CAC", "value": eur(tot_spend / max(customers, 1)), "accent": AMBER, "delta": "-8%", "deltaUp": True, "sub": "per customer"},
+        {"label": "Total Leads", "value": f"{tot_leads:,}", "accent": CYAN, "delta": "+14%", "deltaUp": True, "sub": "captured"},
+        {"label": "Conversion Rate", "value": pct(customers / visitors * 100), "accent": BLUE, "delta": "+0.6 pts", "deltaUp": True, "sub": "visitor → customer"},
+    ]
+    data = {
+        "id": "marketing", "slug": "marketing", "company": "Pulse Media",
+        "title": "Marketing & Social Analytics Dashboard", "currency": "€", "period": "FY 2025",
+        "months": MONTHS, "channels": [c["name"] for c in channels], "kpis": kpis,
+        "series": {
+            "channelPerformance": channels, "funnel": funnel, "leadsByMonth": leads_month,
+            "roasByChannel": [{"name": c["name"], "value": c["roas"]} for c in channels],
+            "spendByChannel": [{"name": c["name"], "value": c["spend"]} for c in channels],
+        },
+    }
+    _excel_generic(data, "marketing", VIOLET, [
+        ("bar", "ROAS by Channel", "roasByChannel", None, None),
+        ("doughnut", "Spend by Channel", "spendByChannel", None, None),
+        ("line", "Leads by Month", "leadsByMonth", None, MONTHS),
+    ], ("Channel Performance", ["Channel", "Spend (€)", "Revenue (€)", "ROAS", "Leads", "CAC (€)"],
+        [[c["name"], c["spend"], c["revenue"], c["roas"], c["leads"], c["cac"]] for c in channels], [1, 2, 5], None))
+    return data
+
+
+# ======================================================================================
+# 7. HR — BrightPath
+# ======================================================================================
+def build_hr() -> dict[str, Any]:
+    rng = random.Random(707)
+    depts = ["Engineering", "Sales", "Marketing", "Operations", "Support", "People"]
+    hc = {d: rng.randint(18, 120) for d in depts}
+    total_hc = sum(hc.values())
+    attr = {d: round(rng.uniform(6, 22), 1) for d in depts}
+    avg_attr = sum(attr.values()) / len(depts)
+    season = [1.4, 1.1, 1.0, 0.9, 1.2, 1.6, 1.3, 1.0, 0.8, 1.1, 1.0, 1.5]
+    attr_month = [round(avg_attr / 12 * s * total_hc / 100, 1) for s in season]
+    funnel = [
+        {"name": "Applied", "value": rng.randint(1800, 2400)},
+        {"name": "Screened", "value": rng.randint(700, 1000)},
+        {"name": "Interviewed", "value": rng.randint(280, 420)},
+        {"name": "Offer", "value": rng.randint(90, 140)},
+        {"name": "Hired", "value": rng.randint(60, 95)},
+    ]
+    tenure = [
+        {"name": "< 1 yr", "value": round(total_hc * 0.24)},
+        {"name": "1–2 yrs", "value": round(total_hc * 0.31)},
+        {"name": "2–4 yrs", "value": round(total_hc * 0.28)},
+        {"name": "4+ yrs", "value": round(total_hc * 0.17)},
+    ]
+    kpis = [
+        {"label": "Headcount", "value": f"{total_hc:,}", "accent": CYAN, "delta": f"+{funnel[-1]['value']} hires", "deltaUp": True, "sub": "full-time"},
+        {"label": "Attrition Rate", "value": pct(avg_attr), "accent": RED, "delta": "-1.8 pts", "deltaUp": True, "sub": "annualised"},
+        {"label": "Open Roles", "value": f"{rng.randint(14, 32)}", "accent": AMBER, "delta": "actively hiring", "deltaUp": True, "sub": "across teams"},
+        {"label": "Avg Tenure", "value": "2.4 yrs", "accent": INDIGO, "delta": "+0.2", "deltaUp": True, "sub": "company-wide"},
+        {"label": "Employee eNPS", "value": "+38", "accent": GREEN, "delta": "+5", "deltaUp": True, "sub": "engagement"},
+    ]
+    data = {
+        "id": "hr", "slug": "hr", "company": "BrightPath",
+        "title": "HR & People Analytics Dashboard", "currency": "€", "period": "FY 2025",
+        "months": MONTHS, "departments": depts, "kpis": kpis,
+        "series": {
+            "headcountByDept": [{"name": d, "value": hc[d]} for d in depts],
+            "attritionByMonth": attr_month, "hiringFunnel": funnel, "tenureDistribution": tenure,
+        },
+        "table": [{"name": d, "headcount": hc[d], "attrition": attr[d]} for d in depts],
+    }
+    _excel_generic(data, "hr", CYAN, [
+        ("bar", "Headcount by Department", "headcountByDept", None, None),
+        ("doughnut", "Tenure Distribution", "tenureDistribution", None, None),
+        ("line", "Attrition (leavers) by Month", "attritionByMonth", None, MONTHS),
+    ], ("Department People KPIs", ["Department", "Headcount", "Attrition %"],
+        [[r["name"], r["headcount"], r["attrition"]] for r in data["table"]], [], None))
+    return data
+
+
+# ======================================================================================
+# 8. E-COMMERCE — Kavo Store
+# ======================================================================================
+def build_ecommerce() -> dict[str, Any]:
+    rng = random.Random(808)
+    season = [0.82, 0.8, 0.9, 0.95, 1.0, 1.02, 0.98, 0.96, 1.06, 1.14, 1.32, 1.4]
+    revenue = [round(190_000 * s * rng.uniform(0.95, 1.05)) for s in season]
+    orders = [round(revenue[i] / rng.uniform(58, 82)) for i in range(12)]
+    total_rev = sum(revenue)
+    total_orders = sum(orders)
+    aov = total_rev / total_orders
+    sources = ["Organic", "Paid Search", "Social", "Email", "Direct"]
+    sw = {"Organic": 0.32, "Paid Search": 0.26, "Social": 0.18, "Email": 0.14, "Direct": 0.10}
+    src_perf = []
+    for s in sources:
+        rev = round(total_rev * sw[s] * rng.uniform(0.9, 1.1))
+        sessions = round(rev / rng.uniform(4, 9))
+        conv = rng.uniform(1.4, 4.2)
+        src_perf.append({"name": s, "revenue": rev, "sessions": sessions, "conversion": round(conv, 2)})
+    products = ["Nomad Backpack", "Aero Runners", "Lume Bottle", "Terra Tee",
+               "Pulse Buds", "Cove Hoodie", "Drift Cap", "Halo Ring Light"]
+    top_products = sorted(
+        [{"name": p, "value": round(total_rev * rng.uniform(0.03, 0.09))} for p in products],
+        key=lambda x: -x["value"])[:6]
+    conv_rate = sum(s["conversion"] for s in src_perf) / len(src_perf)
+    kpis = [
+        {"label": "Revenue", "value": eurk(total_rev), "accent": VIOLET, "delta": "+18%", "deltaUp": True, "sub": "YoY"},
+        {"label": "Orders", "value": f"{total_orders:,}", "accent": INDIGO, "delta": "+12%", "deltaUp": True, "sub": "full year"},
+        {"label": "Avg Order Value", "value": eur(aov), "accent": CYAN, "delta": "+4.5%", "deltaUp": True, "sub": "per order"},
+        {"label": "Conversion Rate", "value": pct(conv_rate), "accent": GREEN, "delta": "+0.3 pts", "deltaUp": True, "sub": "blended"},
+        {"label": "Repeat Customers", "value": "38.2%", "accent": AMBER, "delta": "+2.1 pts", "deltaUp": True, "sub": "of orders"},
+    ]
+    data = {
+        "id": "ecommerce", "slug": "ecommerce", "company": "Kavo Store",
+        "title": "E-commerce Analytics Dashboard", "currency": "€", "period": "FY 2025",
+        "months": MONTHS, "sources": sources, "kpis": kpis,
+        "series": {
+            "revenueByMonth": revenue, "ordersByMonth": orders,
+            "revenueBySource": [{"name": s["name"], "value": s["revenue"]} for s in src_perf],
+            "topProducts": top_products, "sourcePerformance": src_perf,
+        },
+    }
+    _excel_generic(data, "ecommerce", INDIGO, [
+        ("combo", "Revenue vs Orders by Month", "revenueByMonth", "ordersByMonth", MONTHS),
+        ("doughnut", "Revenue by Source", "revenueBySource", None, None),
+        ("bar", "Top Products", "topProducts", None, None),
+    ], ("Traffic Source Performance", ["Source", "Revenue (€)", "Sessions", "Conversion %"],
+        [[s["name"], s["revenue"], s["sessions"], s["conversion"]] for s in src_perf], [1, 2], None))
+    return data
+
+
+# --------------------------------------------------------------------------------------
+# Generic Excel builder (used by the 4 newer dashboards)
+# --------------------------------------------------------------------------------------
+def _excel_generic(data, name, accent, charts, table):
+    wb = Workbook()
+    dash = wb.active
+    dash.title = "Dashboard"
+    dash.sheet_view.showGridLines = False
+    set_widths(dash, {i: 11 for i in range(1, 17)})
+    title_band(dash, data["company"], data["title"])
+    for i, k in enumerate(data["kpis"][:5]):
+        kpi_card(dash, 6, 1 + i * 3, k["label"], k["value"], k["accent"])
+
+    md = wb.create_sheet("Model")
+    md.sheet_state = "hidden"
+    col = 1
+    ref = {}
+    for spec in charts:
+        kind, title_txt, key1, key2, cats = spec
+        series = data["series"][key1]
+        if isinstance(series, list) and series and isinstance(series[0], dict):
+            names = [x["name"] for x in series]
+            vals = [x["value"] for x in series]
+        else:
+            names = cats
+            vals = series
+        md.cell(row=1, column=col, value="cat")
+        md.cell(row=1, column=col + 1, value=title_txt)
+        for r, (nm, vv) in enumerate(zip(names, vals)):
+            md.cell(row=2 + r, column=col, value=nm)
+            md.cell(row=2 + r, column=col + 1, value=vv)
+        ref[key1] = (col, len(vals))
+        if key2:
+            s2 = data["series"][key2]
+            md.cell(row=1, column=col + 2, value=key2)
+            for r, vv in enumerate(s2):
+                md.cell(row=2 + r, column=col + 2, value=vv)
+            ref[key2] = (col + 2, len(s2))
+        col += 4
+
+    anchors = ["A10", "H10", "N10"]
+    for idx, spec in enumerate(charts):
+        kind, title_txt, key1, key2, cats = spec
+        c0, n = ref[key1]
+        if kind == "doughnut":
+            ch = DoughnutChart()
+        elif kind == "line":
+            ch = LineChart()
+        else:
+            ch = BarChart()
+            ch.type = "col"
+        ch.title = title_txt
+        ch.height = 7.5
+        ch.width = 8.5
+        ch.add_data(Reference(md, min_col=c0 + 1, min_row=1, max_row=1 + n), titles_from_data=True)
+        ch.set_categories(Reference(md, min_col=c0, min_row=2, max_row=1 + n))
+        if kind == "doughnut":
+            color_pie_points(ch, n)
+        elif kind == "combo" and key2:
+            ch.series[0].graphicalProperties.solidFill = accent
+            c2, n2 = ref[key2]
+            line = LineChart()
+            line.add_data(Reference(md, min_col=c2 + 1, min_row=1, max_row=1 + n2), titles_from_data=True)
+            line.series[0].graphicalProperties.line.solidFill = CYAN
+            line.series[0].graphicalProperties.line.width = 26000
+            ch += line
+        else:
+            ch.series[0].graphicalProperties.solidFill = accent
+            if kind == "line":
+                ch.series[0].graphicalProperties.line.solidFill = accent
+                ch.series[0].graphicalProperties.line.width = 26000
+            ch.legend = None
+        dash.add_chart(ch, anchors[idx])
+
+    if table:
+        sheet_name, headers, rows, num_cols, cond_col = table
+        ds = wb.create_sheet(sheet_name[:31])
+        ds.sheet_view.showGridLines = False
+        for c, h in enumerate(headers, start=1):
+            ds.cell(row=1, column=c, value=h)
+        for i, row in enumerate(rows, start=2):
+            for c, v in enumerate(row, start=1):
+                ds.cell(row=i, column=c, value=v)
+            for nc in num_cols:
+                ds.cell(row=i, column=nc + 1).number_format = "#,##0"
+        last = len(rows) + 1
+        style_table_sheet(ds, 1, 2, last, len(headers), sheet_name.replace(" ", ""))
+        set_widths(ds, {1: 20, **{c: 13 for c in range(2, len(headers) + 1)}})
+        if cond_col is not None:
+            ds.conditional_formatting.add(
+                f"{get_column_letter(cond_col + 1)}2:{get_column_letter(cond_col + 1)}{last}",
+                ColorScaleRule(start_type="min", start_color=RED,
+                               mid_type="percentile", mid_value=50, mid_color=AMBER,
+                               end_type="max", end_color=GREEN))
+    _finish(wb, name)
+
+
 # --------------------------------------------------------------------------------------
 # Finalise
 # --------------------------------------------------------------------------------------
@@ -935,6 +1254,10 @@ def main() -> None:
         "inventory": build_inventory,
         "procurement": build_procurement,
         "executive": build_executive,
+        "financial": build_financial,
+        "marketing": build_marketing,
+        "hr": build_hr,
+        "ecommerce": build_ecommerce,
     }
     index = []
     for name, fn in builders.items():

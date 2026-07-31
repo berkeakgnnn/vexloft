@@ -1,0 +1,186 @@
+{
+  "id": "hr",
+  "slug": "hr",
+  "company": "BrightPath",
+  "title": "HR & People Analytics Dashboard",
+  "currency": "€",
+  "period": "FY 2025",
+  "months": [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec"
+  ],
+  "departments": [
+    "Engineering",
+    "Sales",
+    "Marketing",
+    "Operations",
+    "Support",
+    "People"
+  ],
+  "kpis": [
+    {
+      "label": "Headcount",
+      "value": "469",
+      "accent": "06B6D4",
+      "delta": "+62 hires",
+      "deltaUp": true,
+      "sub": "full-time"
+    },
+    {
+      "label": "Attrition Rate",
+      "value": "16.2%",
+      "accent": "EF4444",
+      "delta": "-1.8 pts",
+      "deltaUp": true,
+      "sub": "annualised"
+    },
+    {
+      "label": "Open Roles",
+      "value": "16",
+      "accent": "F59E0B",
+      "delta": "actively hiring",
+      "deltaUp": true,
+      "sub": "across teams"
+    },
+    {
+      "label": "Avg Tenure",
+      "value": "2.4 yrs",
+      "accent": "4338CA",
+      "delta": "+0.2",
+      "deltaUp": true,
+      "sub": "company-wide"
+    },
+    {
+      "label": "Employee eNPS",
+      "value": "+38",
+      "accent": "10B981",
+      "delta": "+5",
+      "deltaUp": true,
+      "sub": "engagement"
+    }
+  ],
+  "series": {
+    "headcountByDept": [
+      {
+        "name": "Engineering",
+        "value": 20
+      },
+      {
+        "name": "Sales",
+        "value": 95
+      },
+      {
+        "name": "Marketing",
+        "value": 98
+      },
+      {
+        "name": "Operations",
+        "value": 60
+      },
+      {
+        "name": "Support",
+        "value": 83
+      },
+      {
+        "name": "People",
+        "value": 113
+      }
+    ],
+    "attritionByMonth": [
+      8.9,
+      7.0,
+      6.3,
+      5.7,
+      7.6,
+      10.2,
+      8.2,
+      6.3,
+      5.1,
+      7.0,
+      6.3,
+      9.5
+    ],
+    "hiringFunnel": [
+      {
+        "name": "Applied",
+        "value": 2113
+      },
+      {
+        "name": "Screened",
+        "value": 757
+      },
+      {
+        "name": "Interviewed",
+        "value": 405
+      },
+      {
+        "name": "Offer",
+        "value": 119
+      },
+      {
+        "name": "Hired",
+        "value": 62
+      }
+    ],
+    "tenureDistribution": [
+      {
+        "name": "< 1 yr",
+        "value": 113
+      },
+      {
+        "name": "1–2 yrs",
+        "value": 145
+      },
+      {
+        "name": "2–4 yrs",
+        "value": 131
+      },
+      {
+        "name": "4+ yrs",
+        "value": 80
+      }
+    ]
+  },
+  "table": [
+    {
+      "name": "Engineering",
+      "headcount": 20,
+      "attrition": 14.5
+    },
+    {
+      "name": "Sales",
+      "headcount": 95,
+      "attrition": 16.6
+    },
+    {
+      "name": "Marketing",
+      "headcount": 98,
+      "attrition": 14.1
+    },
+    {
+      "name": "Operations",
+      "headcount": 60,
+      "attrition": 20.7
+    },
+    {
+      "name": "Support",
+      "headcount": 83,
+      "attrition": 14.9
+    },
+    {
+      "name": "People",
+      "headcount": 113,
+      "attrition": 16.6
+    }
+  ]
+}

@@ -19,6 +19,10 @@ import { SalesCharts } from "./charts/sales-charts";
 import { InventoryCharts } from "./charts/inventory-charts";
 import { ProcurementCharts } from "./charts/procurement-charts";
 import { ExecutiveCharts } from "./charts/executive-charts";
+import { FinancialCharts } from "./charts/financial-charts";
+import { MarketingCharts } from "./charts/marketing-charts";
+import { HrCharts } from "./charts/hr-charts";
+import { EcommerceCharts } from "./charts/ecommerce-charts";
 
 type Tab = "dashboard" | "excel" | "download";
 
@@ -38,6 +42,14 @@ function Charts({ data }: { data: DashboardData }): React.ReactElement | null {
       return <ProcurementCharts data={data} />;
     case "executive":
       return <ExecutiveCharts data={data} />;
+    case "financial":
+      return <FinancialCharts data={data} />;
+    case "marketing":
+      return <MarketingCharts data={data} />;
+    case "hr":
+      return <HrCharts data={data} />;
+    case "ecommerce":
+      return <EcommerceCharts data={data} />;
     default:
       return null;
   }

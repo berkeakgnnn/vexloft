@@ -1,13 +1,36 @@
 import Link from "next/link";
-import { ArrowRight, TrendingUp, Package, ShoppingCart, LayoutDashboard } from "lucide-react";
-import { sales, inventory, procurement, executive } from "@/lib/demo-data";
+import {
+  ArrowRight,
+  TrendingUp,
+  Package,
+  ShoppingCart,
+  LayoutDashboard,
+  Wallet,
+  Megaphone,
+  Users,
+  ShoppingBag,
+} from "lucide-react";
+import {
+  sales,
+  inventory,
+  procurement,
+  executive,
+  financial,
+  marketing,
+  hr,
+  ecommerce,
+} from "@/lib/demo-data";
 import { accentVars } from "@/lib/demo-data/accents";
 import type { DashboardData } from "@/lib/demo-data/types";
 
 const CARDS: Array<{ data: DashboardData; icon: typeof TrendingUp; blurb: string }> = [
   { data: sales, icon: TrendingUp, blurb: "Revenue, profit, regional & product performance with target tracking." },
+  { data: financial, icon: Wallet, blurb: "P&L, cash flow, EBITDA, budget vs actual and runway at a glance." },
+  { data: marketing, icon: Megaphone, blurb: "Channel ROAS, CAC, conversion funnel and campaign performance." },
+  { data: ecommerce, icon: ShoppingBag, blurb: "Orders, AOV, conversion, top products and traffic-source revenue." },
   { data: inventory, icon: Package, blurb: "Stock levels, reorder alerts, inventory value and turnover analysis." },
   { data: procurement, icon: ShoppingCart, blurb: "Spend analysis, purchase orders and supplier performance scorecards." },
+  { data: hr, icon: Users, blurb: "Headcount, attrition, hiring funnel, tenure and engagement (eNPS)." },
   { data: executive, icon: LayoutDashboard, blurb: "Cross-functional KPI snapshot — finance, sales and operations." },
 ];
 

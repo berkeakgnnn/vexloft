@@ -31,6 +31,32 @@ export function computeInsight(data: DashboardData): string {
       )[0];
       return `${top.name} is your fastest-growing unit at +${top.growth.toFixed(1)}% YoY.`;
     }
+    case "financial": {
+      const pos = data.series.cashNetByMonth.filter((v) => v > 0).length;
+      const rev = data.series.revenueByMonth.reduce((s, v) => s + v, 0);
+      const ebitda = data.series.ebitdaByMonth.reduce((s, v) => s + v, 0);
+      return `Cash-flow positive in ${pos} of 12 months — EBITDA margin ${((ebitda / rev) * 100).toFixed(1)}%.`;
+    }
+    case "marketing": {
+      const best = [...data.series.channelPerformance].sort(
+        (a, b) => b.roas - a.roas,
+      )[0];
+      return `${best.name} delivers your best ROAS at ${best.roas.toFixed(1)}x.`;
+    }
+    case "hr": {
+      const big = [...data.series.headcountByDept].sort(
+        (a, b) => b.value - a.value,
+      )[0];
+      const worst = [...data.table].sort((a, b) => b.attrition - a.attrition)[0];
+      return `${big.name} is your largest team — highest attrition is ${worst.name} at ${worst.attrition.toFixed(1)}%.`;
+    }
+    case "ecommerce": {
+      const total = data.series.revenueBySource.reduce((s, v) => s + v.value, 0);
+      const top = [...data.series.revenueBySource].sort(
+        (a, b) => b.value - a.value,
+      )[0];
+      return `${top.name} drives the most revenue — ${Math.round((top.value / total) * 100)}% of the total.`;
+    }
     default:
       return "";
   }

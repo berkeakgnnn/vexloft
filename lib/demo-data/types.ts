@@ -164,8 +164,121 @@ export interface ExecutiveData {
   };
 }
 
+/* ---------- Financial ---------- */
+export interface BudgetActual {
+  name: string;
+  budget: number;
+  actual: number;
+}
+
+export interface FinancialData {
+  id: "financial";
+  slug: "financial";
+  company: string;
+  title: string;
+  currency: string;
+  period: string;
+  months: string[];
+  kpis: Kpi[];
+  series: {
+    revenueByMonth: number[];
+    ebitdaByMonth: number[];
+    cashInByMonth: number[];
+    cashOutByMonth: number[];
+    cashNetByMonth: number[];
+    expenseBreakdown: NamedValue[];
+    budgetVsActual: BudgetActual[];
+  };
+}
+
+/* ---------- Marketing ---------- */
+export interface ChannelPerf {
+  name: string;
+  spend: number;
+  revenue: number;
+  roas: number;
+  leads: number;
+  cac: number;
+}
+
+export interface MarketingData {
+  id: "marketing";
+  slug: "marketing";
+  company: string;
+  title: string;
+  currency: string;
+  period: string;
+  months: string[];
+  channels: string[];
+  kpis: Kpi[];
+  series: {
+    channelPerformance: ChannelPerf[];
+    funnel: NamedValue[];
+    leadsByMonth: number[];
+    roasByChannel: NamedValue[];
+    spendByChannel: NamedValue[];
+  };
+}
+
+/* ---------- HR ---------- */
+export interface DeptPeople {
+  name: string;
+  headcount: number;
+  attrition: number;
+}
+
+export interface HrData {
+  id: "hr";
+  slug: "hr";
+  company: string;
+  title: string;
+  currency: string;
+  period: string;
+  months: string[];
+  departments: string[];
+  kpis: Kpi[];
+  series: {
+    headcountByDept: NamedValue[];
+    attritionByMonth: number[];
+    hiringFunnel: NamedValue[];
+    tenureDistribution: NamedValue[];
+  };
+  table: DeptPeople[];
+}
+
+/* ---------- E-commerce ---------- */
+export interface SourcePerf {
+  name: string;
+  revenue: number;
+  sessions: number;
+  conversion: number;
+}
+
+export interface EcommerceData {
+  id: "ecommerce";
+  slug: "ecommerce";
+  company: string;
+  title: string;
+  currency: string;
+  period: string;
+  months: string[];
+  sources: string[];
+  kpis: Kpi[];
+  series: {
+    revenueByMonth: number[];
+    ordersByMonth: number[];
+    revenueBySource: NamedValue[];
+    topProducts: NamedValue[];
+    sourcePerformance: SourcePerf[];
+  };
+}
+
 export type DashboardData =
   | SalesData
   | InventoryData
   | ProcurementData
-  | ExecutiveData;
+  | ExecutiveData
+  | FinancialData
+  | MarketingData
+  | HrData
+  | EcommerceData;
