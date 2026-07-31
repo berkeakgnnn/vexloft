@@ -8,8 +8,11 @@ import {
   Check,
   Link2,
   FileText,
+  Sparkles,
 } from "lucide-react";
 import type { DashboardData } from "@/lib/demo-data/types";
+import { accentVars } from "@/lib/demo-data/accents";
+import { computeInsight } from "@/lib/demo-data/insights";
 import { KpiCard } from "./kpi-card";
 import { ExcelPanel } from "./excel-panel";
 import { SalesCharts } from "./charts/sales-charts";
@@ -59,13 +62,14 @@ export function DashboardExperience({
   downloadPath,
 }: Props): React.ReactElement {
   const [tab, setTab] = useState<Tab>("dashboard");
+  const insight = computeInsight(data);
 
   return (
-    <div className="space-y-6">
+    <div className="vx-rise space-y-6" style={accentVars(data.slug)}>
       <header className="flex flex-wrap items-end justify-between gap-4">
         <div>
           <div className="mb-2 flex items-center gap-2">
-            <span className="rounded-full border border-indigo-400/30 bg-indigo-500/10 px-2.5 py-0.5 text-[11px] font-semibold text-indigo-300">
+            <span className="vx-chip rounded-full px-2.5 py-0.5 text-[11px] font-semibold">
               {data.company}
             </span>
             <span className="text-[11px] text-white/40">{data.period}</span>
@@ -75,9 +79,9 @@ export function DashboardExperience({
           </h1>
           <a
             href={`https://data.vexloft.com/${data.slug}`}
-            className="mt-2.5 inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs font-medium text-white/60 transition-colors hover:border-indigo-400/40 hover:text-white"
+            className="mt-2.5 inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs font-medium text-white/60 transition-colors hover:border-white/25 hover:text-white"
           >
-            <Link2 className="h-3.5 w-3.5 text-indigo-400" />
+            <Link2 className="vx-accent-text h-3.5 w-3.5" />
             data.vexloft.com/{data.slug}
           </a>
         </div>
@@ -86,7 +90,7 @@ export function DashboardExperience({
             href={`/demo/pdf/${data.slug}-portfolio.pdf`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex min-h-[44px] items-center gap-2 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-indigo-900/30 transition-transform active:scale-95"
+            className="vx-btn-accent inline-flex min-h-[44px] items-center gap-2 rounded-xl px-4 py-2 text-sm font-semibold text-white"
           >
             <FileText className="h-4 w-4" />
             Portfolio PDF
@@ -102,7 +106,7 @@ export function DashboardExperience({
         </div>
       </header>
 
-      <div className="inline-flex gap-1 rounded-xl border border-white/10 bg-white/[0.03] p-1">
+      <div className="vx-glass inline-flex gap-1 rounded-xl p-1">
         {TABS.map((t) => {
           const active = tab === t.id;
           const Icon = t.icon;
@@ -113,7 +117,7 @@ export function DashboardExperience({
               onClick={() => setTab(t.id)}
               className={
                 active
-                  ? "inline-flex min-h-[40px] items-center gap-2 rounded-lg bg-gradient-to-r from-indigo-600 to-violet-600 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-indigo-900/30"
+                  ? "vx-pill-active inline-flex min-h-[40px] items-center gap-2 rounded-lg px-4 py-2 text-sm font-semibold"
                   : "inline-flex min-h-[40px] items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium text-white/55 transition-colors hover:text-white"
               }
             >
@@ -126,7 +130,16 @@ export function DashboardExperience({
 
       {tab === "dashboard" && (
         <div className="space-y-6">
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
+          {insight && (
+            <div className="vx-insight flex items-center gap-2.5 px-4 py-3">
+              <Sparkles className="vx-accent-text h-4 w-4 shrink-0" />
+              <p className="text-sm text-white/85">
+                <span className="font-semibold text-white">Smart insight — </span>
+                {insight}
+              </p>
+            </div>
+          )}
+          <div className="vx-stagger grid grid-cols-2 gap-3 sm:grid-cols-3 lg:grid-cols-6">
             {data.kpis.map((kpi) => (
               <KpiCard key={kpi.label} kpi={kpi} />
             ))}
@@ -145,8 +158,8 @@ export function DashboardExperience({
 
       {tab === "download" && (
         <div className="grid gap-4 md:grid-cols-2">
-          <div className="rounded-2xl border border-white/8 bg-white/[0.03] p-6">
-            <FileSpreadsheet className="mb-3 h-8 w-8 text-emerald-400" />
+          <div className="vx-card p-6">
+            <FileSpreadsheet className="vx-accent-text mb-3 h-8 w-8" />
             <h3 className="font-display text-lg font-bold text-white">
               {data.slug}-dashboard.xlsx
             </h3>
@@ -156,7 +169,7 @@ export function DashboardExperience({
             <ul className="mt-4 space-y-2">
               {INSIDE.map((line) => (
                 <li key={line} className="flex items-start gap-2 text-sm text-white/70">
-                  <Check className="mt-0.5 h-4 w-4 shrink-0 text-emerald-400" />
+                  <Check className="vx-accent-text mt-0.5 h-4 w-4 shrink-0" />
                   {line}
                 </li>
               ))}
@@ -164,7 +177,7 @@ export function DashboardExperience({
             <a
               href={downloadPath}
               download
-              className="mt-6 inline-flex min-h-[44px] items-center gap-2 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-indigo-900/30 transition-transform active:scale-95"
+              className="vx-btn-accent mt-6 inline-flex min-h-[44px] items-center gap-2 rounded-xl px-5 py-2.5 text-sm font-semibold text-white"
             >
               <Download className="h-4 w-4" />
               Download .xlsx

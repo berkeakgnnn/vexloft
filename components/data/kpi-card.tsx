@@ -2,11 +2,7 @@ import type { Kpi } from "@/lib/demo-data/types";
 
 export function KpiCard({ kpi }: { kpi: Kpi }): React.ReactElement {
   return (
-    <div className="group relative overflow-hidden rounded-2xl border border-white/8 bg-white/[0.03] p-4 transition-colors hover:border-white/20">
-      <span
-        className="absolute inset-x-0 top-0 h-1"
-        style={{ backgroundColor: kpi.accent }}
-      />
+    <div className="vx-kpi p-4">
       <p className="text-[11px] font-medium uppercase tracking-wide text-white/45">
         {kpi.label}
       </p>
