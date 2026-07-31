@@ -2,7 +2,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { getDashboard, dashboardSlugs } from "@/lib/demo-data";
-import { excelEmbeds, excelDownloadPath } from "@/lib/demo-data/embeds";
+import { getExcelEmbed, excelDownloadPath } from "@/lib/demo-data/embeds";
 import { DashboardExperience } from "@/components/data/dashboard-experience";
 
 export function generateStaticParams(): Array<{ slug: string }> {
@@ -31,7 +31,7 @@ export default async function DashboardPage({
       </Link>
       <DashboardExperience
         data={data}
-        embedUrl={excelEmbeds[slug] ?? null}
+        embedUrl={getExcelEmbed(slug)}
         downloadPath={excelDownloadPath(slug)}
       />
     </div>

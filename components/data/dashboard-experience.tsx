@@ -203,6 +203,31 @@ export function DashboardExperience({
               <span className="text-white/85">Google Sheets</span> or{" "}
               <span className="text-white/85">Power BI</span> and it just works.
             </p>
+            <div className="mt-5">
+              <p className="mb-2 text-[11px] font-medium uppercase tracking-wide text-white/40">
+                One-pagers (PDF)
+              </p>
+              <div className="flex flex-wrap gap-2">
+                <a
+                  href={`/demo/pdf/${data.slug}-portfolio.pdf`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-[40px] items-center gap-2 rounded-xl border border-white/12 bg-white/5 px-3.5 py-2 text-xs font-semibold text-white transition-colors hover:border-white/30"
+                >
+                  <FileText className="vx-accent-text h-3.5 w-3.5" />
+                  Portfolio PDF
+                </a>
+                <a
+                  href={`/demo/pdf/${data.slug}-gig.pdf`}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex min-h-[40px] items-center gap-2 rounded-xl border border-white/12 bg-white/5 px-3.5 py-2 text-xs font-semibold text-white transition-colors hover:border-white/30"
+                >
+                  <FileText className="vx-accent-text h-3.5 w-3.5" />
+                  Gig PDF
+                </a>
+              </div>
+            </div>
             <p className="mt-4 text-[11px] text-white/30">
               Sample project — figures are representative and use fictional data.
             </p>

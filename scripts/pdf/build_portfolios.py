@@ -139,6 +139,87 @@ CONTENT: dict[str, dict[str, Any]] = {
         ],
         "images": [("exec-mid.png", None), ("exec-bottom.png", None)],
     },
+    "financial": {
+        "tagline": "Know your cash position before the month closes — not after.",
+        "intro": "Finance teams don't need another export; they need one screen that tells them whether the "
+                 "business is healthy. This dashboard pulls a full year of Northwind's P&amp;L and cash flow into "
+                 "a single view — revenue against EBITDA, where every euro of expense goes, and whether cash "
+                 "in is beating cash out month after month. The kind of board you can take straight into a "
+                 "leadership meeting.",
+        "delivers": [
+            "Revenue, gross margin, EBITDA and net cash-flow KPIs",
+            "Revenue vs EBITDA trend across the year",
+            "Cash-in vs cash-out with net cash-flow overlaid",
+            "Expense breakdown and budget-vs-actual by department",
+        ],
+        "matters": [
+            "See profitability and liquidity on one screen",
+            "Catch the months where cash out beat cash in",
+            "Walk into the board meeting with the whole P&amp;L",
+            "Swap in your figures and it's your monthly close",
+        ],
+        "images": [("financial-top.png", None)],
+    },
+    "marketing": {
+        "tagline": "Stop guessing which channel works. This tells you.",
+        "intro": "Every marketing budget has money quietly leaking into channels that don't pay back. This "
+                 "dashboard puts Pulse Media's spend, revenue and ROAS side by side for every channel, tracks "
+                 "the funnel from visitor to customer, and shows exactly where the leads come from. The channel "
+                 "earning a 6x return and the one burning cash both become obvious in seconds.",
+        "delivers": [
+            "Blended ROAS, CAC, leads and conversion-rate KPIs",
+            "ROAS and spend-vs-revenue by channel",
+            "Visitor-to-customer conversion funnel",
+            "Monthly leads trend and a full channel scorecard",
+        ],
+        "matters": [
+            "Move budget to the channels that actually pay back",
+            "See your true cost per customer, per channel",
+            "Spot exactly where the funnel leaks",
+            "Report performance without touching a spreadsheet",
+        ],
+        "images": [("marketing-top.png", None)],
+    },
+    "hr": {
+        "tagline": "The people numbers your leadership keeps asking for.",
+        "intro": "Headcount, attrition, hiring — it's usually scattered across three tools and a manager's "
+                 "memory. This dashboard brings BrightPath's people data together: who's on each team, where "
+                 "attrition is climbing, how the hiring pipeline is flowing, and how long people actually stay. "
+                 "HR gets answers in seconds instead of rebuilding a report every board cycle.",
+        "delivers": [
+            "Headcount, attrition, open roles, tenure and eNPS KPIs",
+            "Headcount and attrition by department",
+            "Hiring funnel from applied to hired",
+            "Tenure distribution and a per-team scorecard",
+        ],
+        "matters": [
+            "Spot the teams losing people before it's a crisis",
+            "Show leadership the hiring pipeline at a glance",
+            "Track engagement and retention in one place",
+            "Board-ready people metrics, every cycle",
+        ],
+        "images": [("hr-top.png", None)],
+    },
+    "ecommerce": {
+        "tagline": "Where the revenue really comes from — and what to sell more of.",
+        "intro": "Store analytics are usually buried three clicks deep across five different tabs. This "
+                 "dashboard puts Kavo Store's whole picture on one screen — revenue and orders month by month, "
+                 "average order value, conversion, and exactly which traffic sources and products are pulling "
+                 "their weight. The stuff you need to decide where to spend and what to restock.",
+        "delivers": [
+            "Revenue, orders, AOV, conversion and repeat-rate KPIs",
+            "Revenue vs orders trend across the year",
+            "Revenue and conversion by traffic source",
+            "Top products and a full source-performance table",
+        ],
+        "matters": [
+            "Double down on the channels that convert",
+            "See which products actually drive revenue",
+            "Track AOV and repeat rate over time",
+            "One screen instead of five analytics tabs",
+        ],
+        "images": [("ecom-top.png", None)],
+    },
 }
 
 
@@ -349,11 +430,12 @@ def build(slug: str, data: dict[str, Any], st: dict[str, ParagraphStyle]) -> str
     story.append(cols)
     story.append(Spacer(1, 16))
 
-    story.append(KeepTogether([
-        framed_image(prep_image(*c["images"][1]), content_w, 300),
-        Paragraph("Every chart, KPI and table is built natively inside the .xlsx — no screenshots, no images.", st["cap"]),
-    ]))
-    story.append(Spacer(1, 16))
+    if len(c["images"]) > 1:
+        story.append(KeepTogether([
+            framed_image(prep_image(*c["images"][1]), content_w, 300),
+            Paragraph("Every chart, KPI and table is built natively inside the .xlsx — no screenshots, no images.", st["cap"]),
+        ]))
+        story.append(Spacer(1, 16))
     story.append(Paragraph("HEADLINE METRICS", st["h"]))
     story.append(Spacer(1, 4))
     story.append(kpi_strip(data["kpis"], st))
@@ -364,7 +446,8 @@ def build(slug: str, data: dict[str, Any], st: dict[str, ParagraphStyle]) -> str
 
 def main() -> None:
     st = styles()
-    for slug in ("sales", "inventory", "procurement", "executive"):
+    for slug in ("sales", "inventory", "procurement", "executive",
+                 "financial", "marketing", "hr", "ecommerce"):
         with open(os.path.join(JSON_DIR, f"{slug}.json"), encoding="utf-8") as f:
             data = json.load(f)
         path = build(slug, data, st)
