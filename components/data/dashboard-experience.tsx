@@ -7,6 +7,7 @@ import {
   Download,
   Check,
   Link2,
+  FileText,
 } from "lucide-react";
 import type { DashboardData } from "@/lib/demo-data/types";
 import { KpiCard } from "./kpi-card";
@@ -80,14 +81,25 @@ export function DashboardExperience({
             data.vexloft.com/{data.slug}
           </a>
         </div>
-        <a
-          href={downloadPath}
-          download
-          className="inline-flex min-h-[44px] items-center gap-2 rounded-xl border border-white/12 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition-colors hover:border-white/30"
-        >
-          <Download className="h-4 w-4" />
-          .xlsx
-        </a>
+        <div className="flex items-center gap-2">
+          <a
+            href={`/demo/pdf/${data.slug}-portfolio.pdf`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex min-h-[44px] items-center gap-2 rounded-xl bg-gradient-to-r from-indigo-600 to-violet-600 px-4 py-2 text-sm font-semibold text-white shadow-lg shadow-indigo-900/30 transition-transform active:scale-95"
+          >
+            <FileText className="h-4 w-4" />
+            Portfolio PDF
+          </a>
+          <a
+            href={downloadPath}
+            download
+            className="inline-flex min-h-[44px] items-center gap-2 rounded-xl border border-white/12 bg-white/5 px-4 py-2 text-sm font-semibold text-white transition-colors hover:border-white/30"
+          >
+            <Download className="h-4 w-4" />
+            .xlsx
+          </a>
+        </div>
       </header>
 
       <div className="inline-flex gap-1 rounded-xl border border-white/10 bg-white/[0.03] p-1">
