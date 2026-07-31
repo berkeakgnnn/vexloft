@@ -6,6 +6,7 @@ import {
   FileSpreadsheet,
   Download,
   Check,
+  Link2,
 } from "lucide-react";
 import type { DashboardData } from "@/lib/demo-data/types";
 import { KpiCard } from "./kpi-card";
@@ -71,6 +72,13 @@ export function DashboardExperience({
           <h1 className="font-display text-2xl font-extrabold text-white sm:text-3xl">
             {data.title}
           </h1>
+          <a
+            href={`https://data.vexloft.com/${data.slug}`}
+            className="mt-2.5 inline-flex items-center gap-1.5 rounded-lg border border-white/10 bg-white/[0.03] px-2.5 py-1 text-xs font-medium text-white/60 transition-colors hover:border-indigo-400/40 hover:text-white"
+          >
+            <Link2 className="h-3.5 w-3.5 text-indigo-400" />
+            data.vexloft.com/{data.slug}
+          </a>
         </div>
         <a
           href={downloadPath}
