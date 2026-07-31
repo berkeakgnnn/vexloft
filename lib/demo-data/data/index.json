@@ -1,0 +1,26 @@
+[
+  {
+    "slug": "sales",
+    "company": "NovaRetail",
+    "title": "Sales Analytics & KPI Dashboard",
+    "period": "FY 2025"
+  },
+  {
+    "slug": "inventory",
+    "company": "AeroParts Ltd",
+    "title": "Inventory Management Dashboard",
+    "period": "Live snapshot"
+  },
+  {
+    "slug": "procurement",
+    "company": "Meridian Manufacturing",
+    "title": "Procurement & Supplier Dashboard",
+    "period": "FY 2025"
+  },
+  {
+    "slug": "executive",
+    "company": "Vantage Group",
+    "title": "Executive KPI Dashboard",
+    "period": "FY 2025"
+  }
+]

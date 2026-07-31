@@ -1,0 +1,2613 @@
+{
+  "id": "sales",
+  "slug": "sales",
+  "company": "NovaRetail",
+  "title": "Sales Analytics & KPI Dashboard",
+  "currency": "€",
+  "period": "FY 2025",
+  "months": [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec"
+  ],
+  "categories": [
+    "Electronics",
+    "Apparel",
+    "Home & Living",
+    "Beauty",
+    "Sports"
+  ],
+  "regions": [
+    "North",
+    "South",
+    "East",
+    "West"
+  ],
+  "kpis": [
+    {
+      "label": "Total Revenue",
+      "value": "€2.94M",
+      "accent": "4338CA",
+      "delta": "+12.4%",
+      "deltaUp": true,
+      "sub": "vs prior year"
+    },
+    {
+      "label": "Gross Profit",
+      "value": "€1.01M",
+      "accent": "7C3AED",
+      "delta": "+9.1%",
+      "deltaUp": true,
+      "sub": "vs prior year"
+    },
+    {
+      "label": "Profit Margin",
+      "value": "34.4%",
+      "accent": "06B6D4",
+      "delta": "+1.8 pts",
+      "deltaUp": true,
+      "sub": "blended"
+    },
+    {
+      "label": "Target Achievement",
+      "value": "94.3%",
+      "accent": "F59E0B",
+      "delta": "-5.7%",
+      "deltaUp": false,
+      "sub": "vs annual target"
+    },
+    {
+      "label": "Units Sold",
+      "value": "40,381",
+      "accent": "10B981",
+      "delta": "+8.0%",
+      "deltaUp": true,
+      "sub": "full year"
+    },
+    {
+      "label": "Avg Order Value",
+      "value": "€222",
+      "accent": "3B82F6",
+      "delta": "+3.2%",
+      "deltaUp": true,
+      "sub": "per order"
+    }
+  ],
+  "series": {
+    "revenueByMonth": [
+      195725,
+      193472,
+      221755,
+      233511,
+      240774,
+      244991,
+      236452,
+      229507,
+      247096,
+      268221,
+      311012,
+      321121
+    ],
+    "profitByMonth": [
+      67948,
+      65990,
+      77000,
+      79608,
+      82684,
+      83579,
+      81689,
+      79488,
+      84761,
+      91890,
+      106665,
+      110754
+    ],
+    "targetByMonth": [
+      213342,
+      215850,
+      228544,
+      257443,
+      250042,
+      256014,
+      251873,
+      256952,
+      260866,
+      270102,
+      324683,
+      342983
+    ],
+    "revenueByCategory": [
+      {
+        "name": "Electronics",
+        "value": 996968
+      },
+      {
+        "name": "Apparel",
+        "value": 701110
+      },
+      {
+        "name": "Home & Living",
+        "value": 543640
+      },
+      {
+        "name": "Beauty",
+        "value": 405787
+      },
+      {
+        "name": "Sports",
+        "value": 296132
+      }
+    ],
+    "revenueByRegion": [
+      {
+        "name": "North",
+        "value": 898550
+      },
+      {
+        "name": "South",
+        "value": 805060
+      },
+      {
+        "name": "East",
+        "value": 706084
+      },
+      {
+        "name": "West",
+        "value": 533943
+      }
+    ],
+    "topProducts": [
+      {
+        "name": "Aurora Wireless Earbuds",
+        "category": "Electronics",
+        "value": 47366
+      },
+      {
+        "name": "Pulse Smartwatch",
+        "category": "Electronics",
+        "value": 35762
+      },
+      {
+        "name": "Metro Denim Jacket",
+        "category": "Apparel",
+        "value": 35417
+      },
+      {
+        "name": "Nimbus 4K Monitor",
+        "category": "Electronics",
+        "value": 26164
+      },
+      {
+        "name": "Halo Table Lamp",
+        "category": "Home & Living",
+        "value": 23654
+      },
+      {
+        "name": "Cloudline Duvet",
+        "category": "Home & Living",
+        "value": 21467
+      },
+      {
+        "name": "Silk Serum Pro",
+        "category": "Beauty",
+        "value": 16622
+      },
+      {
+        "name": "Lumen Skincare Set",
+        "category": "Beauty",
+        "value": 10985
+      }
+    ]
+  },
+  "rows": [
+    {
+      "month": "Jan",
+      "monthIndex": 0,
+      "category": "Electronics",
+      "region": "North",
+      "revenue": 21147,
+      "cost": 16193,
+      "profit": 4954,
+      "units": 181
+    },
+    {
+      "month": "Jan",
+      "monthIndex": 0,
+      "category": "Electronics",
+      "region": "South",
+      "revenue": 19905,
+      "cost": 15495,
+      "profit": 4410,
+      "units": 215
+    },
+    {
+      "month": "Jan",
+      "monthIndex": 0,
+      "category": "Electronics",
+      "region": "East",
+      "revenue": 14959,
+      "cost": 11473,
+      "profit": 3486,
+      "units": 243
+    },
+    {
+      "month": "Jan",
+      "monthIndex": 0,
+      "category": "Electronics",
+      "region": "West",
+      "revenue": 12600,
+      "cost": 9658,
+      "profit": 2942,
+      "units": 107
+    },
+    {
+      "month": "Jan",
+      "monthIndex": 0,
+      "category": "Apparel",
+      "region": "North",
+      "revenue": 13132,
+      "cost": 7476,
+      "profit": 5656,
+      "units": 290
+    },
+    {
+      "month": "Jan",
+      "monthIndex": 0,
+      "category": "Apparel",
+      "region": "South",
+      "revenue": 13579,
+      "cost": 7813,
+      "profit": 5766,
+      "units": 177
+    },
+    {
+      "month": "Jan",
+      "monthIndex": 0,
+      "category": "Apparel",
+      "region": "East",
+      "revenue": 10862,
+      "cost": 6352,
+      "profit": 4510,
+      "units": 153
+    },
+    {
+      "month": "Jan",
+      "monthIndex": 0,
+      "category": "Apparel",
+      "region": "West",
+      "revenue": 7907,
+      "cost": 4567,
+      "profit": 3340,
+      "units": 126
+    },
+    {
+      "month": "Jan",
+      "monthIndex": 0,
+      "category": "Home & Living",
+      "region": "North",
+      "revenue": 9956,
+      "cost": 6597,
+      "profit": 3359,
+      "units": 106
+    },
+    {
+      "month": "Jan",
+      "monthIndex": 0,
+      "category": "Home & Living",
+      "region": "South",
+      "revenue": 9943,
+      "cost": 6611,
+      "profit": 3332,
+      "units": 141
+    },
+    {
+      "month": "Jan",
+      "monthIndex": 0,
+      "category": "Home & Living",
+      "region": "East",
+      "revenue": 8255,
+      "cost": 5341,
+      "profit": 2914,
+      "units": 116
+    },
+    {
+      "month": "Jan",
+      "monthIndex": 0,
+      "category": "Home & Living",
+      "region": "West",
+      "revenue": 6635,
+      "cost": 4185,
+      "profit": 2450,
+      "units": 87
+    },
+    {
+      "month": "Jan",
+      "monthIndex": 0,
+      "category": "Beauty",
+      "region": "North",
+      "revenue": 8613,
+      "cost": 4437,
+      "profit": 4176,
+      "units": 216
+    },
+    {
+      "month": "Jan",
+      "monthIndex": 0,
+      "category": "Beauty",
+      "region": "South",
+      "revenue": 7804,
+      "cost": 3939,
+      "profit": 3865,
+      "units": 93
+    },
+    {
+      "month": "Jan",
+      "monthIndex": 0,
+      "category": "Beauty",
+      "region": "East",
+      "revenue": 6062,
+      "cost": 3064,
+      "profit": 2998,
+      "units": 115
+    },
+    {
+      "month": "Jan",
+      "monthIndex": 0,
+      "category": "Beauty",
+      "region": "West",
+      "revenue": 4442,
+      "cost": 2261,
+      "profit": 2181,
+      "units": 47
+    },
+    {
+      "month": "Jan",
+      "monthIndex": 0,
+      "category": "Sports",
+      "region": "North",
+      "revenue": 6435,
+      "cost": 3957,
+      "profit": 2478,
+      "units": 70
+    },
+    {
+      "month": "Jan",
+      "monthIndex": 0,
+      "category": "Sports",
+      "region": "South",
+      "revenue": 5282,
+      "cost": 3275,
+      "profit": 2007,
+      "units": 48
+    },
+    {
+      "month": "Jan",
+      "monthIndex": 0,
+      "category": "Sports",
+      "region": "East",
+      "revenue": 4509,
+      "cost": 2858,
+      "profit": 1651,
+      "units": 48
+    },
+    {
+      "month": "Jan",
+      "monthIndex": 0,
+      "category": "Sports",
+      "region": "West",
+      "revenue": 3698,
+      "cost": 2225,
+      "profit": 1473,
+      "units": 82
+    },
+    {
+      "month": "Feb",
+      "monthIndex": 1,
+      "category": "Electronics",
+      "region": "North",
+      "revenue": 17964,
+      "cost": 13882,
+      "profit": 4082,
+      "units": 155
+    },
+    {
+      "month": "Feb",
+      "monthIndex": 1,
+      "category": "Electronics",
+      "region": "South",
+      "revenue": 19215,
+      "cost": 15292,
+      "profit": 3923,
+      "units": 402
+    },
+    {
+      "month": "Feb",
+      "monthIndex": 1,
+      "category": "Electronics",
+      "region": "East",
+      "revenue": 16441,
+      "cost": 13035,
+      "profit": 3406,
+      "units": 158
+    },
+    {
+      "month": "Feb",
+      "monthIndex": 1,
+      "category": "Electronics",
+      "region": "West",
+      "revenue": 12575,
+      "cost": 9597,
+      "profit": 2978,
+      "units": 239
+    },
+    {
+      "month": "Feb",
+      "monthIndex": 1,
+      "category": "Apparel",
+      "region": "North",
+      "revenue": 15288,
+      "cost": 8994,
+      "profit": 6294,
+      "units": 138
+    },
+    {
+      "month": "Feb",
+      "monthIndex": 1,
+      "category": "Apparel",
+      "region": "South",
+      "revenue": 12282,
+      "cost": 7290,
+      "profit": 4992,
+      "units": 248
+    },
+    {
+      "month": "Feb",
+      "monthIndex": 1,
+      "category": "Apparel",
+      "region": "East",
+      "revenue": 12273,
+      "cost": 7283,
+      "profit": 4990,
+      "units": 187
+    },
+    {
+      "month": "Feb",
+      "monthIndex": 1,
+      "category": "Apparel",
+      "region": "West",
+      "revenue": 7434,
+      "cost": 4324,
+      "profit": 3110,
+      "units": 79
+    },
+    {
+      "month": "Feb",
+      "monthIndex": 1,
+      "category": "Home & Living",
+      "region": "North",
+      "revenue": 10329,
+      "cost": 6536,
+      "profit": 3793,
+      "units": 170
+    },
+    {
+      "month": "Feb",
+      "monthIndex": 1,
+      "category": "Home & Living",
+      "region": "South",
+      "revenue": 10058,
+      "cost": 6377,
+      "profit": 3681,
+      "units": 88
+    },
+    {
+      "month": "Feb",
+      "monthIndex": 1,
+      "category": "Home & Living",
+      "region": "East",
+      "revenue": 7797,
+      "cost": 4978,
+      "profit": 2819,
+      "units": 165
+    },
+    {
+      "month": "Feb",
+      "monthIndex": 1,
+      "category": "Home & Living",
+      "region": "West",
+      "revenue": 6939,
+      "cost": 4619,
+      "profit": 2320,
+      "units": 108
+    },
+    {
+      "month": "Feb",
+      "monthIndex": 1,
+      "category": "Beauty",
+      "region": "North",
+      "revenue": 7524,
+      "cost": 3948,
+      "profit": 3576,
+      "units": 68
+    },
+    {
+      "month": "Feb",
+      "monthIndex": 1,
+      "category": "Beauty",
+      "region": "South",
+      "revenue": 6408,
+      "cost": 3359,
+      "profit": 3049,
+      "units": 59
+    },
+    {
+      "month": "Feb",
+      "monthIndex": 1,
+      "category": "Beauty",
+      "region": "East",
+      "revenue": 6387,
+      "cost": 3335,
+      "profit": 3052,
+      "units": 61
+    },
+    {
+      "month": "Feb",
+      "monthIndex": 1,
+      "category": "Beauty",
+      "region": "West",
+      "revenue": 4535,
+      "cost": 2326,
+      "profit": 2209,
+      "units": 49
+    },
+    {
+      "month": "Feb",
+      "monthIndex": 1,
+      "category": "Sports",
+      "region": "North",
+      "revenue": 6027,
+      "cost": 3745,
+      "profit": 2282,
+      "units": 92
+    },
+    {
+      "month": "Feb",
+      "monthIndex": 1,
+      "category": "Sports",
+      "region": "South",
+      "revenue": 5728,
+      "cost": 3506,
+      "profit": 2222,
+      "units": 61
+    },
+    {
+      "month": "Feb",
+      "monthIndex": 1,
+      "category": "Sports",
+      "region": "East",
+      "revenue": 5044,
+      "cost": 3109,
+      "profit": 1935,
+      "units": 119
+    },
+    {
+      "month": "Feb",
+      "monthIndex": 1,
+      "category": "Sports",
+      "region": "West",
+      "revenue": 3224,
+      "cost": 1947,
+      "profit": 1277,
+      "units": 64
+    },
+    {
+      "month": "Mar",
+      "monthIndex": 2,
+      "category": "Electronics",
+      "region": "North",
+      "revenue": 21152,
+      "cost": 16343,
+      "profit": 4809,
+      "units": 310
+    },
+    {
+      "month": "Mar",
+      "monthIndex": 2,
+      "category": "Electronics",
+      "region": "South",
+      "revenue": 20013,
+      "cost": 15765,
+      "profit": 4248,
+      "units": 214
+    },
+    {
+      "month": "Mar",
+      "monthIndex": 2,
+      "category": "Electronics",
+      "region": "East",
+      "revenue": 18827,
+      "cost": 14566,
+      "profit": 4261,
+      "units": 204
+    },
+    {
+      "month": "Mar",
+      "monthIndex": 2,
+      "category": "Electronics",
+      "region": "West",
+      "revenue": 13674,
+      "cost": 10427,
+      "profit": 3247,
+      "units": 165
+    },
+    {
+      "month": "Mar",
+      "monthIndex": 2,
+      "category": "Apparel",
+      "region": "North",
+      "revenue": 15711,
+      "cost": 9209,
+      "profit": 6502,
+      "units": 160
+    },
+    {
+      "month": "Mar",
+      "monthIndex": 2,
+      "category": "Apparel",
+      "region": "South",
+      "revenue": 13418,
+      "cost": 7752,
+      "profit": 5666,
+      "units": 178
+    },
+    {
+      "month": "Mar",
+      "monthIndex": 2,
+      "category": "Apparel",
+      "region": "East",
+      "revenue": 12098,
+      "cost": 6823,
+      "profit": 5275,
+      "units": 288
+    },
+    {
+      "month": "Mar",
+      "monthIndex": 2,
+      "category": "Apparel",
+      "region": "West",
+      "revenue": 10667,
+      "cost": 6276,
+      "profit": 4391,
+      "units": 144
+    },
+    {
+      "month": "Mar",
+      "monthIndex": 2,
+      "category": "Home & Living",
+      "region": "North",
+      "revenue": 12813,
+      "cost": 8213,
+      "profit": 4600,
+      "units": 133
+    },
+    {
+      "month": "Mar",
+      "monthIndex": 2,
+      "category": "Home & Living",
+      "region": "South",
+      "revenue": 11892,
+      "cost": 7857,
+      "profit": 4035,
+      "units": 156
+    },
+    {
+      "month": "Mar",
+      "monthIndex": 2,
+      "category": "Home & Living",
+      "region": "East",
+      "revenue": 10646,
+      "cost": 7095,
+      "profit": 3551,
+      "units": 249
+    },
+    {
+      "month": "Mar",
+      "monthIndex": 2,
+      "category": "Home & Living",
+      "region": "West",
+      "revenue": 7003,
+      "cost": 4539,
+      "profit": 2464,
+      "units": 116
+    },
+    {
+      "month": "Mar",
+      "monthIndex": 2,
+      "category": "Beauty",
+      "region": "North",
+      "revenue": 9851,
+      "cost": 5013,
+      "profit": 4838,
+      "units": 99
+    },
+    {
+      "month": "Mar",
+      "monthIndex": 2,
+      "category": "Beauty",
+      "region": "South",
+      "revenue": 9063,
+      "cost": 4589,
+      "profit": 4474,
+      "units": 96
+    },
+    {
+      "month": "Mar",
+      "monthIndex": 2,
+      "category": "Beauty",
+      "region": "East",
+      "revenue": 7002,
+      "cost": 3671,
+      "profit": 3331,
+      "units": 74
+    },
+    {
+      "month": "Mar",
+      "monthIndex": 2,
+      "category": "Beauty",
+      "region": "West",
+      "revenue": 6201,
+      "cost": 3282,
+      "profit": 2919,
+      "units": 94
+    },
+    {
+      "month": "Mar",
+      "monthIndex": 2,
+      "category": "Sports",
+      "region": "North",
+      "revenue": 7223,
+      "cost": 4383,
+      "profit": 2840,
+      "units": 75
+    },
+    {
+      "month": "Mar",
+      "monthIndex": 2,
+      "category": "Sports",
+      "region": "South",
+      "revenue": 5843,
+      "cost": 3572,
+      "profit": 2271,
+      "units": 102
+    },
+    {
+      "month": "Mar",
+      "monthIndex": 2,
+      "category": "Sports",
+      "region": "East",
+      "revenue": 4939,
+      "cost": 3117,
+      "profit": 1822,
+      "units": 108
+    },
+    {
+      "month": "Mar",
+      "monthIndex": 2,
+      "category": "Sports",
+      "region": "West",
+      "revenue": 3719,
+      "cost": 2263,
+      "profit": 1456,
+      "units": 73
+    },
+    {
+      "month": "Apr",
+      "monthIndex": 3,
+      "category": "Electronics",
+      "region": "North",
+      "revenue": 25358,
+      "cost": 19883,
+      "profit": 5475,
+      "units": 274
+    },
+    {
+      "month": "Apr",
+      "monthIndex": 3,
+      "category": "Electronics",
+      "region": "South",
+      "revenue": 22941,
+      "cost": 17839,
+      "profit": 5102,
+      "units": 558
+    },
+    {
+      "month": "Apr",
+      "monthIndex": 3,
+      "category": "Electronics",
+      "region": "East",
+      "revenue": 17217,
+      "cost": 13443,
+      "profit": 3774,
+      "units": 178
+    },
+    {
+      "month": "Apr",
+      "monthIndex": 3,
+      "category": "Electronics",
+      "region": "West",
+      "revenue": 15355,
+      "cost": 11985,
+      "profit": 3370,
+      "units": 271
+    },
+    {
+      "month": "Apr",
+      "monthIndex": 3,
+      "category": "Apparel",
+      "region": "North",
+      "revenue": 17340,
+      "cost": 10320,
+      "profit": 7020,
+      "units": 266
+    },
+    {
+      "month": "Apr",
+      "monthIndex": 3,
+      "category": "Apparel",
+      "region": "South",
+      "revenue": 16303,
+      "cost": 9685,
+      "profit": 6618,
+      "units": 191
+    },
+    {
+      "month": "Apr",
+      "monthIndex": 3,
+      "category": "Apparel",
+      "region": "East",
+      "revenue": 13073,
+      "cost": 7414,
+      "profit": 5659,
+      "units": 278
+    },
+    {
+      "month": "Apr",
+      "monthIndex": 3,
+      "category": "Apparel",
+      "region": "West",
+      "revenue": 8764,
+      "cost": 5117,
+      "profit": 3647,
+      "units": 91
+    },
+    {
+      "month": "Apr",
+      "monthIndex": 3,
+      "category": "Home & Living",
+      "region": "North",
+      "revenue": 14229,
+      "cost": 9306,
+      "profit": 4923,
+      "units": 119
+    },
+    {
+      "month": "Apr",
+      "monthIndex": 3,
+      "category": "Home & Living",
+      "region": "South",
+      "revenue": 10823,
+      "cost": 6880,
+      "profit": 3943,
+      "units": 252
+    },
+    {
+      "month": "Apr",
+      "monthIndex": 3,
+      "category": "Home & Living",
+      "region": "East",
+      "revenue": 9349,
+      "cost": 6088,
+      "profit": 3261,
+      "units": 79
+    },
+    {
+      "month": "Apr",
+      "monthIndex": 3,
+      "category": "Home & Living",
+      "region": "West",
+      "revenue": 7028,
+      "cost": 4496,
+      "profit": 2532,
+      "units": 72
+    },
+    {
+      "month": "Apr",
+      "monthIndex": 3,
+      "category": "Beauty",
+      "region": "North",
+      "revenue": 9630,
+      "cost": 5025,
+      "profit": 4605,
+      "units": 191
+    },
+    {
+      "month": "Apr",
+      "monthIndex": 3,
+      "category": "Beauty",
+      "region": "South",
+      "revenue": 9349,
+      "cost": 4984,
+      "profit": 4365,
+      "units": 94
+    },
+    {
+      "month": "Apr",
+      "monthIndex": 3,
+      "category": "Beauty",
+      "region": "East",
+      "revenue": 8462,
+      "cost": 4356,
+      "profit": 4106,
+      "units": 208
+    },
+    {
+      "month": "Apr",
+      "monthIndex": 3,
+      "category": "Beauty",
+      "region": "West",
+      "revenue": 5477,
+      "cost": 2916,
+      "profit": 2561,
+      "units": 72
+    },
+    {
+      "month": "Apr",
+      "monthIndex": 3,
+      "category": "Sports",
+      "region": "North",
+      "revenue": 6560,
+      "cost": 3982,
+      "profit": 2578,
+      "units": 127
+    },
+    {
+      "month": "Apr",
+      "monthIndex": 3,
+      "category": "Sports",
+      "region": "South",
+      "revenue": 6066,
+      "cost": 3857,
+      "profit": 2209,
+      "units": 55
+    },
+    {
+      "month": "Apr",
+      "monthIndex": 3,
+      "category": "Sports",
+      "region": "East",
+      "revenue": 5810,
+      "cost": 3658,
+      "profit": 2152,
+      "units": 108
+    },
+    {
+      "month": "Apr",
+      "monthIndex": 3,
+      "category": "Sports",
+      "region": "West",
+      "revenue": 4377,
+      "cost": 2669,
+      "profit": 1708,
+      "units": 54
+    },
+    {
+      "month": "May",
+      "monthIndex": 4,
+      "category": "Electronics",
+      "region": "North",
+      "revenue": 22464,
+      "cost": 17934,
+      "profit": 4530,
+      "units": 463
+    },
+    {
+      "month": "May",
+      "monthIndex": 4,
+      "category": "Electronics",
+      "region": "South",
+      "revenue": 22522,
+      "cost": 17738,
+      "profit": 4784,
+      "units": 248
+    },
+    {
+      "month": "May",
+      "monthIndex": 4,
+      "category": "Electronics",
+      "region": "East",
+      "revenue": 20441,
+      "cost": 15819,
+      "profit": 4622,
+      "units": 199
+    },
+    {
+      "month": "May",
+      "monthIndex": 4,
+      "category": "Electronics",
+      "region": "West",
+      "revenue": 16234,
+      "cost": 12751,
+      "profit": 3483,
+      "units": 137
+    },
+    {
+      "month": "May",
+      "monthIndex": 4,
+      "category": "Apparel",
+      "region": "North",
+      "revenue": 19355,
+      "cost": 10927,
+      "profit": 8428,
+      "units": 208
+    },
+    {
+      "month": "May",
+      "monthIndex": 4,
+      "category": "Apparel",
+      "region": "South",
+      "revenue": 14027,
+      "cost": 8214,
+      "profit": 5813,
+      "units": 205
+    },
+    {
+      "month": "May",
+      "monthIndex": 4,
+      "category": "Apparel",
+      "region": "East",
+      "revenue": 15000,
+      "cost": 8462,
+      "profit": 6538,
+      "units": 130
+    },
+    {
+      "month": "May",
+      "monthIndex": 4,
+      "category": "Apparel",
+      "region": "West",
+      "revenue": 9232,
+      "cost": 5212,
+      "profit": 4020,
+      "units": 242
+    },
+    {
+      "month": "May",
+      "monthIndex": 4,
+      "category": "Home & Living",
+      "region": "North",
+      "revenue": 12188,
+      "cost": 8153,
+      "profit": 4035,
+      "units": 114
+    },
+    {
+      "month": "May",
+      "monthIndex": 4,
+      "category": "Home & Living",
+      "region": "South",
+      "revenue": 12831,
+      "cost": 8183,
+      "profit": 4648,
+      "units": 136
+    },
+    {
+      "month": "May",
+      "monthIndex": 4,
+      "category": "Home & Living",
+      "region": "East",
+      "revenue": 11103,
+      "cost": 7315,
+      "profit": 3788,
+      "units": 185
+    },
+    {
+      "month": "May",
+      "monthIndex": 4,
+      "category": "Home & Living",
+      "region": "West",
+      "revenue": 8655,
+      "cost": 5703,
+      "profit": 2952,
+      "units": 92
+    },
+    {
+      "month": "May",
+      "monthIndex": 4,
+      "category": "Beauty",
+      "region": "North",
+      "revenue": 9877,
+      "cost": 5104,
+      "profit": 4773,
+      "units": 99
+    },
+    {
+      "month": "May",
+      "monthIndex": 4,
+      "category": "Beauty",
+      "region": "South",
+      "revenue": 9108,
+      "cost": 4733,
+      "profit": 4375,
+      "units": 80
+    },
+    {
+      "month": "May",
+      "monthIndex": 4,
+      "category": "Beauty",
+      "region": "East",
+      "revenue": 7910,
+      "cost": 4202,
+      "profit": 3708,
+      "units": 189
+    },
+    {
+      "month": "May",
+      "monthIndex": 4,
+      "category": "Beauty",
+      "region": "West",
+      "revenue": 6092,
+      "cost": 3208,
+      "profit": 2884,
+      "units": 157
+    },
+    {
+      "month": "May",
+      "monthIndex": 4,
+      "category": "Sports",
+      "region": "North",
+      "revenue": 7791,
+      "cost": 4768,
+      "profit": 3023,
+      "units": 87
+    },
+    {
+      "month": "May",
+      "monthIndex": 4,
+      "category": "Sports",
+      "region": "South",
+      "revenue": 6672,
+      "cost": 4046,
+      "profit": 2626,
+      "units": 58
+    },
+    {
+      "month": "May",
+      "monthIndex": 4,
+      "category": "Sports",
+      "region": "East",
+      "revenue": 5404,
+      "cost": 3277,
+      "profit": 2127,
+      "units": 73
+    },
+    {
+      "month": "May",
+      "monthIndex": 4,
+      "category": "Sports",
+      "region": "West",
+      "revenue": 3868,
+      "cost": 2341,
+      "profit": 1527,
+      "units": 39
+    },
+    {
+      "month": "Jun",
+      "monthIndex": 5,
+      "category": "Electronics",
+      "region": "North",
+      "revenue": 23538,
+      "cost": 18405,
+      "profit": 5133,
+      "units": 213
+    },
+    {
+      "month": "Jun",
+      "monthIndex": 5,
+      "category": "Electronics",
+      "region": "South",
+      "revenue": 22441,
+      "cost": 17834,
+      "profit": 4607,
+      "units": 212
+    },
+    {
+      "month": "Jun",
+      "monthIndex": 5,
+      "category": "Electronics",
+      "region": "East",
+      "revenue": 18548,
+      "cost": 14100,
+      "profit": 4448,
+      "units": 181
+    },
+    {
+      "month": "Jun",
+      "monthIndex": 5,
+      "category": "Electronics",
+      "region": "West",
+      "revenue": 16459,
+      "cost": 13110,
+      "profit": 3349,
+      "units": 170
+    },
+    {
+      "month": "Jun",
+      "monthIndex": 5,
+      "category": "Apparel",
+      "region": "North",
+      "revenue": 18435,
+      "cost": 10986,
+      "profit": 7449,
+      "units": 187
+    },
+    {
+      "month": "Jun",
+      "monthIndex": 5,
+      "category": "Apparel",
+      "region": "South",
+      "revenue": 17029,
+      "cost": 10121,
+      "profit": 6908,
+      "units": 401
+    },
+    {
+      "month": "Jun",
+      "monthIndex": 5,
+      "category": "Apparel",
+      "region": "East",
+      "revenue": 15063,
+      "cost": 8781,
+      "profit": 6282,
+      "units": 386
+    },
+    {
+      "month": "Jun",
+      "monthIndex": 5,
+      "category": "Apparel",
+      "region": "West",
+      "revenue": 10052,
+      "cost": 5906,
+      "profit": 4146,
+      "units": 124
+    },
+    {
+      "month": "Jun",
+      "monthIndex": 5,
+      "category": "Home & Living",
+      "region": "North",
+      "revenue": 14000,
+      "cost": 8984,
+      "profit": 5016,
+      "units": 166
+    },
+    {
+      "month": "Jun",
+      "monthIndex": 5,
+      "category": "Home & Living",
+      "region": "South",
+      "revenue": 13106,
+      "cost": 8764,
+      "profit": 4342,
+      "units": 157
+    },
+    {
+      "month": "Jun",
+      "monthIndex": 5,
+      "category": "Home & Living",
+      "region": "East",
+      "revenue": 11272,
+      "cost": 7145,
+      "profit": 4127,
+      "units": 228
+    },
+    {
+      "month": "Jun",
+      "monthIndex": 5,
+      "category": "Home & Living",
+      "region": "West",
+      "revenue": 8124,
+      "cost": 5384,
+      "profit": 2740,
+      "units": 170
+    },
+    {
+      "month": "Jun",
+      "monthIndex": 5,
+      "category": "Beauty",
+      "region": "North",
+      "revenue": 9821,
+      "cost": 5107,
+      "profit": 4714,
+      "units": 156
+    },
+    {
+      "month": "Jun",
+      "monthIndex": 5,
+      "category": "Beauty",
+      "region": "South",
+      "revenue": 8538,
+      "cost": 4349,
+      "profit": 4189,
+      "units": 117
+    },
+    {
+      "month": "Jun",
+      "monthIndex": 5,
+      "category": "Beauty",
+      "region": "East",
+      "revenue": 8889,
+      "cost": 4531,
+      "profit": 4358,
+      "units": 85
+    },
+    {
+      "month": "Jun",
+      "monthIndex": 5,
+      "category": "Beauty",
+      "region": "West",
+      "revenue": 5594,
+      "cost": 2865,
+      "profit": 2729,
+      "units": 60
+    },
+    {
+      "month": "Jun",
+      "monthIndex": 5,
+      "category": "Sports",
+      "region": "North",
+      "revenue": 6757,
+      "cost": 4145,
+      "profit": 2612,
+      "units": 133
+    },
+    {
+      "month": "Jun",
+      "monthIndex": 5,
+      "category": "Sports",
+      "region": "South",
+      "revenue": 6242,
+      "cost": 3960,
+      "profit": 2282,
+      "units": 122
+    },
+    {
+      "month": "Jun",
+      "monthIndex": 5,
+      "category": "Sports",
+      "region": "East",
+      "revenue": 6246,
+      "cost": 3968,
+      "profit": 2278,
+      "units": 107
+    },
+    {
+      "month": "Jun",
+      "monthIndex": 5,
+      "category": "Sports",
+      "region": "West",
+      "revenue": 4837,
+      "cost": 2967,
+      "profit": 1870,
+      "units": 48
+    },
+    {
+      "month": "Jul",
+      "monthIndex": 6,
+      "category": "Electronics",
+      "region": "North",
+      "revenue": 25271,
+      "cost": 19535,
+      "profit": 5736,
+      "units": 228
+    },
+    {
+      "month": "Jul",
+      "monthIndex": 6,
+      "category": "Electronics",
+      "region": "South",
+      "revenue": 22606,
+      "cost": 17441,
+      "profit": 5165,
+      "units": 266
+    },
+    {
+      "month": "Jul",
+      "monthIndex": 6,
+      "category": "Electronics",
+      "region": "East",
+      "revenue": 18245,
+      "cost": 14048,
+      "profit": 4197,
+      "units": 159
+    },
+    {
+      "month": "Jul",
+      "monthIndex": 6,
+      "category": "Electronics",
+      "region": "West",
+      "revenue": 16037,
+      "cost": 12252,
+      "profit": 3785,
+      "units": 142
+    },
+    {
+      "month": "Jul",
+      "monthIndex": 6,
+      "category": "Apparel",
+      "region": "North",
+      "revenue": 18397,
+      "cost": 10357,
+      "profit": 8040,
+      "units": 392
+    },
+    {
+      "month": "Jul",
+      "monthIndex": 6,
+      "category": "Apparel",
+      "region": "South",
+      "revenue": 15006,
+      "cost": 8906,
+      "profit": 6100,
+      "units": 137
+    },
+    {
+      "month": "Jul",
+      "monthIndex": 6,
+      "category": "Apparel",
+      "region": "East",
+      "revenue": 12737,
+      "cost": 7363,
+      "profit": 5374,
+      "units": 112
+    },
+    {
+      "month": "Jul",
+      "monthIndex": 6,
+      "category": "Apparel",
+      "region": "West",
+      "revenue": 9453,
+      "cost": 5353,
+      "profit": 4100,
+      "units": 131
+    },
+    {
+      "month": "Jul",
+      "monthIndex": 6,
+      "category": "Home & Living",
+      "region": "North",
+      "revenue": 13693,
+      "cost": 9100,
+      "profit": 4593,
+      "units": 125
+    },
+    {
+      "month": "Jul",
+      "monthIndex": 6,
+      "category": "Home & Living",
+      "region": "South",
+      "revenue": 10091,
+      "cost": 6431,
+      "profit": 3660,
+      "units": 208
+    },
+    {
+      "month": "Jul",
+      "monthIndex": 6,
+      "category": "Home & Living",
+      "region": "East",
+      "revenue": 10394,
+      "cost": 6718,
+      "profit": 3676,
+      "units": 91
+    },
+    {
+      "month": "Jul",
+      "monthIndex": 6,
+      "category": "Home & Living",
+      "region": "West",
+      "revenue": 7831,
+      "cost": 5125,
+      "profit": 2706,
+      "units": 83
+    },
+    {
+      "month": "Jul",
+      "monthIndex": 6,
+      "category": "Beauty",
+      "region": "North",
+      "revenue": 9485,
+      "cost": 5049,
+      "profit": 4436,
+      "units": 87
+    },
+    {
+      "month": "Jul",
+      "monthIndex": 6,
+      "category": "Beauty",
+      "region": "South",
+      "revenue": 9579,
+      "cost": 5066,
+      "profit": 4513,
+      "units": 184
+    },
+    {
+      "month": "Jul",
+      "monthIndex": 6,
+      "category": "Beauty",
+      "region": "East",
+      "revenue": 7055,
+      "cost": 3639,
+      "profit": 3416,
+      "units": 73
+    },
+    {
+      "month": "Jul",
+      "monthIndex": 6,
+      "category": "Beauty",
+      "region": "West",
+      "revenue": 5501,
+      "cost": 2924,
+      "profit": 2577,
+      "units": 51
+    },
+    {
+      "month": "Jul",
+      "monthIndex": 6,
+      "category": "Sports",
+      "region": "North",
+      "revenue": 7635,
+      "cost": 4729,
+      "profit": 2906,
+      "units": 152
+    },
+    {
+      "month": "Jul",
+      "monthIndex": 6,
+      "category": "Sports",
+      "region": "South",
+      "revenue": 6822,
+      "cost": 4147,
+      "profit": 2675,
+      "units": 87
+    },
+    {
+      "month": "Jul",
+      "monthIndex": 6,
+      "category": "Sports",
+      "region": "East",
+      "revenue": 5995,
+      "cost": 3747,
+      "profit": 2248,
+      "units": 105
+    },
+    {
+      "month": "Jul",
+      "monthIndex": 6,
+      "category": "Sports",
+      "region": "West",
+      "revenue": 4619,
+      "cost": 2833,
+      "profit": 1786,
+      "units": 64
+    },
+    {
+      "month": "Aug",
+      "monthIndex": 7,
+      "category": "Electronics",
+      "region": "North",
+      "revenue": 23926,
+      "cost": 18888,
+      "profit": 5038,
+      "units": 581
+    },
+    {
+      "month": "Aug",
+      "monthIndex": 7,
+      "category": "Electronics",
+      "region": "South",
+      "revenue": 21853,
+      "cost": 17033,
+      "profit": 4820,
+      "units": 211
+    },
+    {
+      "month": "Aug",
+      "monthIndex": 7,
+      "category": "Electronics",
+      "region": "East",
+      "revenue": 18195,
+      "cost": 14253,
+      "profit": 3942,
+      "units": 155
+    },
+    {
+      "month": "Aug",
+      "monthIndex": 7,
+      "category": "Electronics",
+      "region": "West",
+      "revenue": 12606,
+      "cost": 10005,
+      "profit": 2601,
+      "units": 165
+    },
+    {
+      "month": "Aug",
+      "monthIndex": 7,
+      "category": "Apparel",
+      "region": "North",
+      "revenue": 16318,
+      "cost": 9336,
+      "profit": 6982,
+      "units": 292
+    },
+    {
+      "month": "Aug",
+      "monthIndex": 7,
+      "category": "Apparel",
+      "region": "South",
+      "revenue": 16160,
+      "cost": 9206,
+      "profit": 6954,
+      "units": 138
+    },
+    {
+      "month": "Aug",
+      "monthIndex": 7,
+      "category": "Apparel",
+      "region": "East",
+      "revenue": 13324,
+      "cost": 7628,
+      "profit": 5696,
+      "units": 130
+    },
+    {
+      "month": "Aug",
+      "monthIndex": 7,
+      "category": "Apparel",
+      "region": "West",
+      "revenue": 10147,
+      "cost": 6021,
+      "profit": 4126,
+      "units": 204
+    },
+    {
+      "month": "Aug",
+      "monthIndex": 7,
+      "category": "Home & Living",
+      "region": "North",
+      "revenue": 13449,
+      "cost": 8494,
+      "profit": 4955,
+      "units": 254
+    },
+    {
+      "month": "Aug",
+      "monthIndex": 7,
+      "category": "Home & Living",
+      "region": "South",
+      "revenue": 10968,
+      "cost": 7049,
+      "profit": 3919,
+      "units": 179
+    },
+    {
+      "month": "Aug",
+      "monthIndex": 7,
+      "category": "Home & Living",
+      "region": "East",
+      "revenue": 10119,
+      "cost": 6675,
+      "profit": 3444,
+      "units": 140
+    },
+    {
+      "month": "Aug",
+      "monthIndex": 7,
+      "category": "Home & Living",
+      "region": "West",
+      "revenue": 7480,
+      "cost": 4944,
+      "profit": 2536,
+      "units": 132
+    },
+    {
+      "month": "Aug",
+      "monthIndex": 7,
+      "category": "Beauty",
+      "region": "North",
+      "revenue": 11194,
+      "cost": 5655,
+      "profit": 5539,
+      "units": 164
+    },
+    {
+      "month": "Aug",
+      "monthIndex": 7,
+      "category": "Beauty",
+      "region": "South",
+      "revenue": 9389,
+      "cost": 4805,
+      "profit": 4584,
+      "units": 144
+    },
+    {
+      "month": "Aug",
+      "monthIndex": 7,
+      "category": "Beauty",
+      "region": "East",
+      "revenue": 7130,
+      "cost": 3813,
+      "profit": 3317,
+      "units": 65
+    },
+    {
+      "month": "Aug",
+      "monthIndex": 7,
+      "category": "Beauty",
+      "region": "West",
+      "revenue": 5223,
+      "cost": 2722,
+      "profit": 2501,
+      "units": 103
+    },
+    {
+      "month": "Aug",
+      "monthIndex": 7,
+      "category": "Sports",
+      "region": "North",
+      "revenue": 6316,
+      "cost": 3850,
+      "profit": 2466,
+      "units": 66
+    },
+    {
+      "month": "Aug",
+      "monthIndex": 7,
+      "category": "Sports",
+      "region": "South",
+      "revenue": 6264,
+      "cost": 3834,
+      "profit": 2430,
+      "units": 73
+    },
+    {
+      "month": "Aug",
+      "monthIndex": 7,
+      "category": "Sports",
+      "region": "East",
+      "revenue": 4976,
+      "cost": 3056,
+      "profit": 1920,
+      "units": 108
+    },
+    {
+      "month": "Aug",
+      "monthIndex": 7,
+      "category": "Sports",
+      "region": "West",
+      "revenue": 4470,
+      "cost": 2752,
+      "profit": 1718,
+      "units": 46
+    },
+    {
+      "month": "Sep",
+      "monthIndex": 8,
+      "category": "Electronics",
+      "region": "North",
+      "revenue": 25512,
+      "cost": 19798,
+      "profit": 5714,
+      "units": 300
+    },
+    {
+      "month": "Sep",
+      "monthIndex": 8,
+      "category": "Electronics",
+      "region": "South",
+      "revenue": 21797,
+      "cost": 17050,
+      "profit": 4747,
+      "units": 215
+    },
+    {
+      "month": "Sep",
+      "monthIndex": 8,
+      "category": "Electronics",
+      "region": "East",
+      "revenue": 18461,
+      "cost": 14139,
+      "profit": 4322,
+      "units": 465
+    },
+    {
+      "month": "Sep",
+      "monthIndex": 8,
+      "category": "Electronics",
+      "region": "West",
+      "revenue": 15380,
+      "cost": 11716,
+      "profit": 3664,
+      "units": 191
+    },
+    {
+      "month": "Sep",
+      "monthIndex": 8,
+      "category": "Apparel",
+      "region": "North",
+      "revenue": 17224,
+      "cost": 10005,
+      "profit": 7219,
+      "units": 282
+    },
+    {
+      "month": "Sep",
+      "monthIndex": 8,
+      "category": "Apparel",
+      "region": "South",
+      "revenue": 17306,
+      "cost": 10227,
+      "profit": 7079,
+      "units": 148
+    },
+    {
+      "month": "Sep",
+      "monthIndex": 8,
+      "category": "Apparel",
+      "region": "East",
+      "revenue": 14387,
+      "cost": 8539,
+      "profit": 5848,
+      "units": 132
+    },
+    {
+      "month": "Sep",
+      "monthIndex": 8,
+      "category": "Apparel",
+      "region": "West",
+      "revenue": 10458,
+      "cost": 6240,
+      "profit": 4218,
+      "units": 90
+    },
+    {
+      "month": "Sep",
+      "monthIndex": 8,
+      "category": "Home & Living",
+      "region": "North",
+      "revenue": 12905,
+      "cost": 8515,
+      "profit": 4390,
+      "units": 137
+    },
+    {
+      "month": "Sep",
+      "monthIndex": 8,
+      "category": "Home & Living",
+      "region": "South",
+      "revenue": 12589,
+      "cost": 8286,
+      "profit": 4303,
+      "units": 207
+    },
+    {
+      "month": "Sep",
+      "monthIndex": 8,
+      "category": "Home & Living",
+      "region": "East",
+      "revenue": 11760,
+      "cost": 7746,
+      "profit": 4014,
+      "units": 222
+    },
+    {
+      "month": "Sep",
+      "monthIndex": 8,
+      "category": "Home & Living",
+      "region": "West",
+      "revenue": 9078,
+      "cost": 5983,
+      "profit": 3095,
+      "units": 213
+    },
+    {
+      "month": "Sep",
+      "monthIndex": 8,
+      "category": "Beauty",
+      "region": "North",
+      "revenue": 9709,
+      "cost": 4948,
+      "profit": 4761,
+      "units": 105
+    },
+    {
+      "month": "Sep",
+      "monthIndex": 8,
+      "category": "Beauty",
+      "region": "South",
+      "revenue": 10034,
+      "cost": 5353,
+      "profit": 4681,
+      "units": 91
+    },
+    {
+      "month": "Sep",
+      "monthIndex": 8,
+      "category": "Beauty",
+      "region": "East",
+      "revenue": 7867,
+      "cost": 4016,
+      "profit": 3851,
+      "units": 175
+    },
+    {
+      "month": "Sep",
+      "monthIndex": 8,
+      "category": "Beauty",
+      "region": "West",
+      "revenue": 6183,
+      "cost": 3200,
+      "profit": 2983,
+      "units": 89
+    },
+    {
+      "month": "Sep",
+      "monthIndex": 8,
+      "category": "Sports",
+      "region": "North",
+      "revenue": 8414,
+      "cost": 5252,
+      "profit": 3162,
+      "units": 81
+    },
+    {
+      "month": "Sep",
+      "monthIndex": 8,
+      "category": "Sports",
+      "region": "South",
+      "revenue": 7396,
+      "cost": 4658,
+      "profit": 2738,
+      "units": 92
+    },
+    {
+      "month": "Sep",
+      "monthIndex": 8,
+      "category": "Sports",
+      "region": "East",
+      "revenue": 5916,
+      "cost": 3676,
+      "profit": 2240,
+      "units": 78
+    },
+    {
+      "month": "Sep",
+      "monthIndex": 8,
+      "category": "Sports",
+      "region": "West",
+      "revenue": 4720,
+      "cost": 2988,
+      "profit": 1732,
+      "units": 51
+    },
+    {
+      "month": "Oct",
+      "monthIndex": 9,
+      "category": "Electronics",
+      "region": "North",
+      "revenue": 26661,
+      "cost": 20876,
+      "profit": 5785,
+      "units": 354
+    },
+    {
+      "month": "Oct",
+      "monthIndex": 9,
+      "category": "Electronics",
+      "region": "South",
+      "revenue": 22443,
+      "cost": 17091,
+      "profit": 5352,
+      "units": 299
+    },
+    {
+      "month": "Oct",
+      "monthIndex": 9,
+      "category": "Electronics",
+      "region": "East",
+      "revenue": 24255,
+      "cost": 19149,
+      "profit": 5106,
+      "units": 570
+    },
+    {
+      "month": "Oct",
+      "monthIndex": 9,
+      "category": "Electronics",
+      "region": "West",
+      "revenue": 18096,
+      "cost": 14305,
+      "profit": 3791,
+      "units": 207
+    },
+    {
+      "month": "Oct",
+      "monthIndex": 9,
+      "category": "Apparel",
+      "region": "North",
+      "revenue": 17629,
+      "cost": 10108,
+      "profit": 7521,
+      "units": 270
+    },
+    {
+      "month": "Oct",
+      "monthIndex": 9,
+      "category": "Apparel",
+      "region": "South",
+      "revenue": 17345,
+      "cost": 9832,
+      "profit": 7513,
+      "units": 193
+    },
+    {
+      "month": "Oct",
+      "monthIndex": 9,
+      "category": "Apparel",
+      "region": "East",
+      "revenue": 15898,
+      "cost": 9299,
+      "profit": 6599,
+      "units": 202
+    },
+    {
+      "month": "Oct",
+      "monthIndex": 9,
+      "category": "Apparel",
+      "region": "West",
+      "revenue": 11772,
+      "cost": 6669,
+      "profit": 5103,
+      "units": 111
+    },
+    {
+      "month": "Oct",
+      "monthIndex": 9,
+      "category": "Home & Living",
+      "region": "North",
+      "revenue": 16324,
+      "cost": 10834,
+      "profit": 5490,
+      "units": 162
+    },
+    {
+      "month": "Oct",
+      "monthIndex": 9,
+      "category": "Home & Living",
+      "region": "South",
+      "revenue": 12256,
+      "cost": 7868,
+      "profit": 4388,
+      "units": 291
+    },
+    {
+      "month": "Oct",
+      "monthIndex": 9,
+      "category": "Home & Living",
+      "region": "East",
+      "revenue": 12408,
+      "cost": 8239,
+      "profit": 4169,
+      "units": 108
+    },
+    {
+      "month": "Oct",
+      "monthIndex": 9,
+      "category": "Home & Living",
+      "region": "West",
+      "revenue": 8919,
+      "cost": 5901,
+      "profit": 3018,
+      "units": 83
+    },
+    {
+      "month": "Oct",
+      "monthIndex": 9,
+      "category": "Beauty",
+      "region": "North",
+      "revenue": 10604,
+      "cost": 5371,
+      "profit": 5233,
+      "units": 97
+    },
+    {
+      "month": "Oct",
+      "monthIndex": 9,
+      "category": "Beauty",
+      "region": "South",
+      "revenue": 11308,
+      "cost": 5956,
+      "profit": 5352,
+      "units": 127
+    },
+    {
+      "month": "Oct",
+      "monthIndex": 9,
+      "category": "Beauty",
+      "region": "East",
+      "revenue": 8806,
+      "cost": 4678,
+      "profit": 4128,
+      "units": 143
+    },
+    {
+      "month": "Oct",
+      "monthIndex": 9,
+      "category": "Beauty",
+      "region": "West",
+      "revenue": 6049,
+      "cost": 3203,
+      "profit": 2846,
+      "units": 141
+    },
+    {
+      "month": "Oct",
+      "monthIndex": 9,
+      "category": "Sports",
+      "region": "North",
+      "revenue": 8765,
+      "cost": 5483,
+      "profit": 3282,
+      "units": 186
+    },
+    {
+      "month": "Oct",
+      "monthIndex": 9,
+      "category": "Sports",
+      "region": "South",
+      "revenue": 7147,
+      "cost": 4371,
+      "profit": 2776,
+      "units": 69
+    },
+    {
+      "month": "Oct",
+      "monthIndex": 9,
+      "category": "Sports",
+      "region": "East",
+      "revenue": 6880,
+      "cost": 4222,
+      "profit": 2658,
+      "units": 136
+    },
+    {
+      "month": "Oct",
+      "monthIndex": 9,
+      "category": "Sports",
+      "region": "West",
+      "revenue": 4656,
+      "cost": 2876,
+      "profit": 1780,
+      "units": 53
+    },
+    {
+      "month": "Nov",
+      "monthIndex": 10,
+      "category": "Electronics",
+      "region": "North",
+      "revenue": 35859,
+      "cost": 27670,
+      "profit": 8189,
+      "units": 715
+    },
+    {
+      "month": "Nov",
+      "monthIndex": 10,
+      "category": "Electronics",
+      "region": "South",
+      "revenue": 29055,
+      "cost": 22561,
+      "profit": 6494,
+      "units": 294
+    },
+    {
+      "month": "Nov",
+      "monthIndex": 10,
+      "category": "Electronics",
+      "region": "East",
+      "revenue": 26043,
+      "cost": 20371,
+      "profit": 5672,
+      "units": 248
+    },
+    {
+      "month": "Nov",
+      "monthIndex": 10,
+      "category": "Electronics",
+      "region": "West",
+      "revenue": 17428,
+      "cost": 13825,
+      "profit": 3603,
+      "units": 329
+    },
+    {
+      "month": "Nov",
+      "monthIndex": 10,
+      "category": "Apparel",
+      "region": "North",
+      "revenue": 22743,
+      "cost": 13235,
+      "profit": 9508,
+      "units": 275
+    },
+    {
+      "month": "Nov",
+      "monthIndex": 10,
+      "category": "Apparel",
+      "region": "South",
+      "revenue": 18053,
+      "cost": 10445,
+      "profit": 7608,
+      "units": 296
+    },
+    {
+      "month": "Nov",
+      "monthIndex": 10,
+      "category": "Apparel",
+      "region": "East",
+      "revenue": 16746,
+      "cost": 9667,
+      "profit": 7079,
+      "units": 233
+    },
+    {
+      "month": "Nov",
+      "monthIndex": 10,
+      "category": "Apparel",
+      "region": "West",
+      "revenue": 12336,
+      "cost": 7235,
+      "profit": 5101,
+      "units": 108
+    },
+    {
+      "month": "Nov",
+      "monthIndex": 10,
+      "category": "Home & Living",
+      "region": "North",
+      "revenue": 18985,
+      "cost": 12104,
+      "profit": 6881,
+      "units": 333
+    },
+    {
+      "month": "Nov",
+      "monthIndex": 10,
+      "category": "Home & Living",
+      "region": "South",
+      "revenue": 14596,
+      "cost": 9541,
+      "profit": 5055,
+      "units": 154
+    },
+    {
+      "month": "Nov",
+      "monthIndex": 10,
+      "category": "Home & Living",
+      "region": "East",
+      "revenue": 13556,
+      "cost": 8808,
+      "profit": 4748,
+      "units": 113
+    },
+    {
+      "month": "Nov",
+      "monthIndex": 10,
+      "category": "Home & Living",
+      "region": "West",
+      "revenue": 11055,
+      "cost": 7317,
+      "profit": 3738,
+      "units": 188
+    },
+    {
+      "month": "Nov",
+      "monthIndex": 10,
+      "category": "Beauty",
+      "region": "North",
+      "revenue": 14188,
+      "cost": 7172,
+      "profit": 7016,
+      "units": 123
+    },
+    {
+      "month": "Nov",
+      "monthIndex": 10,
+      "category": "Beauty",
+      "region": "South",
+      "revenue": 12173,
+      "cost": 6491,
+      "profit": 5682,
+      "units": 167
+    },
+    {
+      "month": "Nov",
+      "monthIndex": 10,
+      "category": "Beauty",
+      "region": "East",
+      "revenue": 10845,
+      "cost": 5555,
+      "profit": 5290,
+      "units": 95
+    },
+    {
+      "month": "Nov",
+      "monthIndex": 10,
+      "category": "Beauty",
+      "region": "West",
+      "revenue": 7144,
+      "cost": 3605,
+      "profit": 3539,
+      "units": 117
+    },
+    {
+      "month": "Nov",
+      "monthIndex": 10,
+      "category": "Sports",
+      "region": "North",
+      "revenue": 9899,
+      "cost": 6151,
+      "profit": 3748,
+      "units": 95
+    },
+    {
+      "month": "Nov",
+      "monthIndex": 10,
+      "category": "Sports",
+      "region": "South",
+      "revenue": 8660,
+      "cost": 5460,
+      "profit": 3200,
+      "units": 75
+    },
+    {
+      "month": "Nov",
+      "monthIndex": 10,
+      "category": "Sports",
+      "region": "East",
+      "revenue": 6605,
+      "cost": 3998,
+      "profit": 2607,
+      "units": 107
+    },
+    {
+      "month": "Nov",
+      "monthIndex": 10,
+      "category": "Sports",
+      "region": "West",
+      "revenue": 5043,
+      "cost": 3136,
+      "profit": 1907,
+      "units": 52
+    },
+    {
+      "month": "Dec",
+      "monthIndex": 11,
+      "category": "Electronics",
+      "region": "North",
+      "revenue": 31540,
+      "cost": 24596,
+      "profit": 6944,
+      "units": 542
+    },
+    {
+      "month": "Dec",
+      "monthIndex": 11,
+      "category": "Electronics",
+      "region": "South",
+      "revenue": 26296,
+      "cost": 20222,
+      "profit": 6074,
+      "units": 440
+    },
+    {
+      "month": "Dec",
+      "monthIndex": 11,
+      "category": "Electronics",
+      "region": "East",
+      "revenue": 27630,
+      "cost": 22158,
+      "profit": 5472,
+      "units": 635
+    },
+    {
+      "month": "Dec",
+      "monthIndex": 11,
+      "category": "Electronics",
+      "region": "West",
+      "revenue": 19783,
+      "cost": 15398,
+      "profit": 4385,
+      "units": 221
+    },
+    {
+      "month": "Dec",
+      "monthIndex": 11,
+      "category": "Apparel",
+      "region": "North",
+      "revenue": 22072,
+      "cost": 13152,
+      "profit": 8920,
+      "units": 364
+    },
+    {
+      "month": "Dec",
+      "monthIndex": 11,
+      "category": "Apparel",
+      "region": "South",
+      "revenue": 21391,
+      "cost": 12338,
+      "profit": 9053,
+      "units": 254
+    },
+    {
+      "month": "Dec",
+      "monthIndex": 11,
+      "category": "Apparel",
+      "region": "East",
+      "revenue": 20367,
+      "cost": 11896,
+      "profit": 8471,
+      "units": 309
+    },
+    {
+      "month": "Dec",
+      "monthIndex": 11,
+      "category": "Apparel",
+      "region": "West",
+      "revenue": 15517,
+      "cost": 8825,
+      "profit": 6692,
+      "units": 133
+    },
+    {
+      "month": "Dec",
+      "monthIndex": 11,
+      "category": "Home & Living",
+      "region": "North",
+      "revenue": 18832,
+      "cost": 12053,
+      "profit": 6779,
+      "units": 158
+    },
+    {
+      "month": "Dec",
+      "monthIndex": 11,
+      "category": "Home & Living",
+      "region": "South",
+      "revenue": 17129,
+      "cost": 11140,
+      "profit": 5989,
+      "units": 164
+    },
+    {
+      "month": "Dec",
+      "monthIndex": 11,
+      "category": "Home & Living",
+      "region": "East",
+      "revenue": 12633,
+      "cost": 8101,
+      "profit": 4532,
+      "units": 164
+    },
+    {
+      "month": "Dec",
+      "monthIndex": 11,
+      "category": "Home & Living",
+      "region": "West",
+      "revenue": 11616,
+      "cost": 7491,
+      "profit": 4125,
+      "units": 97
+    },
+    {
+      "month": "Dec",
+      "monthIndex": 11,
+      "category": "Beauty",
+      "region": "North",
+      "revenue": 14331,
+      "cost": 7550,
+      "profit": 6781,
+      "units": 140
+    },
+    {
+      "month": "Dec",
+      "monthIndex": 11,
+      "category": "Beauty",
+      "region": "South",
+      "revenue": 11166,
+      "cost": 5952,
+      "profit": 5214,
+      "units": 129
+    },
+    {
+      "month": "Dec",
+      "monthIndex": 11,
+      "category": "Beauty",
+      "region": "East",
+      "revenue": 9899,
+      "cost": 5040,
+      "profit": 4859,
+      "units": 96
+    },
+    {
+      "month": "Dec",
+      "monthIndex": 11,
+      "category": "Beauty",
+      "region": "West",
+      "revenue": 8286,
+      "cost": 4419,
+      "profit": 3867,
+      "units": 76
+    },
+    {
+      "month": "Dec",
+      "monthIndex": 11,
+      "category": "Sports",
+      "region": "North",
+      "revenue": 10162,
+      "cost": 6270,
+      "profit": 3892,
+      "units": 101
+    },
+    {
+      "month": "Dec",
+      "monthIndex": 11,
+      "category": "Sports",
+      "region": "South",
+      "revenue": 9751,
+      "cost": 5975,
+      "profit": 3776,
+      "units": 121
+    },
+    {
+      "month": "Dec",
+      "monthIndex": 11,
+      "category": "Sports",
+      "region": "East",
+      "revenue": 7064,
+      "cost": 4260,
+      "profit": 2804,
+      "units": 164
+    },
+    {
+      "month": "Dec",
+      "monthIndex": 11,
+      "category": "Sports",
+      "region": "West",
+      "revenue": 5656,
+      "cost": 3531,
+      "profit": 2125,
+      "units": 52
+    }
+  ]
+}
