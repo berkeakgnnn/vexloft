@@ -56,6 +56,16 @@ const pacopilot: FeaturedProject = {
   cta: "PA Copilot'u Keşfet",
 };
 
+const katina: FeaturedProject = {
+  name: "Katina",
+  category: "Mobil Uygulama",
+  description:
+    "Ruh eşi okuması: adınız, doğum tarihiniz ve tercihiniz otuz kartlık destede tek bir karta düşüyor — kimin geleceği, nerede tanışacağınız ve adının baş harfi. Aynı üç bilgi her zaman aynı kartı verir ve okuma internetsiz de çalışır. Günlük okuma ve soru sorabildiğiniz bir kâhinle birlikte.",
+  tags: ["React Native", "Expo", "Türkçe + İngilizce", "Çevrimdışı Çalışır"],
+  href: "https://katina.vexloft.com",
+  cta: "Katina'yı Keşfet",
+};
+
 function ProjectText({ project }: { project: FeaturedProject }): React.ReactElement {
   return (
     <div>
@@ -286,6 +296,43 @@ export function FeaturedWorkSection(): React.ReactElement {
                 />
               </div>
             </a>
+          </Reveal>
+        </div>
+
+        {/* Katina: staggered card-art duo left, text right */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center mt-28 lg:mt-36">
+          <Reveal className="lg:col-span-7">
+            <a
+              href={katina.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Katina web sitesi"
+              className="group flex items-end justify-center gap-4 sm:gap-6"
+            >
+              <div className="relative w-[44%] max-w-[260px] rounded-3xl overflow-hidden border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.5)] transition-transform duration-500 group-hover:-translate-y-2">
+                <Image
+                  src="/projects/katina-turan.jpg"
+                  alt="Katina destesinden Turan kartı"
+                  width={900}
+                  height={1350}
+                  sizes="(max-width: 640px) 44vw, 260px"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+              <div className="relative w-[44%] max-w-[260px] rounded-3xl overflow-hidden border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.5)] mb-10 transition-transform duration-500 group-hover:translate-y-2">
+                <Image
+                  src="/projects/katina-suveyla.jpg"
+                  alt="Katina destesinden Süveyla kartı"
+                  width={900}
+                  height={1350}
+                  sizes="(max-width: 640px) 44vw, 260px"
+                  className="w-full h-auto object-cover"
+                />
+              </div>
+            </a>
+          </Reveal>
+          <Reveal delay={0.15} className="lg:col-span-5">
+            <ProjectText project={katina} />
           </Reveal>
         </div>
 
