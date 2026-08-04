@@ -13,6 +13,21 @@ import {
 
 const smoothEase: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
+// Kart üstündeki proje adı. Alttaki scrim olmadan isim bazı görsellerde
+// (acik zeminli ASTRA ekrani) okunmuyordu.
+function ProjectTag({ label }: { label: string }): React.ReactElement {
+  return (
+    <div className="absolute inset-x-0 bottom-0 pt-10 pb-2.5 px-3 bg-gradient-to-t from-black/75 to-transparent pointer-events-none">
+      <span
+        className="text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.14em] text-white/85"
+        style={{ fontFamily: "var(--font-plus-jakarta), system-ui, sans-serif" }}
+      >
+        {label}
+      </span>
+    </div>
+  );
+}
+
 export function HeroSection(): React.ReactElement {
   const sectionRef = useRef<HTMLElement>(null);
   const reduceMotion = useReducedMotion();
@@ -51,13 +66,15 @@ export function HeroSection(): React.ReactElement {
     },
   };
 
-  // Scroll-linked parallax: the two project cards drift at different rates
+  // Scroll-linked parallax: her proje kartı farklı hızda kayıyor, derinlik hissi veriyor
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start start", "end start"],
   });
-  const yAnimyst = useTransform(scrollYProgress, [0, 1], [0, reduceMotion ? 0 : 90]);
-  const yAlkor = useTransform(scrollYProgress, [0, 1], [0, reduceMotion ? 0 : -50]);
+  const yKatina = useTransform(scrollYProgress, [0, 1], [0, reduceMotion ? 0 : 70]);
+  const yAnimyst = useTransform(scrollYProgress, [0, 1], [0, reduceMotion ? 0 : -60]);
+  const yAstra = useTransform(scrollYProgress, [0, 1], [0, reduceMotion ? 0 : 110]);
+  const yPacopilot = useTransform(scrollYProgress, [0, 1], [0, reduceMotion ? 0 : -35]);
 
   return (
     <section
@@ -161,38 +178,73 @@ export function HeroSection(): React.ReactElement {
               aria-hidden="true"
             />
 
-            {/* AniMyst art: tall app-frame card */}
+            {/* AniMyst — arkada sol üst */}
             <motion.div
               variants={cardVariants}
               style={{ y: yAnimyst }}
-              className="absolute right-[4%] sm:right-[8%] top-0 w-[52%] sm:w-[46%] max-w-[300px] rotate-2 rounded-3xl overflow-hidden border border-white/10 shadow-[0_24px_80px_rgba(0,0,0,0.55)]"
+              className="absolute left-0 top-[2%] w-[46%] sm:w-[42%] max-w-[250px] -rotate-6 rounded-3xl overflow-hidden border border-white/10 shadow-[0_18px_50px_rgba(0,0,0,0.45)]"
             >
               <Image
                 src="/projects/animyst-hero.jpg"
                 alt="AniMyst mobil oyunundan bir sahne"
-                width={563}
+                width={562}
                 height={1000}
-                priority
-                sizes="(max-width: 640px) 52vw, (max-width: 1024px) 40vw, 300px"
+                sizes="(max-width: 640px) 46vw, (max-width: 1024px) 36vw, 250px"
                 className="w-full h-auto object-cover"
               />
+              <ProjectTag label="AniMyst" />
             </motion.div>
 
-            {/* Alkor photo: landscape card overlapping bottom-left */}
+            {/* ASTRA — arkada sağ üst */}
             <motion.div
               variants={cardVariants}
-              style={{ y: yAlkor }}
-              className="absolute left-0 bottom-[4%] w-[62%] sm:w-[58%] max-w-[400px] -rotate-2 rounded-2xl overflow-hidden border border-white/10 shadow-[0_24px_80px_rgba(0,0,0,0.55)]"
+              style={{ y: yAstra }}
+              className="absolute right-0 top-0 w-[42%] sm:w-[38%] max-w-[225px] rotate-6 rounded-3xl overflow-hidden border border-white/10 shadow-[0_18px_50px_rgba(0,0,0,0.45)]"
             >
               <Image
-                src="/projects/alkor-cms.jpg"
-                alt="Alkor Cephe Sistemleri tarafından tamamlanan plaza cephesi"
-                width={1100}
-                height={619}
-                priority
-                sizes="(max-width: 640px) 62vw, (max-width: 1024px) 48vw, 400px"
+                src="/projects/astra-home.png"
+                alt="ASTRA sinerji roguelike oyununun ana ekranı"
+                width={443}
+                height={960}
+                sizes="(max-width: 640px) 42vw, (max-width: 1024px) 32vw, 225px"
                 className="w-full h-auto object-cover"
               />
+              <ProjectTag label="ASTRA" />
+            </motion.div>
+
+            {/* PA Copilot — arkada sağ alt, mobilde gizli (kalabalık yapıyor) */}
+            <motion.div
+              variants={cardVariants}
+              style={{ y: yPacopilot }}
+              className="hidden sm:block absolute right-[2%] bottom-0 w-[34%] max-w-[200px] rotate-3 rounded-3xl overflow-hidden border border-white/10 shadow-[0_18px_50px_rgba(0,0,0,0.45)]"
+            >
+              <Image
+                src="/projects/pacopilot-onetap.png"
+                alt="PA Copilot uygulamasının anons hazırlama ekranı"
+                width={443}
+                height={960}
+                sizes="(max-width: 1024px) 30vw, 200px"
+                className="w-full h-auto object-cover"
+              />
+              <ProjectTag label="PA Copilot" />
+            </motion.div>
+
+            {/* Katina — en önde, ortada */}
+            <motion.div
+              variants={cardVariants}
+              style={{ y: yKatina }}
+              className="absolute left-1/2 -translate-x-1/2 bottom-[6%] w-[52%] sm:w-[46%] max-w-[280px] -rotate-1 rounded-3xl overflow-hidden border border-white/15 shadow-[0_28px_70px_rgba(0,0,0,0.6)]"
+            >
+              <Image
+                src="/projects/katina-turan.jpg"
+                alt="Katina destesinden Turan kartı"
+                width={900}
+                height={1350}
+                priority
+                sizes="(max-width: 640px) 52vw, (max-width: 1024px) 40vw, 280px"
+                className="w-full h-auto object-cover"
+              />
+              <ProjectTag label="Katina" />
             </motion.div>
           </motion.div>
         </div>
