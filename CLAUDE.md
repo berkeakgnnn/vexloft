@@ -135,3 +135,33 @@ app/
 - Otomatik commit atma — kullanıcı söyleyene kadar biriktir
 - Commit mesajı: conventional commits (feat:, fix:, chore:, refactor:)
 - Tek seferde birden fazla değişikliği topla
+
+## Hafıza / Günlük Sistemi
+
+Yeni session açıldığında **önce `docs/STATE.md`** okunur — nerede kaldığımız orada.
+
+| Dosya | Ne için |
+|---|---|
+| `docs/STATE.md` | Şu an nerede kaldık. Her session sonunda üstüne yazılır, 1 sayfa. |
+| `docs/JOURNAL.md` | Gün gün tarihçe. Sadece eklenir, en yeni en üstte. |
+| `docs/decisions/` | "Neden böyle yaptık" — numaralı karar dosyaları. |
+| `docs/design/` | Claude Design brief'leri ve tasarım çıktıları. |
+
+Ayrım: davranış değiştiren şey → bu dosyaya kural olarak. "Şöyle olmuştu"
+kaydı → JOURNAL. "Neden böyle yaptık" → decisions. Aynı bilgiyi iki yere yazma.
+
+## Bilinen Tuzaklar
+
+- **Gerçek iletişim:** vexloftstudio@gmail.com, Antalya. `/iletisim` formundaki
+  `+90 500 000 00 00` ve `ahmet@sirket.com` **placeholder** — bunları gerçek
+  bilgi sanma, portfolyoya taşıma.
+- **Proje kartı deseni fotoğraf için tasarlandı.** Görsel arka planda, yazı
+  üstünde. Metin dolu ekran görüntülerinde yazı üstüne yazı biniyor; açık renkli
+  görsellerde üstteki numara/rozet kayboluyor. Yeni proje eklerken görselin tipini
+  düşün (bkz. `docs/design/2026-08-27-vitrin-brief.md`).
+- Portfolyoya **yalnızca gerçek iş** girer: sahte metrik, uydurma müşteri logosu,
+  yayında olmayan projeyi yayındaymış gibi gösterme yok.
+
+---
+
+Session sonunda `docs/STATE.md` ve `docs/JOURNAL.md` güncellenir.

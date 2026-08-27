@@ -1,0 +1,796 @@
+{
+  "id": "inventory",
+  "slug": "inventory",
+  "company": "AeroParts Ltd",
+  "title": "Inventory Management Dashboard",
+  "currency": "€",
+  "period": "Live snapshot",
+  "categories": [
+    "Fasteners",
+    "Avionics",
+    "Hydraulics",
+    "Engine Parts",
+    "Interior"
+  ],
+  "warehouses": [
+    "Hub-A",
+    "Hub-B",
+    "Hub-C"
+  ],
+  "statusOrder": [
+    "In Stock",
+    "Low",
+    "Reorder",
+    "Out of Stock"
+  ],
+  "kpis": [
+    {
+      "label": "Total SKUs",
+      "value": "50",
+      "accent": "4338CA",
+      "delta": "50 active",
+      "deltaUp": true,
+      "sub": "tracked parts"
+    },
+    {
+      "label": "Inventory Value",
+      "value": "€14.70M",
+      "accent": "7C3AED",
+      "delta": "+4.6%",
+      "deltaUp": true,
+      "sub": "on-hand at cost"
+    },
+    {
+      "label": "Below Reorder",
+      "value": "15",
+      "accent": "F59E0B",
+      "delta": "0 out of stock",
+      "deltaUp": false,
+      "sub": "needs action"
+    },
+    {
+      "label": "Inventory Turnover",
+      "value": "4.4x",
+      "accent": "06B6D4",
+      "delta": "+0.3x",
+      "deltaUp": true,
+      "sub": "annualised"
+    },
+    {
+      "label": "Avg Lead Time",
+      "value": "25 days",
+      "accent": "10B981",
+      "delta": "-2 days",
+      "deltaUp": true,
+      "sub": "supplier avg"
+    }
+  ],
+  "series": {
+    "valueByCategory": [
+      {
+        "name": "Fasteners",
+        "value": 3288918
+      },
+      {
+        "name": "Avionics",
+        "value": 3457409
+      },
+      {
+        "name": "Hydraulics",
+        "value": 2466061
+      },
+      {
+        "name": "Engine Parts",
+        "value": 3337874
+      },
+      {
+        "name": "Interior",
+        "value": 2149428
+      }
+    ],
+    "statusDistribution": [
+      {
+        "name": "In Stock",
+        "value": 27
+      },
+      {
+        "name": "Low",
+        "value": 8
+      },
+      {
+        "name": "Reorder",
+        "value": 15
+      },
+      {
+        "name": "Out of Stock",
+        "value": 0
+      }
+    ],
+    "topValueSkus": [
+      {
+        "name": "Titanium Bolt 014",
+        "value": 805021
+      },
+      {
+        "name": "Rivet Set 042",
+        "value": 758064
+      },
+      {
+        "name": "Bearing Ring 245",
+        "value": 747812
+      },
+      {
+        "name": "Comm Radio 126",
+        "value": 720288
+      },
+      {
+        "name": "Sensor Board 133",
+        "value": 710169
+      },
+      {
+        "name": "Turbine Blade 217",
+        "value": 707132
+      },
+      {
+        "name": "Tray Table 336",
+        "value": 661814
+      },
+      {
+        "name": "Titanium Bolt 007",
+        "value": 606730
+      }
+    ]
+  },
+  "rows": [
+    {
+      "sku": "AP-1007",
+      "part": "Titanium Bolt",
+      "category": "Fasteners",
+      "warehouse": "Hub-A",
+      "onHand": 391,
+      "reorderPoint": 109,
+      "unitCost": 1551.74,
+      "value": 606730,
+      "monthlyUsage": 67,
+      "leadTimeDays": 17,
+      "status": "In Stock"
+    },
+    {
+      "sku": "AP-1014",
+      "part": "Titanium Bolt",
+      "category": "Fasteners",
+      "warehouse": "Hub-B",
+      "onHand": 346,
+      "reorderPoint": 110,
+      "unitCost": 2326.65,
+      "value": 805021,
+      "monthlyUsage": 69,
+      "leadTimeDays": 33,
+      "status": "In Stock"
+    },
+    {
+      "sku": "AP-1021",
+      "part": "Lock Nut",
+      "category": "Fasteners",
+      "warehouse": "Hub-B",
+      "onHand": 18,
+      "reorderPoint": 175,
+      "unitCost": 1272.35,
+      "value": 22902,
+      "monthlyUsage": 40,
+      "leadTimeDays": 20,
+      "status": "Reorder"
+    },
+    {
+      "sku": "AP-1028",
+      "part": "Lock Nut",
+      "category": "Fasteners",
+      "warehouse": "Hub-A",
+      "onHand": 322,
+      "reorderPoint": 138,
+      "unitCost": 1814.11,
+      "value": 584143,
+      "monthlyUsage": 97,
+      "leadTimeDays": 38,
+      "status": "In Stock"
+    },
+    {
+      "sku": "AP-1035",
+      "part": "Rivet Set",
+      "category": "Fasteners",
+      "warehouse": "Hub-B",
+      "onHand": 444,
+      "reorderPoint": 111,
+      "unitCost": 792.35,
+      "value": 351803,
+      "monthlyUsage": 31,
+      "leadTimeDays": 32,
+      "status": "In Stock"
+    },
+    {
+      "sku": "AP-1042",
+      "part": "Rivet Set",
+      "category": "Fasteners",
+      "warehouse": "Hub-C",
+      "onHand": 381,
+      "reorderPoint": 151,
+      "unitCost": 1989.67,
+      "value": 758064,
+      "monthlyUsage": 99,
+      "leadTimeDays": 7,
+      "status": "In Stock"
+    },
+    {
+      "sku": "AP-1049",
+      "part": "Hex Screw",
+      "category": "Fasteners",
+      "warehouse": "Hub-B",
+      "onHand": 127,
+      "reorderPoint": 156,
+      "unitCost": 619.38,
+      "value": 78661,
+      "monthlyUsage": 75,
+      "leadTimeDays": 36,
+      "status": "Reorder"
+    },
+    {
+      "sku": "AP-1056",
+      "part": "Hex Screw",
+      "category": "Fasteners",
+      "warehouse": "Hub-A",
+      "onHand": 23,
+      "reorderPoint": 179,
+      "unitCost": 2156.53,
+      "value": 49600,
+      "monthlyUsage": 126,
+      "leadTimeDays": 45,
+      "status": "Reorder"
+    },
+    {
+      "sku": "AP-1063",
+      "part": "Washer Kit",
+      "category": "Fasteners",
+      "warehouse": "Hub-A",
+      "onHand": 19,
+      "reorderPoint": 108,
+      "unitCost": 634.58,
+      "value": 12057,
+      "monthlyUsage": 37,
+      "leadTimeDays": 18,
+      "status": "Reorder"
+    },
+    {
+      "sku": "AP-1070",
+      "part": "Washer Kit",
+      "category": "Fasteners",
+      "warehouse": "Hub-B",
+      "onHand": 63,
+      "reorderPoint": 105,
+      "unitCost": 316.46,
+      "value": 19937,
+      "monthlyUsage": 43,
+      "leadTimeDays": 17,
+      "status": "Reorder"
+    },
+    {
+      "sku": "AP-1077",
+      "part": "Nav Transceiver",
+      "category": "Avionics",
+      "warehouse": "Hub-B",
+      "onHand": 121,
+      "reorderPoint": 99,
+      "unitCost": 2149.49,
+      "value": 260088,
+      "monthlyUsage": 59,
+      "leadTimeDays": 17,
+      "status": "Low"
+    },
+    {
+      "sku": "AP-1084",
+      "part": "Nav Transceiver",
+      "category": "Avionics",
+      "warehouse": "Hub-B",
+      "onHand": 149,
+      "reorderPoint": 103,
+      "unitCost": 2078.59,
+      "value": 309710,
+      "monthlyUsage": 113,
+      "leadTimeDays": 20,
+      "status": "In Stock"
+    },
+    {
+      "sku": "AP-1091",
+      "part": "Altimeter Module",
+      "category": "Avionics",
+      "warehouse": "Hub-B",
+      "onHand": 393,
+      "reorderPoint": 67,
+      "unitCost": 1476.49,
+      "value": 580261,
+      "monthlyUsage": 116,
+      "leadTimeDays": 29,
+      "status": "In Stock"
+    },
+    {
+      "sku": "AP-1098",
+      "part": "Altimeter Module",
+      "category": "Avionics",
+      "warehouse": "Hub-A",
+      "onHand": 266,
+      "reorderPoint": 157,
+      "unitCost": 1379.91,
+      "value": 367056,
+      "monthlyUsage": 59,
+      "leadTimeDays": 31,
+      "status": "In Stock"
+    },
+    {
+      "sku": "AP-1105",
+      "part": "GPS Unit",
+      "category": "Avionics",
+      "warehouse": "Hub-A",
+      "onHand": 123,
+      "reorderPoint": 131,
+      "unitCost": 2109.73,
+      "value": 259497,
+      "monthlyUsage": 128,
+      "leadTimeDays": 27,
+      "status": "Reorder"
+    },
+    {
+      "sku": "AP-1112",
+      "part": "GPS Unit",
+      "category": "Avionics",
+      "warehouse": "Hub-B",
+      "onHand": 101,
+      "reorderPoint": 135,
+      "unitCost": 786.6,
+      "value": 79447,
+      "monthlyUsage": 25,
+      "leadTimeDays": 37,
+      "status": "Reorder"
+    },
+    {
+      "sku": "AP-1119",
+      "part": "Comm Radio",
+      "category": "Avionics",
+      "warehouse": "Hub-B",
+      "onHand": 291,
+      "reorderPoint": 100,
+      "unitCost": 262.83,
+      "value": 76484,
+      "monthlyUsage": 132,
+      "leadTimeDays": 15,
+      "status": "In Stock"
+    },
+    {
+      "sku": "AP-1126",
+      "part": "Comm Radio",
+      "category": "Avionics",
+      "warehouse": "Hub-C",
+      "onHand": 442,
+      "reorderPoint": 136,
+      "unitCost": 1629.61,
+      "value": 720288,
+      "monthlyUsage": 137,
+      "leadTimeDays": 24,
+      "status": "In Stock"
+    },
+    {
+      "sku": "AP-1133",
+      "part": "Sensor Board",
+      "category": "Avionics",
+      "warehouse": "Hub-C",
+      "onHand": 333,
+      "reorderPoint": 180,
+      "unitCost": 2132.64,
+      "value": 710169,
+      "monthlyUsage": 86,
+      "leadTimeDays": 16,
+      "status": "In Stock"
+    },
+    {
+      "sku": "AP-1140",
+      "part": "Sensor Board",
+      "category": "Avionics",
+      "warehouse": "Hub-A",
+      "onHand": 285,
+      "reorderPoint": 119,
+      "unitCost": 331.26,
+      "value": 94409,
+      "monthlyUsage": 21,
+      "leadTimeDays": 5,
+      "status": "In Stock"
+    },
+    {
+      "sku": "AP-1147",
+      "part": "Actuator Cyl.",
+      "category": "Hydraulics",
+      "warehouse": "Hub-A",
+      "onHand": 177,
+      "reorderPoint": 152,
+      "unitCost": 1564.11,
+      "value": 276847,
+      "monthlyUsage": 74,
+      "leadTimeDays": 43,
+      "status": "Low"
+    },
+    {
+      "sku": "AP-1154",
+      "part": "Actuator Cyl.",
+      "category": "Hydraulics",
+      "warehouse": "Hub-C",
+      "onHand": 13,
+      "reorderPoint": 123,
+      "unitCost": 253.78,
+      "value": 3299,
+      "monthlyUsage": 87,
+      "leadTimeDays": 15,
+      "status": "Reorder"
+    },
+    {
+      "sku": "AP-1161",
+      "part": "Pump Assembly",
+      "category": "Hydraulics",
+      "warehouse": "Hub-B",
+      "onHand": 6,
+      "reorderPoint": 172,
+      "unitCost": 159.15,
+      "value": 955,
+      "monthlyUsage": 98,
+      "leadTimeDays": 10,
+      "status": "Reorder"
+    },
+    {
+      "sku": "AP-1168",
+      "part": "Pump Assembly",
+      "category": "Hydraulics",
+      "warehouse": "Hub-A",
+      "onHand": 196,
+      "reorderPoint": 60,
+      "unitCost": 888.56,
+      "value": 174158,
+      "monthlyUsage": 81,
+      "leadTimeDays": 10,
+      "status": "In Stock"
+    },
+    {
+      "sku": "AP-1175",
+      "part": "Valve Block",
+      "category": "Hydraulics",
+      "warehouse": "Hub-B",
+      "onHand": 211,
+      "reorderPoint": 119,
+      "unitCost": 2308.79,
+      "value": 487155,
+      "monthlyUsage": 133,
+      "leadTimeDays": 39,
+      "status": "In Stock"
+    },
+    {
+      "sku": "AP-1182",
+      "part": "Valve Block",
+      "category": "Hydraulics",
+      "warehouse": "Hub-C",
+      "onHand": 387,
+      "reorderPoint": 114,
+      "unitCost": 1205.03,
+      "value": 466347,
+      "monthlyUsage": 115,
+      "leadTimeDays": 19,
+      "status": "In Stock"
+    },
+    {
+      "sku": "AP-1189",
+      "part": "Hose Line",
+      "category": "Hydraulics",
+      "warehouse": "Hub-B",
+      "onHand": 241,
+      "reorderPoint": 180,
+      "unitCost": 1453.38,
+      "value": 350265,
+      "monthlyUsage": 24,
+      "leadTimeDays": 19,
+      "status": "Low"
+    },
+    {
+      "sku": "AP-1196",
+      "part": "Hose Line",
+      "category": "Hydraulics",
+      "warehouse": "Hub-A",
+      "onHand": 240,
+      "reorderPoint": 139,
+      "unitCost": 1896.76,
+      "value": 455222,
+      "monthlyUsage": 25,
+      "leadTimeDays": 40,
+      "status": "In Stock"
+    },
+    {
+      "sku": "AP-1203",
+      "part": "Seal Kit",
+      "category": "Hydraulics",
+      "warehouse": "Hub-C",
+      "onHand": 10,
+      "reorderPoint": 65,
+      "unitCost": 1010.09,
+      "value": 10101,
+      "monthlyUsage": 135,
+      "leadTimeDays": 8,
+      "status": "Reorder"
+    },
+    {
+      "sku": "AP-1210",
+      "part": "Seal Kit",
+      "category": "Hydraulics",
+      "warehouse": "Hub-C",
+      "onHand": 160,
+      "reorderPoint": 124,
+      "unitCost": 1510.7,
+      "value": 241712,
+      "monthlyUsage": 140,
+      "leadTimeDays": 43,
+      "status": "Low"
+    },
+    {
+      "sku": "AP-1217",
+      "part": "Turbine Blade",
+      "category": "Engine Parts",
+      "warehouse": "Hub-B",
+      "onHand": 328,
+      "reorderPoint": 108,
+      "unitCost": 2155.89,
+      "value": 707132,
+      "monthlyUsage": 65,
+      "leadTimeDays": 41,
+      "status": "In Stock"
+    },
+    {
+      "sku": "AP-1224",
+      "part": "Turbine Blade",
+      "category": "Engine Parts",
+      "warehouse": "Hub-C",
+      "onHand": 190,
+      "reorderPoint": 99,
+      "unitCost": 376.82,
+      "value": 71596,
+      "monthlyUsage": 39,
+      "leadTimeDays": 11,
+      "status": "In Stock"
+    },
+    {
+      "sku": "AP-1231",
+      "part": "Fuel Injector",
+      "category": "Engine Parts",
+      "warehouse": "Hub-B",
+      "onHand": 282,
+      "reorderPoint": 128,
+      "unitCost": 1766.79,
+      "value": 498235,
+      "monthlyUsage": 86,
+      "leadTimeDays": 33,
+      "status": "In Stock"
+    },
+    {
+      "sku": "AP-1238",
+      "part": "Fuel Injector",
+      "category": "Engine Parts",
+      "warehouse": "Hub-C",
+      "onHand": 196,
+      "reorderPoint": 128,
+      "unitCost": 1338.09,
+      "value": 262266,
+      "monthlyUsage": 47,
+      "leadTimeDays": 20,
+      "status": "In Stock"
+    },
+    {
+      "sku": "AP-1245",
+      "part": "Bearing Ring",
+      "category": "Engine Parts",
+      "warehouse": "Hub-C",
+      "onHand": 470,
+      "reorderPoint": 98,
+      "unitCost": 1591.09,
+      "value": 747812,
+      "monthlyUsage": 85,
+      "leadTimeDays": 12,
+      "status": "In Stock"
+    },
+    {
+      "sku": "AP-1252",
+      "part": "Bearing Ring",
+      "category": "Engine Parts",
+      "warehouse": "Hub-C",
+      "onHand": 358,
+      "reorderPoint": 172,
+      "unitCost": 677.18,
+      "value": 242430,
+      "monthlyUsage": 43,
+      "leadTimeDays": 28,
+      "status": "In Stock"
+    },
+    {
+      "sku": "AP-1259",
+      "part": "Compressor Disk",
+      "category": "Engine Parts",
+      "warehouse": "Hub-C",
+      "onHand": 213,
+      "reorderPoint": 139,
+      "unitCost": 1122.65,
+      "value": 239124,
+      "monthlyUsage": 21,
+      "leadTimeDays": 42,
+      "status": "In Stock"
+    },
+    {
+      "sku": "AP-1266",
+      "part": "Compressor Disk",
+      "category": "Engine Parts",
+      "warehouse": "Hub-C",
+      "onHand": 102,
+      "reorderPoint": 160,
+      "unitCost": 1142.67,
+      "value": 116552,
+      "monthlyUsage": 58,
+      "leadTimeDays": 20,
+      "status": "Reorder"
+    },
+    {
+      "sku": "AP-1273",
+      "part": "Igniter Plug",
+      "category": "Engine Parts",
+      "warehouse": "Hub-C",
+      "onHand": 319,
+      "reorderPoint": 134,
+      "unitCost": 525.61,
+      "value": 167670,
+      "monthlyUsage": 25,
+      "leadTimeDays": 28,
+      "status": "In Stock"
+    },
+    {
+      "sku": "AP-1280",
+      "part": "Igniter Plug",
+      "category": "Engine Parts",
+      "warehouse": "Hub-B",
+      "onHand": 131,
+      "reorderPoint": 141,
+      "unitCost": 2176.01,
+      "value": 285057,
+      "monthlyUsage": 119,
+      "leadTimeDays": 17,
+      "status": "Reorder"
+    },
+    {
+      "sku": "AP-1287",
+      "part": "Seat Rail",
+      "category": "Interior",
+      "warehouse": "Hub-C",
+      "onHand": 100,
+      "reorderPoint": 80,
+      "unitCost": 2204.72,
+      "value": 220472,
+      "monthlyUsage": 71,
+      "leadTimeDays": 6,
+      "status": "Low"
+    },
+    {
+      "sku": "AP-1294",
+      "part": "Seat Rail",
+      "category": "Interior",
+      "warehouse": "Hub-B",
+      "onHand": 23,
+      "reorderPoint": 148,
+      "unitCost": 832.64,
+      "value": 19151,
+      "monthlyUsage": 128,
+      "leadTimeDays": 23,
+      "status": "Reorder"
+    },
+    {
+      "sku": "AP-1301",
+      "part": "Panel Trim",
+      "category": "Interior",
+      "warehouse": "Hub-A",
+      "onHand": 103,
+      "reorderPoint": 77,
+      "unitCost": 2311.63,
+      "value": 238098,
+      "monthlyUsage": 33,
+      "leadTimeDays": 30,
+      "status": "Low"
+    },
+    {
+      "sku": "AP-1308",
+      "part": "Panel Trim",
+      "category": "Interior",
+      "warehouse": "Hub-B",
+      "onHand": 10,
+      "reorderPoint": 64,
+      "unitCost": 730.7,
+      "value": 7307,
+      "monthlyUsage": 113,
+      "leadTimeDays": 30,
+      "status": "Reorder"
+    },
+    {
+      "sku": "AP-1315",
+      "part": "Cabin Light",
+      "category": "Interior",
+      "warehouse": "Hub-B",
+      "onHand": 71,
+      "reorderPoint": 134,
+      "unitCost": 197.35,
+      "value": 14012,
+      "monthlyUsage": 21,
+      "leadTimeDays": 41,
+      "status": "Reorder"
+    },
+    {
+      "sku": "AP-1322",
+      "part": "Cabin Light",
+      "category": "Interior",
+      "warehouse": "Hub-B",
+      "onHand": 187,
+      "reorderPoint": 146,
+      "unitCost": 2156.23,
+      "value": 403215,
+      "monthlyUsage": 135,
+      "leadTimeDays": 23,
+      "status": "Low"
+    },
+    {
+      "sku": "AP-1329",
+      "part": "Tray Table",
+      "category": "Interior",
+      "warehouse": "Hub-B",
+      "onHand": 283,
+      "reorderPoint": 114,
+      "unitCost": 789.38,
+      "value": 223395,
+      "monthlyUsage": 103,
+      "leadTimeDays": 17,
+      "status": "In Stock"
+    },
+    {
+      "sku": "AP-1336",
+      "part": "Tray Table",
+      "category": "Interior",
+      "warehouse": "Hub-C",
+      "onHand": 410,
+      "reorderPoint": 156,
+      "unitCost": 1614.18,
+      "value": 661814,
+      "monthlyUsage": 42,
+      "leadTimeDays": 31,
+      "status": "In Stock"
+    },
+    {
+      "sku": "AP-1343",
+      "part": "Overhead Bin Latch",
+      "category": "Interior",
+      "warehouse": "Hub-C",
+      "onHand": 360,
+      "reorderPoint": 171,
+      "unitCost": 839.7,
+      "value": 302292,
+      "monthlyUsage": 132,
+      "leadTimeDays": 45,
+      "status": "In Stock"
+    },
+    {
+      "sku": "AP-1350",
+      "part": "Overhead Bin Latch",
+      "category": "Interior",
+      "warehouse": "Hub-C",
+      "onHand": 121,
+      "reorderPoint": 96,
+      "unitCost": 493.16,
+      "value": 59672,
+      "monthlyUsage": 17,
+      "leadTimeDays": 45,
+      "status": "Low"
+    }
+  ]
+}

@@ -1,0 +1,163 @@
+/*
+ * Vexloft Data — design system (2026 refresh).
+ * Scoped to the /data section via .vx-root so the marketing site is untouched.
+ * Dark-first, elevation via surface colour, glassmorphism 2.0, per-category accents.
+ */
+
+.vx-root {
+  --vx-bg: #06080f;
+  --vx-bg-2: #0a0e18;
+  --vx-surface: #0e1422;      /* base card — lighter than bg = raised */
+  --vx-surface-2: #141c2e;    /* hover / elevated = closer */
+  --vx-border: rgba(255, 255, 255, 0.07);
+  --vx-border-strong: rgba(255, 255, 255, 0.14);
+  --vx-text: #eef1f8;
+  --vx-muted: #98a2b8;
+  --vx-faint: #5c6680;
+  --vx-primary: #7c6cff;
+  --vx-primary-2: #a78bfa;
+  --vx-cyan: #22d3ee;
+
+  /* per-dashboard signature colour; overridden inline per slug */
+  --vx-accent: #7c6cff;
+  --vx-accent-2: #a78bfa;
+  --vx-accent-soft: rgba(124, 108, 255, 0.15);
+
+  background: var(--vx-bg);
+  color: var(--vx-text);
+}
+
+/* ---------- aurora background (subtle) ---------- */
+.vx-aurora {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+.vx-aurora::before,
+.vx-aurora::after {
+  content: "";
+  position: absolute;
+  width: 60vw;
+  height: 60vw;
+  border-radius: 50%;
+  filter: blur(120px);
+  opacity: 0.16;
+}
+.vx-aurora::before {
+  top: -20vw;
+  left: -10vw;
+  background: radial-gradient(circle, var(--vx-accent), transparent 70%);
+  animation: vx-drift-a 26s ease-in-out infinite;
+}
+.vx-aurora::after {
+  bottom: -25vw;
+  right: -10vw;
+  background: radial-gradient(circle, var(--vx-cyan), transparent 70%);
+  animation: vx-drift-b 32s ease-in-out infinite;
+}
+@keyframes vx-drift-a {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(6vw, 5vw) scale(1.12); }
+}
+@keyframes vx-drift-b {
+  0%, 100% { transform: translate(0, 0) scale(1); }
+  50% { transform: translate(-5vw, -4vw) scale(1.08); }
+}
+
+/* ---------- surfaces ---------- */
+.vx-card {
+  background: var(--vx-surface);
+  border: 1px solid var(--vx-border);
+  border-radius: 18px;
+  transition: background .25s ease, border-color .25s ease, transform .25s ease, box-shadow .25s ease;
+}
+.vx-card-hover:hover {
+  background: var(--vx-surface-2);
+  border-color: color-mix(in srgb, var(--vx-accent) 45%, transparent);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 40px -12px color-mix(in srgb, var(--vx-accent) 40%, transparent);
+}
+
+/* glassmorphism 2.0 — for sticky header, tab bar, floating filter bar */
+.vx-glass {
+  background: color-mix(in srgb, var(--vx-surface) 62%, transparent);
+  backdrop-filter: blur(14px) saturate(140%);
+  -webkit-backdrop-filter: blur(14px) saturate(140%);
+  border: 1px solid var(--vx-border);
+}
+
+/* ---------- KPI ---------- */
+.vx-kpi {
+  position: relative;
+  background: var(--vx-surface);
+  border: 1px solid var(--vx-border);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease;
+}
+.vx-kpi::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--vx-accent), var(--vx-accent-2));
+}
+.vx-kpi:hover {
+  transform: translateY(-3px);
+  border-color: color-mix(in srgb, var(--vx-accent) 50%, transparent);
+  box-shadow: 0 14px 40px -16px color-mix(in srgb, var(--vx-accent) 55%, transparent);
+}
+
+/* ---------- accents ---------- */
+.vx-accent-text { color: var(--vx-accent); }
+.vx-accent-bg { background: var(--vx-accent); }
+.vx-btn-accent {
+  background: linear-gradient(135deg, var(--vx-accent), var(--vx-accent-2));
+  box-shadow: 0 10px 30px -10px color-mix(in srgb, var(--vx-accent) 60%, transparent);
+  transition: transform .18s ease, box-shadow .25s ease;
+}
+.vx-btn-accent:active { transform: scale(.97); }
+
+.vx-chip {
+  background: var(--vx-accent-soft);
+  color: var(--vx-accent-2);
+  border: 1px solid color-mix(in srgb, var(--vx-accent) 30%, transparent);
+}
+
+/* smart-insight chip */
+.vx-insight {
+  background: linear-gradient(135deg,
+    color-mix(in srgb, var(--vx-accent) 16%, transparent),
+    color-mix(in srgb, var(--vx-cyan) 10%, transparent));
+  border: 1px solid color-mix(in srgb, var(--vx-accent) 28%, transparent);
+  border-radius: 14px;
+}
+
+/* segmented / tab active pill */
+.vx-pill-active {
+  background: linear-gradient(135deg, var(--vx-accent), var(--vx-accent-2));
+  color: #fff;
+  box-shadow: 0 8px 24px -8px color-mix(in srgb, var(--vx-accent) 60%, transparent);
+}
+
+/* ---------- micro-interactions: mount rise + stagger ---------- */
+@keyframes vx-rise {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.vx-rise { animation: vx-rise .5s cubic-bezier(.22,.61,.36,1) both; }
+.vx-stagger > * { animation: vx-rise .5s cubic-bezier(.22,.61,.36,1) both; }
+.vx-stagger > *:nth-child(1) { animation-delay: .02s; }
+.vx-stagger > *:nth-child(2) { animation-delay: .06s; }
+.vx-stagger > *:nth-child(3) { animation-delay: .10s; }
+.vx-stagger > *:nth-child(4) { animation-delay: .14s; }
+.vx-stagger > *:nth-child(5) { animation-delay: .18s; }
+.vx-stagger > *:nth-child(6) { animation-delay: .22s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .vx-aurora::before, .vx-aurora::after { animation: none; }
+  .vx-rise, .vx-stagger > * { animation: none; }
+  .vx-card, .vx-kpi { transition: none; }
+}

@@ -1,0 +1,158 @@
+{
+  "id": "executive",
+  "slug": "executive",
+  "company": "Vantage Group",
+  "title": "Executive KPI Dashboard",
+  "currency": "€",
+  "period": "FY 2025",
+  "months": [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec"
+  ],
+  "departments": [
+    "Retail",
+    "Wholesale",
+    "Digital",
+    "Services"
+  ],
+  "regions": [
+    "Europe",
+    "N. America",
+    "APAC",
+    "MEA"
+  ],
+  "kpis": [
+    {
+      "label": "Annual Revenue",
+      "value": "€12.84M",
+      "accent": "4338CA",
+      "delta": "+14.2%",
+      "deltaUp": true,
+      "sub": "YoY"
+    },
+    {
+      "label": "EBITDA",
+      "value": "€2.47M",
+      "accent": "7C3AED",
+      "delta": "19.2%",
+      "deltaUp": true,
+      "sub": "margin"
+    },
+    {
+      "label": "Win Rate",
+      "value": "34.8%",
+      "accent": "06B6D4",
+      "delta": "+2.4 pts",
+      "deltaUp": true,
+      "sub": "sales pipeline"
+    },
+    {
+      "label": "On-Time Delivery",
+      "value": "94.1%",
+      "accent": "10B981",
+      "delta": "+1.5 pts",
+      "deltaUp": true,
+      "sub": "operations"
+    },
+    {
+      "label": "Headcount",
+      "value": "1,284",
+      "accent": "F59E0B",
+      "delta": "+86 YoY",
+      "deltaUp": true,
+      "sub": "full-time"
+    },
+    {
+      "label": "Employee eNPS",
+      "value": "+41",
+      "accent": "3B82F6",
+      "delta": "+6",
+      "deltaUp": true,
+      "sub": "engagement"
+    }
+  ],
+  "series": {
+    "revenueByMonth": [
+      880648,
+      918780,
+      967770,
+      1003900,
+      1077217,
+      1091436,
+      1043450,
+      1014557,
+      1138543,
+      1166626,
+      1237512,
+      1304503
+    ],
+    "ebitdaByMonth": [
+      159173,
+      188476,
+      208058,
+      181729,
+      192258,
+      218686,
+      185678,
+      197335,
+      211796,
+      201537,
+      235597,
+      285654
+    ],
+    "departmentPerformance": [
+      {
+        "name": "Retail",
+        "revenue": 3329360,
+        "growth": 1.4,
+        "margin": 12.8
+      },
+      {
+        "name": "Wholesale",
+        "revenue": 2168640,
+        "growth": 21.7,
+        "margin": 24.2
+      },
+      {
+        "name": "Digital",
+        "revenue": 3473873,
+        "growth": 10.2,
+        "margin": 25.6
+      },
+      {
+        "name": "Services",
+        "revenue": 2210208,
+        "growth": 16.3,
+        "margin": 25.3
+      }
+    ],
+    "revenueByRegion": [
+      {
+        "name": "Europe",
+        "value": 5394876
+      },
+      {
+        "name": "N. America",
+        "value": 3596584
+      },
+      {
+        "name": "APAC",
+        "value": 2568988
+      },
+      {
+        "name": "MEA",
+        "value": 1284494
+      }
+    ]
+  }
+}

@@ -1,0 +1,760 @@
+{
+  "id": "procurement",
+  "slug": "procurement",
+  "company": "Meridian Manufacturing",
+  "title": "Procurement & Supplier Dashboard",
+  "currency": "€",
+  "period": "FY 2025",
+  "categories": [
+    "Raw Materials",
+    "Components",
+    "Packaging",
+    "MRO",
+    "Logistics"
+  ],
+  "suppliers": [
+    "Kraftwerk GmbH",
+    "Nordic Steel Co",
+    "Apex Components",
+    "PoliPack SA",
+    "Volta Logistics",
+    "Summit MRO",
+    "Delta Alloys",
+    "BluePine Ltd"
+  ],
+  "statuses": [
+    "Received",
+    "Open",
+    "Overdue"
+  ],
+  "kpis": [
+    {
+      "label": "Total Spend",
+      "value": "€2.57M",
+      "accent": "4338CA",
+      "delta": "YTD",
+      "deltaUp": true,
+      "sub": "across all POs"
+    },
+    {
+      "label": "Open POs",
+      "value": "11",
+      "accent": "7C3AED",
+      "delta": "6 overdue",
+      "deltaUp": false,
+      "sub": "in progress"
+    },
+    {
+      "label": "Avg On-Time Delivery",
+      "value": "88.0%",
+      "accent": "10B981",
+      "delta": "+3.1 pts",
+      "deltaUp": true,
+      "sub": "received orders"
+    },
+    {
+      "label": "Savings YTD",
+      "value": "€123K",
+      "accent": "06B6D4",
+      "delta": "4.8%",
+      "deltaUp": true,
+      "sub": "vs baseline"
+    },
+    {
+      "label": "Active Suppliers",
+      "value": "8",
+      "accent": "F59E0B",
+      "delta": "3 A-rated",
+      "deltaUp": true,
+      "sub": "qualified"
+    }
+  ],
+  "series": {
+    "spendByCategory": [
+      {
+        "name": "Raw Materials",
+        "value": 609539
+      },
+      {
+        "name": "Components",
+        "value": 358404
+      },
+      {
+        "name": "Packaging",
+        "value": 463681
+      },
+      {
+        "name": "MRO",
+        "value": 541586
+      },
+      {
+        "name": "Logistics",
+        "value": 599608
+      }
+    ],
+    "spendBySupplier": [
+      {
+        "name": "Volta Logistics",
+        "value": 630370
+      },
+      {
+        "name": "Summit MRO",
+        "value": 435389
+      },
+      {
+        "name": "PoliPack SA",
+        "value": 388391
+      },
+      {
+        "name": "Nordic Steel Co",
+        "value": 343789
+      },
+      {
+        "name": "BluePine Ltd",
+        "value": 291532
+      },
+      {
+        "name": "Delta Alloys",
+        "value": 167265
+      },
+      {
+        "name": "Apex Components",
+        "value": 162818
+      },
+      {
+        "name": "Kraftwerk GmbH",
+        "value": 153264
+      }
+    ],
+    "statusDistribution": [
+      {
+        "name": "Received",
+        "value": 25
+      },
+      {
+        "name": "Open",
+        "value": 11
+      },
+      {
+        "name": "Overdue",
+        "value": 6
+      }
+    ],
+    "spendByMonth": [
+      169317,
+      61677,
+      404825,
+      113863,
+      277336,
+      329115,
+      123113,
+      95778,
+      301693,
+      314344,
+      199730,
+      182027
+    ],
+    "months": [
+      "Jan",
+      "Feb",
+      "Mar",
+      "Apr",
+      "May",
+      "Jun",
+      "Jul",
+      "Aug",
+      "Sep",
+      "Oct",
+      "Nov",
+      "Dec"
+    ]
+  },
+  "scorecard": [
+    {
+      "supplier": "Kraftwerk GmbH",
+      "spend": 153264,
+      "otd": 87.4,
+      "leadTime": 28,
+      "quality": 89.2,
+      "priceIndex": 96.4,
+      "overall": 90.7,
+      "rating": "A"
+    },
+    {
+      "supplier": "BluePine Ltd",
+      "spend": 291532,
+      "otd": 84.0,
+      "leadTime": 33,
+      "quality": 96.8,
+      "priceIndex": 81.3,
+      "overall": 87.7,
+      "rating": "B"
+    },
+    {
+      "supplier": "Nordic Steel Co",
+      "spend": 343789,
+      "otd": 88.9,
+      "leadTime": 31,
+      "quality": 88.3,
+      "priceIndex": 83.4,
+      "overall": 87.1,
+      "rating": "B"
+    },
+    {
+      "supplier": "Summit MRO",
+      "spend": 435389,
+      "otd": 94.7,
+      "leadTime": 30,
+      "quality": 79.1,
+      "priceIndex": 86.6,
+      "overall": 86.8,
+      "rating": "B"
+    },
+    {
+      "supplier": "PoliPack SA",
+      "spend": 388391,
+      "otd": 81.5,
+      "leadTime": 33,
+      "quality": 85.2,
+      "priceIndex": 91.8,
+      "overall": 85.9,
+      "rating": "B"
+    },
+    {
+      "supplier": "Volta Logistics",
+      "spend": 630370,
+      "otd": 89.8,
+      "leadTime": 35,
+      "quality": 80.0,
+      "priceIndex": 85.3,
+      "overall": 85.0,
+      "rating": "B"
+    },
+    {
+      "supplier": "Delta Alloys",
+      "spend": 167265,
+      "otd": 74.6,
+      "leadTime": 24,
+      "quality": 83.6,
+      "priceIndex": 97.5,
+      "overall": 84.7,
+      "rating": "B"
+    },
+    {
+      "supplier": "Apex Components",
+      "spend": 162818,
+      "otd": 80.0,
+      "leadTime": 34,
+      "quality": 88.9,
+      "priceIndex": 80.0,
+      "overall": 83.1,
+      "rating": "B"
+    }
+  ],
+  "rows": [
+    {
+      "po": "PO-4803",
+      "supplier": "PoliPack SA",
+      "category": "Raw Materials",
+      "buyer": "K. Novak",
+      "value": 140586,
+      "status": "Received",
+      "leadTimeDays": 43,
+      "onTime": "Yes",
+      "savings": 3273,
+      "monthIndex": 2
+    },
+    {
+      "po": "PO-4806",
+      "supplier": "BluePine Ltd",
+      "category": "MRO",
+      "buyer": "A. Ozdemir",
+      "value": 115241,
+      "status": "Open",
+      "leadTimeDays": 23,
+      "onTime": "-",
+      "savings": 5482,
+      "monthIndex": 9
+    },
+    {
+      "po": "PO-4809",
+      "supplier": "Delta Alloys",
+      "category": "Raw Materials",
+      "buyer": "L. Rossi",
+      "value": 23046,
+      "status": "Received",
+      "leadTimeDays": 7,
+      "onTime": "Yes",
+      "savings": 1400,
+      "monthIndex": 11
+    },
+    {
+      "po": "PO-4812",
+      "supplier": "PoliPack SA",
+      "category": "Raw Materials",
+      "buyer": "M. Chen",
+      "value": 33965,
+      "status": "Received",
+      "leadTimeDays": 20,
+      "onTime": "Yes",
+      "savings": 2432,
+      "monthIndex": 11
+    },
+    {
+      "po": "PO-4815",
+      "supplier": "Volta Logistics",
+      "category": "Logistics",
+      "buyer": "L. Rossi",
+      "value": 77872,
+      "status": "Received",
+      "leadTimeDays": 58,
+      "onTime": "Yes",
+      "savings": 6987,
+      "monthIndex": 4
+    },
+    {
+      "po": "PO-4818",
+      "supplier": "Summit MRO",
+      "category": "Components",
+      "buyer": "M. Chen",
+      "value": 13680,
+      "status": "Overdue",
+      "leadTimeDays": 38,
+      "onTime": "No",
+      "savings": 208,
+      "monthIndex": 1
+    },
+    {
+      "po": "PO-4821",
+      "supplier": "BluePine Ltd",
+      "category": "Components",
+      "buyer": "M. Chen",
+      "value": 16746,
+      "status": "Overdue",
+      "leadTimeDays": 31,
+      "onTime": "No",
+      "savings": 58,
+      "monthIndex": 2
+    },
+    {
+      "po": "PO-4824",
+      "supplier": "Delta Alloys",
+      "category": "Raw Materials",
+      "buyer": "A. Ozdemir",
+      "value": 3800,
+      "status": "Received",
+      "leadTimeDays": 17,
+      "onTime": "Yes",
+      "savings": 223,
+      "monthIndex": 9
+    },
+    {
+      "po": "PO-4827",
+      "supplier": "Kraftwerk GmbH",
+      "category": "Logistics",
+      "buyer": "M. Chen",
+      "value": 40055,
+      "status": "Open",
+      "leadTimeDays": 11,
+      "onTime": "-",
+      "savings": 3543,
+      "monthIndex": 8
+    },
+    {
+      "po": "PO-4830",
+      "supplier": "Delta Alloys",
+      "category": "Components",
+      "buyer": "A. Ozdemir",
+      "value": 9125,
+      "status": "Overdue",
+      "leadTimeDays": 16,
+      "onTime": "No",
+      "savings": 474,
+      "monthIndex": 1
+    },
+    {
+      "po": "PO-4833",
+      "supplier": "Delta Alloys",
+      "category": "MRO",
+      "buyer": "L. Rossi",
+      "value": 24755,
+      "status": "Received",
+      "leadTimeDays": 49,
+      "onTime": "Yes",
+      "savings": 938,
+      "monthIndex": 0
+    },
+    {
+      "po": "PO-4836",
+      "supplier": "BluePine Ltd",
+      "category": "MRO",
+      "buyer": "M. Chen",
+      "value": 62973,
+      "status": "Received",
+      "leadTimeDays": 25,
+      "onTime": "Yes",
+      "savings": 2454,
+      "monthIndex": 7
+    },
+    {
+      "po": "PO-4839",
+      "supplier": "Apex Components",
+      "category": "Logistics",
+      "buyer": "M. Chen",
+      "value": 130013,
+      "status": "Received",
+      "leadTimeDays": 38,
+      "onTime": "Yes",
+      "savings": 997,
+      "monthIndex": 2
+    },
+    {
+      "po": "PO-4842",
+      "supplier": "Volta Logistics",
+      "category": "Packaging",
+      "buyer": "M. Chen",
+      "value": 94570,
+      "status": "Open",
+      "leadTimeDays": 51,
+      "onTime": "-",
+      "savings": 7554,
+      "monthIndex": 5
+    },
+    {
+      "po": "PO-4845",
+      "supplier": "Volta Logistics",
+      "category": "MRO",
+      "buyer": "L. Rossi",
+      "value": 9715,
+      "status": "Open",
+      "leadTimeDays": 23,
+      "onTime": "-",
+      "savings": 193,
+      "monthIndex": 8
+    },
+    {
+      "po": "PO-4848",
+      "supplier": "Summit MRO",
+      "category": "Components",
+      "buyer": "A. Ozdemir",
+      "value": 39742,
+      "status": "Received",
+      "leadTimeDays": 59,
+      "onTime": "-",
+      "savings": 74,
+      "monthIndex": 4
+    },
+    {
+      "po": "PO-4851",
+      "supplier": "Kraftwerk GmbH",
+      "category": "Packaging",
+      "buyer": "A. Ozdemir",
+      "value": 62827,
+      "status": "Open",
+      "leadTimeDays": 19,
+      "onTime": "-",
+      "savings": 4864,
+      "monthIndex": 4
+    },
+    {
+      "po": "PO-4854",
+      "supplier": "Volta Logistics",
+      "category": "Components",
+      "buyer": "K. Novak",
+      "value": 125016,
+      "status": "Received",
+      "leadTimeDays": 27,
+      "onTime": "-",
+      "savings": 7504,
+      "monthIndex": 11
+    },
+    {
+      "po": "PO-4857",
+      "supplier": "Summit MRO",
+      "category": "Packaging",
+      "buyer": "L. Rossi",
+      "value": 106420,
+      "status": "Open",
+      "leadTimeDays": 34,
+      "onTime": "-",
+      "savings": 7994,
+      "monthIndex": 8
+    },
+    {
+      "po": "PO-4860",
+      "supplier": "Delta Alloys",
+      "category": "Components",
+      "buyer": "K. Novak",
+      "value": 13523,
+      "status": "Received",
+      "leadTimeDays": 22,
+      "onTime": "Yes",
+      "savings": 954,
+      "monthIndex": 8
+    },
+    {
+      "po": "PO-4863",
+      "supplier": "PoliPack SA",
+      "category": "Logistics",
+      "buyer": "L. Rossi",
+      "value": 67098,
+      "status": "Open",
+      "leadTimeDays": 36,
+      "onTime": "-",
+      "savings": 1877,
+      "monthIndex": 2
+    },
+    {
+      "po": "PO-4866",
+      "supplier": "BluePine Ltd",
+      "category": "MRO",
+      "buyer": "M. Chen",
+      "value": 67831,
+      "status": "Overdue",
+      "leadTimeDays": 49,
+      "onTime": "No",
+      "savings": 871,
+      "monthIndex": 0
+    },
+    {
+      "po": "PO-4869",
+      "supplier": "BluePine Ltd",
+      "category": "Raw Materials",
+      "buyer": "K. Novak",
+      "value": 28741,
+      "status": "Overdue",
+      "leadTimeDays": 36,
+      "onTime": "No",
+      "savings": 961,
+      "monthIndex": 5
+    },
+    {
+      "po": "PO-4872",
+      "supplier": "Nordic Steel Co",
+      "category": "Raw Materials",
+      "buyer": "L. Rossi",
+      "value": 20576,
+      "status": "Received",
+      "leadTimeDays": 12,
+      "onTime": "Yes",
+      "savings": 725,
+      "monthIndex": 0
+    },
+    {
+      "po": "PO-4875",
+      "supplier": "Volta Logistics",
+      "category": "Logistics",
+      "buyer": "A. Ozdemir",
+      "value": 38872,
+      "status": "Open",
+      "leadTimeDays": 28,
+      "onTime": "-",
+      "savings": 2255,
+      "monthIndex": 1
+    },
+    {
+      "po": "PO-4878",
+      "supplier": "Summit MRO",
+      "category": "Raw Materials",
+      "buyer": "M. Chen",
+      "value": 23577,
+      "status": "Open",
+      "leadTimeDays": 16,
+      "onTime": "-",
+      "savings": 1427,
+      "monthIndex": 3
+    },
+    {
+      "po": "PO-4881",
+      "supplier": "Nordic Steel Co",
+      "category": "Raw Materials",
+      "buyer": "K. Novak",
+      "value": 134337,
+      "status": "Received",
+      "leadTimeDays": 46,
+      "onTime": "Yes",
+      "savings": 3723,
+      "monthIndex": 9
+    },
+    {
+      "po": "PO-4884",
+      "supplier": "Apex Components",
+      "category": "MRO",
+      "buyer": "M. Chen",
+      "value": 32805,
+      "status": "Received",
+      "leadTimeDays": 31,
+      "onTime": "Yes",
+      "savings": 1879,
+      "monthIndex": 7
+    },
+    {
+      "po": "PO-4887",
+      "supplier": "Summit MRO",
+      "category": "MRO",
+      "buyer": "M. Chen",
+      "value": 90286,
+      "status": "Received",
+      "leadTimeDays": 27,
+      "onTime": "Yes",
+      "savings": 2857,
+      "monthIndex": 3
+    },
+    {
+      "po": "PO-4890",
+      "supplier": "Summit MRO",
+      "category": "Logistics",
+      "buyer": "A. Ozdemir",
+      "value": 98956,
+      "status": "Overdue",
+      "leadTimeDays": 31,
+      "onTime": "No",
+      "savings": 5123,
+      "monthIndex": 5
+    },
+    {
+      "po": "PO-4893",
+      "supplier": "Delta Alloys",
+      "category": "Packaging",
+      "buyer": "M. Chen",
+      "value": 93016,
+      "status": "Received",
+      "leadTimeDays": 33,
+      "onTime": "-",
+      "savings": 7380,
+      "monthIndex": 8
+    },
+    {
+      "po": "PO-4896",
+      "supplier": "Kraftwerk GmbH",
+      "category": "Components",
+      "buyer": "K. Novak",
+      "value": 50382,
+      "status": "Open",
+      "leadTimeDays": 55,
+      "onTime": "-",
+      "savings": 3204,
+      "monthIndex": 2
+    },
+    {
+      "po": "PO-4899",
+      "supplier": "Nordic Steel Co",
+      "category": "Packaging",
+      "buyer": "M. Chen",
+      "value": 106848,
+      "status": "Received",
+      "leadTimeDays": 50,
+      "onTime": "Yes",
+      "savings": 8879,
+      "monthIndex": 5
+    },
+    {
+      "po": "PO-4902",
+      "supplier": "Volta Logistics",
+      "category": "Components",
+      "buyer": "M. Chen",
+      "value": 60966,
+      "status": "Received",
+      "leadTimeDays": 37,
+      "onTime": "Yes",
+      "savings": 407,
+      "monthIndex": 9
+    },
+    {
+      "po": "PO-4905",
+      "supplier": "Volta Logistics",
+      "category": "MRO",
+      "buyer": "L. Rossi",
+      "value": 96895,
+      "status": "Received",
+      "leadTimeDays": 27,
+      "onTime": "Yes",
+      "savings": 451,
+      "monthIndex": 4
+    },
+    {
+      "po": "PO-4908",
+      "supplier": "Volta Logistics",
+      "category": "Components",
+      "buyer": "K. Novak",
+      "value": 29224,
+      "status": "Received",
+      "leadTimeDays": 58,
+      "onTime": "Yes",
+      "savings": 2242,
+      "monthIndex": 10
+    },
+    {
+      "po": "PO-4911",
+      "supplier": "Summit MRO",
+      "category": "Raw Materials",
+      "buyer": "A. Ozdemir",
+      "value": 62728,
+      "status": "Received",
+      "leadTimeDays": 7,
+      "onTime": "Yes",
+      "savings": 4704,
+      "monthIndex": 10
+    },
+    {
+      "po": "PO-4914",
+      "supplier": "Volta Logistics",
+      "category": "MRO",
+      "buyer": "M. Chen",
+      "value": 41085,
+      "status": "Received",
+      "leadTimeDays": 20,
+      "onTime": "Yes",
+      "savings": 1664,
+      "monthIndex": 6
+    },
+    {
+      "po": "PO-4917",
+      "supplier": "PoliPack SA",
+      "category": "Logistics",
+      "buyer": "K. Novak",
+      "value": 38964,
+      "status": "Received",
+      "leadTimeDays": 60,
+      "onTime": "Yes",
+      "savings": 2180,
+      "monthIndex": 8
+    },
+    {
+      "po": "PO-4920",
+      "supplier": "PoliPack SA",
+      "category": "Logistics",
+      "buyer": "M. Chen",
+      "value": 107778,
+      "status": "Received",
+      "leadTimeDays": 8,
+      "onTime": "Yes",
+      "savings": 8763,
+      "monthIndex": 10
+    },
+    {
+      "po": "PO-4923",
+      "supplier": "Volta Logistics",
+      "category": "Raw Materials",
+      "buyer": "K. Novak",
+      "value": 56155,
+      "status": "Received",
+      "leadTimeDays": 25,
+      "onTime": "Yes",
+      "savings": 21,
+      "monthIndex": 0
+    },
+    {
+      "po": "PO-4926",
+      "supplier": "Nordic Steel Co",
+      "category": "Raw Materials",
+      "buyer": "L. Rossi",
+      "value": 82028,
+      "status": "Open",
+      "leadTimeDays": 16,
+      "onTime": "-",
+      "savings": 4256,
+      "monthIndex": 6
+    }
+  ]
+}

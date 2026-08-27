@@ -1,0 +1,50 @@
+[
+  {
+    "slug": "sales",
+    "company": "NovaRetail",
+    "title": "Sales Analytics & KPI Dashboard",
+    "period": "FY 2025"
+  },
+  {
+    "slug": "inventory",
+    "company": "AeroParts Ltd",
+    "title": "Inventory Management Dashboard",
+    "period": "Live snapshot"
+  },
+  {
+    "slug": "procurement",
+    "company": "Meridian Manufacturing",
+    "title": "Procurement & Supplier Dashboard",
+    "period": "FY 2025"
+  },
+  {
+    "slug": "executive",
+    "company": "Vantage Group",
+    "title": "Executive KPI Dashboard",
+    "period": "FY 2025"
+  },
+  {
+    "slug": "financial",
+    "company": "Northwind Foods",
+    "title": "Financial & Cash Flow Dashboard",
+    "period": "FY 2025"
+  },
+  {
+    "slug": "marketing",
+    "company": "Pulse Media",
+    "title": "Marketing & Social Analytics Dashboard",
+    "period": "FY 2025"
+  },
+  {
+    "slug": "hr",
+    "company": "BrightPath",
+    "title": "HR & People Analytics Dashboard",
+    "period": "FY 2025"
+  },
+  {
+    "slug": "ecommerce",
+    "company": "Kavo Store",
+    "title": "E-commerce Analytics Dashboard",
+    "period": "FY 2025"
+  }
+]

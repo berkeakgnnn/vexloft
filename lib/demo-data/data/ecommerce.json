@@ -1,0 +1,181 @@
+{
+  "id": "ecommerce",
+  "slug": "ecommerce",
+  "company": "Kavo Store",
+  "title": "E-commerce Analytics Dashboard",
+  "currency": "€",
+  "period": "FY 2025",
+  "months": [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec"
+  ],
+  "sources": [
+    "Organic",
+    "Paid Search",
+    "Social",
+    "Email",
+    "Direct"
+  ],
+  "kpis": [
+    {
+      "label": "Revenue",
+      "value": "€2.34M",
+      "accent": "7C3AED",
+      "delta": "+18%",
+      "deltaUp": true,
+      "sub": "YoY"
+    },
+    {
+      "label": "Orders",
+      "value": "35,127",
+      "accent": "4338CA",
+      "delta": "+12%",
+      "deltaUp": true,
+      "sub": "full year"
+    },
+    {
+      "label": "Avg Order Value",
+      "value": "€67",
+      "accent": "06B6D4",
+      "delta": "+4.5%",
+      "deltaUp": true,
+      "sub": "per order"
+    },
+    {
+      "label": "Conversion Rate",
+      "value": "3.6%",
+      "accent": "10B981",
+      "delta": "+0.3 pts",
+      "deltaUp": true,
+      "sub": "blended"
+    },
+    {
+      "label": "Repeat Customers",
+      "value": "38.2%",
+      "accent": "F59E0B",
+      "delta": "+2.1 pts",
+      "deltaUp": true,
+      "sub": "of orders"
+    }
+  ],
+  "series": {
+    "revenueByMonth": [
+      153687,
+      154279,
+      174774,
+      179421,
+      198314,
+      188700,
+      183423,
+      182162,
+      196264,
+      217343,
+      257885,
+      253007
+    ],
+    "ordersByMonth": [
+      2577,
+      2022,
+      2963,
+      2964,
+      2457,
+      2993,
+      2842,
+      2545,
+      3280,
+      3012,
+      3176,
+      4296
+    ],
+    "revenueBySource": [
+      {
+        "name": "Organic",
+        "value": 783196
+      },
+      {
+        "name": "Paid Search",
+        "value": 616579
+      },
+      {
+        "name": "Social",
+        "value": 443882
+      },
+      {
+        "name": "Email",
+        "value": 295333
+      },
+      {
+        "name": "Direct",
+        "value": 246169
+      }
+    ],
+    "topProducts": [
+      {
+        "name": "Nomad Backpack",
+        "value": 203760
+      },
+      {
+        "name": "Lume Bottle",
+        "value": 201328
+      },
+      {
+        "name": "Drift Cap",
+        "value": 153067
+      },
+      {
+        "name": "Pulse Buds",
+        "value": 142174
+      },
+      {
+        "name": "Aero Runners",
+        "value": 141877
+      },
+      {
+        "name": "Cove Hoodie",
+        "value": 128101
+      }
+    ],
+    "sourcePerformance": [
+      {
+        "name": "Organic",
+        "revenue": 783196,
+        "sessions": 96010,
+        "conversion": 3.4
+      },
+      {
+        "name": "Paid Search",
+        "revenue": 616579,
+        "sessions": 94366,
+        "conversion": 4.02
+      },
+      {
+        "name": "Social",
+        "revenue": 443882,
+        "sessions": 55801,
+        "conversion": 2.76
+      },
+      {
+        "name": "Email",
+        "revenue": 295333,
+        "sessions": 57111,
+        "conversion": 3.95
+      },
+      {
+        "name": "Direct",
+        "revenue": 246169,
+        "sessions": 34697,
+        "conversion": 3.94
+      }
+    ]
+  }
+}

@@ -146,3 +146,13 @@ body {
   0% { clip-path: circle(100% at 50% 50%); }
   100% { clip-path: circle(0% at 50% 50%); }
 }
+
+/* Showcase: "in development" chip — a slow pulse, not a blinking alarm */
+@keyframes vexPulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.7); }
+}
+.vex-pulse { animation: vexPulse 2s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .vex-pulse { animation: none; }
+}

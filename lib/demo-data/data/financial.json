@@ -1,0 +1,180 @@
+{
+  "id": "financial",
+  "slug": "financial",
+  "company": "Northwind Foods",
+  "title": "Financial & Cash Flow Dashboard",
+  "currency": "€",
+  "period": "FY 2025",
+  "months": [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec"
+  ],
+  "kpis": [
+    {
+      "label": "Annual Revenue",
+      "value": "€10.81M",
+      "accent": "10B981",
+      "delta": "+11.3%",
+      "deltaUp": true,
+      "sub": "YoY"
+    },
+    {
+      "label": "Gross Margin",
+      "value": "44.2%",
+      "accent": "4338CA",
+      "delta": "+1.4 pts",
+      "deltaUp": true,
+      "sub": "blended"
+    },
+    {
+      "label": "EBITDA",
+      "value": "€2.26M",
+      "accent": "7C3AED",
+      "delta": "20.9%",
+      "deltaUp": true,
+      "sub": "margin"
+    },
+    {
+      "label": "Net Cash Flow",
+      "value": "€1.89M",
+      "accent": "06B6D4",
+      "delta": "12/12 mo +",
+      "deltaUp": true,
+      "sub": "full year"
+    },
+    {
+      "label": "Cash Balance",
+      "value": "€3.34M",
+      "accent": "F59E0B",
+      "delta": "€1.89M net",
+      "deltaUp": true,
+      "sub": "end of period"
+    }
+  ],
+  "series": {
+    "revenueByMonth": [
+      775349,
+      790398,
+      833674,
+      872834,
+      886500,
+      940356,
+      887633,
+      848226,
+      949455,
+      969956,
+      997447,
+      1058257
+    ],
+    "ebitdaByMonth": [
+      143646,
+      149066,
+      141749,
+      154841,
+      178287,
+      204323,
+      203682,
+      207359,
+      239663,
+      216397,
+      228814,
+      187890
+    ],
+    "cashInByMonth": [
+      813798,
+      806707,
+      822958,
+      904543,
+      851374,
+      898911,
+      799915,
+      785121,
+      951009,
+      933905,
+      1042598,
+      954067
+    ],
+    "cashOutByMonth": [
+      671525,
+      677040,
+      713484,
+      739943,
+      731692,
+      705815,
+      684692,
+      688928,
+      720963,
+      726889,
+      774935,
+      836150
+    ],
+    "cashNetByMonth": [
+      142273,
+      129667,
+      109474,
+      164600,
+      119682,
+      193096,
+      115223,
+      96193,
+      230046,
+      207016,
+      267663,
+      117917
+    ],
+    "expenseBreakdown": [
+      {
+        "name": "COGS",
+        "value": 6026755
+      },
+      {
+        "name": "Payroll",
+        "value": 1314359
+      },
+      {
+        "name": "Marketing",
+        "value": 556075
+      },
+      {
+        "name": "Operations",
+        "value": 404418
+      },
+      {
+        "name": "R&D",
+        "value": 252761
+      }
+    ],
+    "budgetVsActual": [
+      {
+        "name": "Production",
+        "budget": 1379650,
+        "actual": 1326387
+      },
+      {
+        "name": "Sales",
+        "budget": 1708679,
+        "actual": 1885720
+      },
+      {
+        "name": "Logistics",
+        "budget": 1248487,
+        "actual": 1140768
+      },
+      {
+        "name": "Admin",
+        "budget": 1187596,
+        "actual": 1267196
+      }
+    ]
+  }
+}

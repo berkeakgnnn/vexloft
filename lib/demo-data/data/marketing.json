@@ -1,0 +1,195 @@
+{
+  "id": "marketing",
+  "slug": "marketing",
+  "company": "Pulse Media",
+  "title": "Marketing & Social Analytics Dashboard",
+  "currency": "€",
+  "period": "FY 2025",
+  "months": [
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec"
+  ],
+  "channels": [
+    "Google Ads",
+    "Meta",
+    "LinkedIn",
+    "TikTok",
+    "Email"
+  ],
+  "kpis": [
+    {
+      "label": "Marketing Spend",
+      "value": "€412K",
+      "accent": "7C3AED",
+      "delta": "YTD",
+      "deltaUp": true,
+      "sub": "all channels"
+    },
+    {
+      "label": "Blended ROAS",
+      "value": "3.3x",
+      "accent": "10B981",
+      "delta": "+0.4x",
+      "deltaUp": true,
+      "sub": "on ad spend"
+    },
+    {
+      "label": "Avg CAC",
+      "value": "€314",
+      "accent": "F59E0B",
+      "delta": "-8%",
+      "deltaUp": true,
+      "sub": "per customer"
+    },
+    {
+      "label": "Total Leads",
+      "value": "11,669",
+      "accent": "06B6D4",
+      "delta": "+14%",
+      "deltaUp": true,
+      "sub": "captured"
+    },
+    {
+      "label": "Conversion Rate",
+      "value": "4.5%",
+      "accent": "3B82F6",
+      "delta": "+0.6 pts",
+      "deltaUp": true,
+      "sub": "visitor → customer"
+    }
+  ],
+  "series": {
+    "channelPerformance": [
+      {
+        "name": "Google Ads",
+        "spend": 149516,
+        "revenue": 351088,
+        "roas": 2.35,
+        "leads": 3505,
+        "cac": 268
+      },
+      {
+        "name": "Meta",
+        "spend": 101193,
+        "revenue": 423851,
+        "roas": 4.19,
+        "leads": 4207,
+        "cac": 128
+      },
+      {
+        "name": "LinkedIn",
+        "spend": 69278,
+        "revenue": 151240,
+        "roas": 2.18,
+        "leads": 1513,
+        "cac": 353
+      },
+      {
+        "name": "TikTok",
+        "spend": 54063,
+        "revenue": 206220,
+        "roas": 3.81,
+        "leads": 1621,
+        "cac": 172
+      },
+      {
+        "name": "Email",
+        "spend": 38383,
+        "revenue": 224827,
+        "roas": 5.86,
+        "leads": 823,
+        "cac": 317
+      }
+    ],
+    "funnel": [
+      {
+        "name": "Visitors",
+        "value": 29172
+      },
+      {
+        "name": "Leads",
+        "value": 11669
+      },
+      {
+        "name": "MQLs",
+        "value": 6418
+      },
+      {
+        "name": "SQLs",
+        "value": 3209
+      },
+      {
+        "name": "Customers",
+        "value": 1313
+      }
+    ],
+    "leadsByMonth": [
+      827,
+      875,
+      924,
+      972,
+      1021,
+      992,
+      953,
+      972,
+      1050,
+      1089,
+      1167,
+      1216
+    ],
+    "roasByChannel": [
+      {
+        "name": "Google Ads",
+        "value": 2.35
+      },
+      {
+        "name": "Meta",
+        "value": 4.19
+      },
+      {
+        "name": "LinkedIn",
+        "value": 2.18
+      },
+      {
+        "name": "TikTok",
+        "value": 3.81
+      },
+      {
+        "name": "Email",
+        "value": 5.86
+      }
+    ],
+    "spendByChannel": [
+      {
+        "name": "Google Ads",
+        "value": 149516
+      },
+      {
+        "name": "Meta",
+        "value": 101193
+      },
+      {
+        "name": "LinkedIn",
+        "value": 69278
+      },
+      {
+        "name": "TikTok",
+        "value": 54063
+      },
+      {
+        "name": "Email",
+        "value": 38383
+      }
+    ]
+  }
+}
