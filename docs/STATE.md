@@ -2,7 +2,7 @@
 
 > Bu dosya her session sonunda **üstüne yazılır**. Tarihçe için `JOURNAL.md`.
 
-**27 Ağustos 2026 · `feature/vexloft-data-demos` @ `ead98c9` + commit'lenmemiş değişiklikler**
+**27 Ağustos 2026 · `main` @ `06a1f0a`**
 
 ## Çalışan neler
 
@@ -33,8 +33,10 @@
 - [x] ~~Vitrin yeniden tasarımı~~ — Claude Design'dan gelen "Projeler Vitrini"
       tasarımı uygulandı: üç çerçeve tipi (tarayıcı / telefon üçlüsü /
       çerçevesiz fotoğraf), metin artık görselin üstünde değil kendi sütununda.
-- [ ] Değişiklikler commit'lenmedi; branch `feature/vexloft-data-demos`
-      (main'e merge edilmemiş).
+- [x] ~~Commit + merge~~ — `feature/vexloft-data-demos` main'e merge edildi
+      (`06a1f0a`) ve push'landı. Data portfolyosu (1 Ağustos'tan beri bekliyordu)
+      da bu merge'le main'e geçti. Berke'nin hero/featured-work commit'leriyle
+      çakışma çıkmadı.
 - [ ] Zamlandı yayına çıkınca `href` gerçek App Store linkiyle değişmeli.
 - [ ] `/iletisim` formundaki `+90 500 000 00 00` ve `ahmet@sirket.com`
       **placeholder** — gerçek bilgiyle değiştirilmeli ya da kaldırılmalı.
