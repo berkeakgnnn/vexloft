@@ -2,57 +2,51 @@
 
 > Bu dosya her session sonunda **üstüne yazılır**. Tarihçe için `JOURNAL.md`.
 
-**27 Ağustos 2026 · `main` @ `06a1f0a`**
+**27 Ağustos 2026 · `main` @ `c6d0f50` · canlı: https://www.vexloft.com**
 
 ## Çalışan neler
 
 - **Landing** (`app/page.tsx`) — hero, hizmetler, QR menü showcase, neden biz,
   iletişim CTA. Framer Motion animasyonlu, koyu indigo/violet gradient dili.
-- **Alt sayfalar:** `/hizmetler`, `/hakkimizda`, `/iletisim` (form + backend),
-  `/qr-projelerimiz` (+ `[slug]`), `/web-projelerimiz`, `/data` (+ `[slug]`).
-- **Vexloft Data** — interaktif dashboard portfolyosu: finans, pazarlama, İK,
-  e-ticaret panelleri; Live Excel sekmesi ve proje başına PDF one-pager.
+  Berke'nin 4 Ağustos eklemeleri de burada (hero'da mobil projeler, featured
+  work'te Katina).
+- **Projelerimiz** (`/web-projelerimiz`) — **yeni vitrin yayında**. Üç çerçeve
+  sistemi: tarayıcı (BarberBook, Alkor), telefon üçlüsü (Zamlandı), çerçevesiz
+  fotoğraf (Velora). Metin artık görselin üstünde değil, kendi sütununda.
+- **Vexloft Data** (`/data`) — finans, pazarlama, İK, e-ticaret dashboard'ları,
+  Live Excel sekmesi, proje başına PDF one-pager. 1 Ağustos'tan beri dalda
+  bekliyordu; bu session'da main'e merge edilip yayına çıktı.
+- Diğer sayfalar: `/hizmetler`, `/hakkimizda`, `/iletisim`, `/qr-projelerimiz`.
 - Deploy: Coolify için standalone `Dockerfile` mevcut. Canlı: vexloft.com.
-
-## Bu session'da yapılanlar (henüz commit'lenmedi)
-
-- `/web-projelerimiz` artık **"Projelerimiz"**: başlık, eyebrow, açıklama ve
-  footer linki güncellendi (URL aynı kaldı).
-- **BarberBook** eklendi (öne çıkan kart) — görsel canlı siteden alındı:
-  `public/projects/barberbook.jpg`.
-- **Zamlandı** eklendi — üç tanıtım ekranından kompoze kart görseli:
-  `public/projects/zamlandi.png`. Henüz yayında olmadığı için `href: "#"`,
-  rozet "iOS Uygulama · Geliştiriliyor".
-- **Velora** açıklaması gerçek projeye göre düzeltildi (otel sipariş sistemi,
-  .NET Core backend, admin panel).
-- Kart okunabilirlik degradesi güçlendirildi (açık renkli ekran görüntülerinde
-  numara ve rozet kayboluyordu).
 
 ## Yarım kalanlar
 
-- [x] ~~Vitrin yeniden tasarımı~~ — Claude Design'dan gelen "Projeler Vitrini"
-      tasarımı uygulandı: üç çerçeve tipi (tarayıcı / telefon üçlüsü /
-      çerçevesiz fotoğraf), metin artık görselin üstünde değil kendi sütununda.
-- [x] ~~Commit + merge~~ — `feature/vexloft-data-demos` main'e merge edildi
-      (`06a1f0a`) ve push'landı. Data portfolyosu (1 Ağustos'tan beri bekliyordu)
-      da bu merge'le main'e geçti. Berke'nin hero/featured-work commit'leriyle
-      çakışma çıkmadı.
-- [ ] Zamlandı yayına çıkınca `href` gerçek App Store linkiyle değişmeli.
+- [ ] **Ana sayfadaki proje kartları hâlâ eski desende** — vitrindeki çerçeve
+      sistemine geçirilmeli; şu an sitede iki farklı kart dili var.
 - [ ] `/iletisim` formundaki `+90 500 000 00 00` ve `ahmet@sirket.com`
-      **placeholder** — gerçek bilgiyle değiştirilmeli ya da kaldırılmalı.
+      **placeholder** — temizlenmeli. Gerçek: vexloftstudio@gmail.com, Antalya.
+- [ ] Zamlandı yayına çıkınca kartın `href`'i App Store linkiyle değişmeli
+      (şu an linksiz, "TestFlight yakında" yazıyor).
 - [ ] Test altyapısı yok.
 
 ## Bir sonraki somut adım
 
-1. Değişiklikleri commit'le (kullanıcı onayıyla) ve deploy et.
-2. `/iletisim` sayfasındaki placeholder iletişim bilgilerini temizle.
-3. Ana sayfadaki proje showcase bölümü hâlâ eski kart desenini kullanıyor —
-   yeni çerçeve sistemine geçirilmeli (tutarlılık için).
+1. `components/landing/featured-work-section.tsx` → ana sayfa kartlarını
+   `components/web-projelerimiz/web-project-card.tsx`'teki çerçeve sistemine
+   geçir (tek kart dili).
+2. `/iletisim` placeholder iletişim bilgilerini temizle.
 
 ## Aktif tuzaklar
 
-- Gerçek iletişim: **vexloftstudio@gmail.com**, Antalya. Başka numara/eposta
-  uydurma — formdaki değerler placeholder.
-- Bu repo Next.js'in bilinen sürümünden farklı olabilir; `AGENTS.md` kod
-  yazmadan önce `node_modules/next/dist/docs/` okunmasını söylüyor.
-- Kullanıcı söylemeden commit atma (CLAUDE.md kuralı).
+- **Repo ortak:** `github.com/berkeakgnnn/vexloft`. Berke de main'e push
+  ediyor (hero, featured work, Katina görselleri). Merge öncesi **mutlaka
+  `git fetch` + çakışma kontrolü** — bu session'da origin/main bilinenden
+  ilerideydi, körlemesine merge edilseydi işi ezilebilirdi.
+- Gerçek iletişim: vexloftstudio@gmail.com, Antalya. Uydurma bilgi koyma.
+- **Kullanıcı söylemeden commit atma** (CLAUDE.md kuralı).
+- `next/image` dosya değişse de eski görseli önbellekten servis ediyor;
+  `.next` temizlenmeden yeni görsel görünmüyor.
+- Vitrin çerçevesine konacak ekran görüntüleri **uzun** olmalı (~1440×1100);
+  kısa görselde çerçevenin altı boş kalıyor ve hover kayacak yer bulamıyor.
+- Sunucu paylaşımlı ve kalabalık; başka bir proje build alırken siteler
+  yavaşlayabiliyor (BarberBook'ta yaşandı).
