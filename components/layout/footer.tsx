@@ -9,7 +9,7 @@ const pageLinks = [
 
 const projectLinks = [
   { href: "/qr-projelerimiz", label: "QR Menü Projeleri" },
-  { href: "/web-projelerimiz", label: "Web Projeleri" },
+  { href: "/web-projelerimiz", label: "Projelerimiz" },
   { href: "https://animyst.vexloft.com", label: "AniMyst", external: true },
 ];
 
