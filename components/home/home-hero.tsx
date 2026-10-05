@@ -10,16 +10,16 @@ import {
   useTransform,
 } from "framer-motion";
 import { DevicePair } from "./device-pair";
-import { mockProjects } from "./projects";
+import { showcaseProjects } from "./projects";
 
 const ease: [number, number, number, number] = [0.16, 1, 0.3, 1];
 const CYCLE_MS = 4000;
 
-export function MockHero(): React.ReactElement {
+export function HomeHero(): React.ReactElement {
   const [active, setActive] = useState<number>(0);
   const [paused, setPaused] = useState<boolean>(false);
   const reduceMotion = useReducedMotion();
-  const project = mockProjects[active];
+  const project = showcaseProjects[active];
   const sectionRef = useRef<HTMLElement>(null);
 
   // Scroll-out hand-off: text lifts away, devices sink and tilt toward the
@@ -41,7 +41,7 @@ export function MockHero(): React.ReactElement {
   useEffect(() => {
     if (paused) return;
     const id = window.setInterval(() => {
-      setActive((i) => (i + 1) % mockProjects.length);
+      setActive((i) => (i + 1) % showcaseProjects.length);
     }, CYCLE_MS);
     return () => window.clearInterval(id);
   }, [paused]);
@@ -165,7 +165,7 @@ export function MockHero(): React.ReactElement {
             role="tablist"
             aria-label="Projeler"
           >
-            {mockProjects.map((p, i) => (
+            {showcaseProjects.map((p, i) => (
               <button
                 key={p.id}
                 type="button"

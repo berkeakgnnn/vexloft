@@ -14,7 +14,7 @@ import { Logo } from "@/components/logo";
 import { ScrollToTop } from "@/components/shared/scroll-to-top";
 
 const navLinks = [
-  { href: "/#projeler", label: "Projeler" },
+  { href: "/#isler", label: "Projeler" },
   { href: "/hizmetler", label: "Hizmetler" },
   { href: "/hakkimizda", label: "Hakkımızda" },
 ];

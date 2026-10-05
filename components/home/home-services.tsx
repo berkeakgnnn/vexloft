@@ -147,7 +147,7 @@ function ServiceCard({
 
 // Transition in: a giant word band slides sideways with scroll, then cards
 // flip up from below in a staggered 3D cascade.
-export function ServicesMock(): React.ReactElement {
+export function HomeServices(): React.ReactElement {
   const ref = useRef<HTMLElement>(null);
   const reduceMotion = useReducedMotion();
   const still = reduceMotion ?? false;

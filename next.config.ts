@@ -1,6 +1,10 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // The redesign was previewed at /mock before it became the home page.
+  async redirects() {
+    return [{ source: "/mock", destination: "/", permanent: true }];
+  },
   output: "standalone",
   images: {
     remotePatterns: [

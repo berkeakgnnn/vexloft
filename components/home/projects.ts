@@ -1,6 +1,6 @@
-// Mock data for the redesign preview at /mock. Every project gets the same
+// Home page project showcase. Every project gets the same
 // asset pair (desktop + mobile shot of its live site) so none dominates.
-export interface MockProject {
+export interface ShowcaseProject {
   id: string;
   name: string;
   category: string;
@@ -13,7 +13,7 @@ export interface MockProject {
   glow: string;
 }
 
-export const mockProjects: MockProject[] = [
+export const showcaseProjects: ShowcaseProject[] = [
   {
     id: "queenspalace",
     name: "Queens Palace",
@@ -22,8 +22,8 @@ export const mockProjects: MockProject[] = [
       "Saf mantık kraliçe bulmacası. 1.000 bölüm, 10 saray odası, herkes için aynı Günlük Bulmaca.",
     url: "https://queenspalace.vexloft.com",
     domain: "queenspalace.vexloft.com",
-    desktop: "/mock/queenspalace-desktop.jpg",
-    mobile: "/mock/queenspalace-mobile.jpg",
+    desktop: "/showcase/queenspalace-desktop.jpg",
+    mobile: "/showcase/queenspalace-mobile.jpg",
     accent: "#f4c66a",
     glow: "rgba(168, 85, 247, 0.45)",
   },
@@ -35,8 +35,8 @@ export const mockProjects: MockProject[] = [
       "Bulanık görselden anime karakterini bil, paket aç, 600 kart topla. Günlük meydan okuma ve aylık sıralama.",
     url: "https://animyst.vexloft.com",
     domain: "animyst.vexloft.com",
-    desktop: "/mock/animyst-desktop.jpg",
-    mobile: "/mock/animyst-mobile.jpg",
+    desktop: "/showcase/animyst-desktop.jpg",
+    mobile: "/showcase/animyst-mobile.jpg",
     accent: "#e879f9",
     glow: "rgba(217, 70, 239, 0.42)",
   },
@@ -48,8 +48,8 @@ export const mockProjects: MockProject[] = [
       "Yıldız atlası gibi çizilmiş 2–5 dakikalık sinerji roguelike. 5×5 gökyüzü, takımyıldızlar, günlük ortak gökyüzü.",
     url: "https://astra.vexloft.com",
     domain: "astra.vexloft.com",
-    desktop: "/mock/astra-desktop.jpg",
-    mobile: "/mock/astra-mobile.jpg",
+    desktop: "/showcase/astra-desktop.jpg",
+    mobile: "/showcase/astra-mobile.jpg",
     accent: "#e9d5a1",
     glow: "rgba(234, 179, 8, 0.28)",
   },
@@ -61,8 +61,8 @@ export const mockProjects: MockProject[] = [
       "Pilotlar için anons yardımcısı. Uçuşu bir kez girin; anons İngilizce, Türkçe ve Almanca hazır. Tamamen çevrimdışı.",
     url: "https://pacopilot.vexloft.com",
     domain: "pacopilot.vexloft.com",
-    desktop: "/mock/pacopilot-desktop.jpg",
-    mobile: "/mock/pacopilot-mobile.jpg",
+    desktop: "/showcase/pacopilot-desktop.jpg",
+    mobile: "/showcase/pacopilot-mobile.jpg",
     accent: "#67d4f5",
     glow: "rgba(56, 189, 248, 0.38)",
   },
@@ -74,8 +74,8 @@ export const mockProjects: MockProject[] = [
       "Premium çikolata markası için 3D önizlemeli kutu tasarlama, kurumsal hediye ve çok dilli katalog.",
     url: "https://velorachocos.com",
     domain: "velorachocos.com",
-    desktop: "/mock/velora-desktop.jpg",
-    mobile: "/mock/velora-mobile.jpg",
+    desktop: "/showcase/velora-desktop.jpg",
+    mobile: "/showcase/velora-mobile.jpg",
     accent: "#d6a86a",
     glow: "rgba(180, 83, 9, 0.38)",
   },
@@ -87,8 +87,8 @@ export const mockProjects: MockProject[] = [
       "Çok dilli kurumsal site ve içerik paneli. Projeler, hizmetler ve medya tek yerden yönetiliyor.",
     url: "https://alkorcephesistemleri.com/tr",
     domain: "alkorcephesistemleri.com",
-    desktop: "/mock/alkor-desktop.jpg",
-    mobile: "/mock/alkor-mobile.jpg",
+    desktop: "/showcase/alkor-desktop.jpg",
+    mobile: "/showcase/alkor-mobile.jpg",
     accent: "#d4b46a",
     glow: "rgba(59, 130, 246, 0.35)",
   },

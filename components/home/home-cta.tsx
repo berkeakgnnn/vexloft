@@ -18,7 +18,7 @@ const line2 = "hayata geçirelim.".split("");
 // Transition in: a circle opens from the centre and floods the screen with
 // the brand gradient; the headline then rises letter by letter.
 // Transition out: rounded bottom corners lift away to uncover the footer.
-export function CtaMock(): React.ReactElement {
+export function HomeCta(): React.ReactElement {
   const ref = useRef<HTMLElement>(null);
   const reduceMotion = useReducedMotion();
   const still = reduceMotion ?? false;

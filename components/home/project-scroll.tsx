@@ -12,7 +12,7 @@ import {
 } from "framer-motion";
 import { ArrowUpRight } from "lucide-react";
 import { DevicePair } from "./device-pair";
-import { mockProjects } from "./projects";
+import { showcaseProjects } from "./projects";
 
 const ease: [number, number, number, number] = [0.16, 1, 0.3, 1];
 
@@ -23,7 +23,7 @@ export function ProjectScroll(): React.ReactElement {
   const [active, setActive] = useState<number>(0);
   const [direction, setDirection] = useState<1 | -1>(1);
   const reduceMotion = useReducedMotion();
-  const count = mockProjects.length;
+  const count = showcaseProjects.length;
 
   const { scrollYProgress } = useScroll({
     target: sectionRef,
@@ -38,7 +38,7 @@ export function ProjectScroll(): React.ReactElement {
     }
   });
 
-  const project = mockProjects[active];
+  const project = showcaseProjects[active];
 
   // Entry transition from the hero: the stage rises as a rounded, inset card
   // and opens to full bleed by the time it pins.
@@ -94,7 +94,7 @@ export function ProjectScroll(): React.ReactElement {
               {String(count).padStart(2, "0")}
             </p>
             <ol className="hidden lg:flex flex-col gap-1">
-              {mockProjects.map((p, i) => (
+              {showcaseProjects.map((p, i) => (
                 <li key={p.id}>
                   <div
                     className="flex items-baseline gap-4 py-2 transition-colors duration-500"
@@ -217,7 +217,7 @@ export function ProjectScroll(): React.ReactElement {
           className="absolute left-1/2 -translate-x-1/2 bottom-6 flex gap-2"
           aria-hidden="true"
         >
-          {mockProjects.map((p, i) => (
+          {showcaseProjects.map((p, i) => (
             <span
               key={p.id}
               className="h-1 w-10 rounded-full bg-white/10 overflow-hidden"

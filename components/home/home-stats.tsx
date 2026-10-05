@@ -56,7 +56,7 @@ function CountUp({
 }
 
 // Transition in: a skewed gradient slab that straightens as it scrolls into place.
-export function StatsMock(): React.ReactElement {
+export function HomeStats(): React.ReactElement {
   const ref = useRef<HTMLElement>(null);
   const reduceMotion = useReducedMotion();
   const still = reduceMotion ?? false;

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import type { MockProject } from "./projects";
+import type { ShowcaseProject } from "./projects";
 
 // Browser window with the desktop shot, phone overlapping bottom-right with the
 // mobile shot. Same geometry for every project.
@@ -7,7 +7,7 @@ export function DevicePair({
   project,
   priority = false,
 }: {
-  project: MockProject;
+  project: ShowcaseProject;
   priority?: boolean;
 }): React.ReactElement {
   return (
