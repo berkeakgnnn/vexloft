@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Image from "next/image";
 import Link from "next/link";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { AnimateOnScroll } from "@/components/shared/animate-on-scroll";
 
-export const metadata: Metadata = {
-  title: "Hizmetler | Vexloft",
-  description:
-    "Mobil uygulama, web platformu, e-ticaret, QR menü, CRM ve API altyapı hizmetleri. Tasarımdan yayına uçtan uca geliştirme.",
-};
+export const metadata: Metadata = pageMetadata(
+  "Hizmetler",
+  "Mobil uygulama, web platformu, e-ticaret, QR menü, CRM ve API altyapı hizmetleri. Tasarımdan yayına uçtan uca geliştirme.",
+  "/hizmetler",
+);
 
 interface ServiceChips {
   title: string;
@@ -112,16 +113,16 @@ export default function HizmetlerPage(): React.ReactElement {
 
           {/* Bento grid: 6 services, 6 cells */}
           <div className="grid grid-cols-1 lg:grid-cols-6 gap-5">
-            {/* Mobil: large cell with AniMyst art */}
+            {/* Mobil: large cell with stock photo (Unsplash) */}
             <AnimateOnScroll className="lg:col-span-4">
               <div className="group relative overflow-hidden rounded-3xl border border-white/10 min-h-[320px] lg:min-h-[420px] h-full">
                 <Image
-                  src="/projects/animyst-locks.jpg"
-                  alt="AniMyst mobil oyunundan kilitli kristaller sahnesi"
+                  src="/images/hizmet-mobil.jpg"
+                  alt="Elde tutulan telefonda hava durumu ve trafik verisi gösteren bir mobil uygulama"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 66vw"
-                  className="object-cover object-[50%_30%] transition-transform duration-700 group-hover:scale-[1.03]"
+                  className="object-cover object-[50%_40%] transition-transform duration-700 group-hover:scale-[1.03]"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#060a14] via-[#060a14]/50 to-transparent" />
                 <div className="absolute bottom-0 left-0 right-0 p-8">
@@ -139,12 +140,12 @@ export default function HizmetlerPage(): React.ReactElement {
               </div>
             </AnimateOnScroll>
 
-            {/* Web: image cell with Alkor photo */}
+            {/* Web: image cell with stock photo (Unsplash) */}
             <AnimateOnScroll delay={100} className="lg:col-span-2">
               <div className="group relative overflow-hidden rounded-3xl border border-white/10 min-h-[320px] lg:min-h-[420px] h-full">
                 <Image
-                  src="/projects/alkor-villa.jpg"
-                  alt="Alkor Cephe Sistemleri projesi modern villa cephesi"
+                  src="/images/hizmet-web.jpg"
+                  alt="Masada ekranında kod açık bir dizüstü bilgisayar"
                   fill
                   priority
                   sizes="(max-width: 1024px) 100vw, 33vw"

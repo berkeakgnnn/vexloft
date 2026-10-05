@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getPublicMenu } from "@/lib/api";
+import { pageMetadata } from "@/lib/metadata";
 import { MenuHeader } from "@/components/menu/menu-header";
 import { CategoryNav } from "@/components/menu/category-nav";
 import { CategorySection } from "@/components/menu/category-section";
@@ -13,11 +14,12 @@ interface PageProps {
 export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
   const { slug } = await params;
   const menu = await getPublicMenu(slug);
-  if (!menu) return { title: "Menu Bulunamadi" };
-  return {
-    title: `${menu.name} | Vexloft QR Menu`,
-    description: menu.info.tagline ?? `${menu.name} dijital menusu`,
-  };
+  if (!menu) return { title: "Menü bulunamadı", robots: { index: false } };
+  return pageMetadata(
+    `${menu.name} QR Menü`,
+    menu.info.tagline ?? `${menu.name} dijital menüsü`,
+    `/qr-projelerimiz/${slug}`,
+  );
 }
 
 export default async function MenuPage({ params }: PageProps): Promise<React.ReactElement> {

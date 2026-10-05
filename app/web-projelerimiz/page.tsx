@@ -1,14 +1,15 @@
 import Link from "next/link";
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { WebProjectCard, type WebProject } from "@/components/web-projelerimiz/web-project-card";
 
-export const metadata: Metadata = {
-  title: "Projelerimiz | Vexloft",
-  description:
-    "Vexloft tarafından hayata geçirilen web platformları, SaaS ürünleri ve mobil uygulamalar.",
-};
+export const metadata: Metadata = pageMetadata(
+  "Projelerimiz",
+  "Vexloft tarafından hayata geçirilen web platformları, SaaS ürünleri ve mobil uygulamalar.",
+  "/web-projelerimiz",
+);
 
 // Etiketler projelerin gerçek stack'i — vitrinde yalnızca doğru bilgi durur.
 const projects: WebProject[] = [
@@ -55,6 +56,36 @@ const projects: WebProject[] = [
     tags: ["Next.js", "Three.js", ".NET Core", "Admin Panel"],
     href: "https://velorachocos.com",
     visual: { kind: "photo", image: "/projects/velora.jpg" },
+  },
+  {
+    id: "queenspalace",
+    name: "Queens Palace",
+    description:
+      "Saf mantık kraliçe bulmacası: her satıra, sütuna ve renk bölgesine bir kraliçe. 1.000 bölüm, 10 saray odası ve herkes için aynı Günlük Bulmaca. Tanıtım sitesinde 1. bölüm tarayıcıda oynanabiliyor.",
+    badge: "iOS Oyun",
+    status: "building",
+    tags: ["React Native", "Expo", "Next.js", "8 Dil"],
+    href: "https://queenspalace.vexloft.com",
+    visual: {
+      kind: "browser",
+      image: "/projects/queenspalace-site.jpg",
+      url: "queenspalace.vexloft.com",
+    },
+  },
+  {
+    id: "animyst",
+    name: "AniMyst",
+    description:
+      "Anime karakter tahmin ve kart koleksiyon oyunu. Bulanık görselden karakteri bil, paket aç, 600 kart topla; günlük meydan okuma ve aylık liderlik tablosu.",
+    badge: "iOS Oyun",
+    status: "live",
+    tags: ["React Native", "Expo", "Gacha Sistemi", "Liderlik Tablosu"],
+    href: "https://animyst.vexloft.com",
+    visual: {
+      kind: "browser",
+      image: "/projects/animyst-site.jpg",
+      url: "animyst.vexloft.com",
+    },
   },
   {
     id: "alkor-cms",

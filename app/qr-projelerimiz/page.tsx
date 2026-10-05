@@ -1,9 +1,17 @@
 import Image from "next/image";
+import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Link from "next/link";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { getActiveBusinesses } from "@/lib/api";
 import type { PublicMenu } from "@/lib/api";
+
+export const metadata: Metadata = pageMetadata(
+  "QR Menü Projelerimiz",
+  "Kafe, restoran ve barlar için hazırladığımız temalı, çok dilli dijital QR menüler. Canlı örnekleri inceleyin.",
+  "/qr-projelerimiz",
+);
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "";
 

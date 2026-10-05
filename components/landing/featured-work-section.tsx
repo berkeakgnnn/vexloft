@@ -56,14 +56,14 @@ const pacopilot: FeaturedProject = {
   cta: "PA Copilot'u Keşfet",
 };
 
-const katina: FeaturedProject = {
-  name: "Katina",
-  category: "Mobil Uygulama",
+const queensPalace: FeaturedProject = {
+  name: "Queens Palace",
+  category: "Mobil Oyun",
   description:
-    "Ruh eşi okuması: adınız, doğum tarihiniz ve tercihiniz otuz kartlık destede tek bir karta düşüyor — kimin geleceği, nerede tanışacağınız ve adının baş harfi. Aynı üç bilgi her zaman aynı kartı verir ve okuma internetsiz de çalışır. Günlük okuma ve soru sorabildiğiniz bir kâhinle birlikte.",
-  tags: ["React Native", "Expo", "Türkçe + İngilizce", "Çevrimdışı Çalışır"],
-  href: "https://katina.vexloft.com",
-  cta: "Katina'yı Keşfet",
+    "Saf mantık, tahmin yok: her satıra, sütuna ve renk bölgesine bir kraliçe yerleştirin. 5×5'ten 10×10'a 1.000 bölümle tozlu saray odalarını eski ihtişamına kavuşturun, her gün herkes için aynı Günlük Bulmaca'yı çözün.",
+  tags: ["React Native", "Expo", "1.000+ Bölüm", "Günlük Bulmaca"],
+  href: "https://queenspalace.vexloft.com",
+  cta: "Queens Palace'ı Keşfet",
 };
 
 function ProjectText({ project }: { project: FeaturedProject }): React.ReactElement {
@@ -299,32 +299,32 @@ export function FeaturedWorkSection(): React.ReactElement {
           </Reveal>
         </div>
 
-        {/* Katina: staggered card-art duo left, text right */}
+        {/* Queens Palace: in-game screen duo left, text right */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center mt-28 lg:mt-36">
           <Reveal className="lg:col-span-7">
             <a
-              href={katina.href}
+              href={queensPalace.href}
               target="_blank"
               rel="noopener noreferrer"
-              aria-label="Katina web sitesi"
+              aria-label="Queens Palace web sitesi"
               className="group flex items-end justify-center gap-4 sm:gap-6"
             >
               <div className="relative w-[44%] max-w-[260px] rounded-3xl overflow-hidden border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.5)] transition-transform duration-500 group-hover:-translate-y-2">
                 <Image
-                  src="/projects/katina-turan.jpg"
-                  alt="Katina destesinden Turan kartı"
+                  src="/projects/queenspalace-home.jpg"
+                  alt="Queens Palace ana ekranı — Taht Salonu ve Safir Kraliçe"
                   width={900}
-                  height={1350}
+                  height={1955}
                   sizes="(max-width: 640px) 44vw, 260px"
                   className="w-full h-auto object-cover"
                 />
               </div>
               <div className="relative w-[44%] max-w-[260px] rounded-3xl overflow-hidden border border-white/10 shadow-[0_20px_60px_rgba(0,0,0,0.5)] mb-10 transition-transform duration-500 group-hover:translate-y-2">
                 <Image
-                  src="/projects/katina-suveyla.jpg"
-                  alt="Katina destesinden Süveyla kartı"
+                  src="/projects/queenspalace-gameplay.jpg"
+                  alt="Queens Palace oynanış ekranı — renk bölgeli kraliçe bulmacası"
                   width={900}
-                  height={1350}
+                  height={1955}
                   sizes="(max-width: 640px) 44vw, 260px"
                   className="w-full h-auto object-cover"
                 />
@@ -332,7 +332,7 @@ export function FeaturedWorkSection(): React.ReactElement {
             </a>
           </Reveal>
           <Reveal delay={0.15} className="lg:col-span-5">
-            <ProjectText project={katina} />
+            <ProjectText project={queensPalace} />
           </Reveal>
         </div>
 

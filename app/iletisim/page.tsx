@@ -1,12 +1,14 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { ContactForm } from "./contact-form";
 
-export const metadata: Metadata = {
-  title: "İletişim — Vexloft",
-  description: "Projenizi hayata geçirmek için bizimle iletişime geçin.",
-};
+export const metadata: Metadata = pageMetadata(
+  "İletişim",
+  "Projenizi hayata geçirmek için bizimle iletişime geçin. Mobil uygulama, web sitesi, e-ticaret ve QR menü için teklif alın.",
+  "/iletisim",
+);
 
 export default function IletisimPage(): React.ReactElement {
   return (

@@ -71,7 +71,7 @@ export function HeroSection(): React.ReactElement {
     target: sectionRef,
     offset: ["start start", "end start"],
   });
-  const yKatina = useTransform(scrollYProgress, [0, 1], [0, reduceMotion ? 0 : 70]);
+  const yQueensPalace = useTransform(scrollYProgress, [0, 1], [0, reduceMotion ? 0 : 70]);
   const yAnimyst = useTransform(scrollYProgress, [0, 1], [0, reduceMotion ? 0 : -60]);
   const yAstra = useTransform(scrollYProgress, [0, 1], [0, reduceMotion ? 0 : 110]);
   const yPacopilot = useTransform(scrollYProgress, [0, 1], [0, reduceMotion ? 0 : -35]);
@@ -229,22 +229,22 @@ export function HeroSection(): React.ReactElement {
               <ProjectTag label="PA Copilot" />
             </motion.div>
 
-            {/* Katina — en önde, ortada */}
+            {/* Queens Palace — en önde, ortada */}
             <motion.div
               variants={cardVariants}
-              style={{ y: yKatina }}
+              style={{ y: yQueensPalace }}
               className="absolute left-1/2 -translate-x-1/2 bottom-[6%] w-[52%] sm:w-[46%] max-w-[280px] -rotate-1 rounded-3xl overflow-hidden border border-white/15 shadow-[0_28px_70px_rgba(0,0,0,0.6)]"
             >
               <Image
-                src="/projects/katina-turan.jpg"
-                alt="Katina destesinden Turan kartı"
+                src="/projects/queenspalace-gameplay.jpg"
+                alt="Queens Palace mantık bulmacası oyununun oynanış ekranı"
                 width={900}
-                height={1350}
+                height={1955}
                 priority
                 sizes="(max-width: 640px) 52vw, (max-width: 1024px) 40vw, 280px"
                 className="w-full h-auto object-cover"
               />
-              <ProjectTag label="Katina" />
+              <ProjectTag label="Queens Palace" />
             </motion.div>
           </motion.div>
         </div>

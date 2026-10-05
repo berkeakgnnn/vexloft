@@ -1,15 +1,16 @@
 import type { Metadata } from "next";
+import { pageMetadata } from "@/lib/metadata";
 import Image from "next/image";
 import Link from "next/link";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
 import { AnimateOnScroll } from "@/components/shared/animate-on-scroll";
 
-export const metadata: Metadata = {
-  title: "Hakkımızda | Vexloft",
-  description:
-    "Antalya merkezli yazılım stüdyosu Vexloft. Mobil uygulama, web platformu ve dijital altyapı çözümlerini uçtan uca üstleniyoruz.",
-};
+export const metadata: Metadata = pageMetadata(
+  "Hakkımızda",
+  "Antalya merkezli yazılım stüdyosu Vexloft. Mobil uygulama, web platformu ve dijital altyapı çözümlerini uçtan uca üstleniyoruz.",
+  "/hakkimizda",
+);
 
 interface Value {
   number: string;
@@ -59,43 +60,69 @@ export default function HakkimizdaPage(): React.ReactElement {
                 letterSpacing: "-0.02em",
               }}
             >
-              Küçük ekip,
+              İki kişilik ekip,
               <br />
               <span className="gradient-text">büyük sahiplenme.</span>
             </h1>
           </AnimateOnScroll>
 
-          {/* Story: text + real project photo */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center mb-24 lg:mb-32">
+          {/* Story: text + team photo (Unsplash) */}
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start mb-24 lg:mb-32">
             <AnimateOnScroll className="lg:col-span-6">
-              <div className="space-y-6 text-lg text-gray-400 leading-relaxed">
+              <p
+                className="text-2xl md:text-3xl font-bold text-white leading-snug mb-8"
+                style={{
+                  fontFamily: "var(--font-plus-jakarta), system-ui, sans-serif",
+                }}
+              >
+                Vexloft, iki arkadaşın kurduğu Antalya merkezli bir yazılım
+                stüdyosu.
+              </p>
+              <div className="space-y-5 text-lg text-gray-400 leading-relaxed">
                 <p>
-                  Vexloft, Antalya merkezli bir yazılım stüdyosu. Mobil
-                  uygulamalar, web platformları ve QR menü sistemleri
-                  geliştiriyoruz.
+                  Arada proje yöneticisi ya da aracı yok. Tasarımı yapan da,
+                  kodu yazan da, ürünü yayına alan da biziz; projenizde
+                  konuştuğunuz kişi doğrudan işi yapan kişi.
                 </p>
                 <p>
-                  Kurumsal web sitelerinden App Store&apos;da yayınlanan mobil
-                  oyunlara kadar farklı ölçeklerde ürünler tasarladık,
-                  geliştirdik ve yayına aldık. Her projede tasarımdan altyapıya
-                  sürecin tamamını üstleniyoruz.
-                </p>
-                <p>
-                  Bizim için iyi yazılım, teslim edildiği gün değil; aylar
-                  sonra hâlâ sorunsuz çalıştığında başarılıdır.
+                  Kurumsal web sitelerinden mobil oyunlara kadar farklı
+                  ölçeklerde ürünler tasarladık, geliştirdik ve yayına aldık.
+                  Mobil uygulama, web platformu ve QR menü sistemlerinde sürecin
+                  tamamını üstleniyoruz.
                 </p>
               </div>
+              <blockquote className="mt-8 border-l-2 border-indigo-400 pl-5 text-lg text-white/90 leading-relaxed">
+                Bizim için iyi yazılım, teslim edildiği gün değil; aylar sonra
+                hâlâ sorunsuz çalıştığında başarılıdır.
+              </blockquote>
+              <ul className="mt-10 flex flex-wrap gap-3">
+                {[
+                  "2 kişilik çekirdek ekip",
+                  "Antalya",
+                  "Tasarım · Geliştirme · Yayın",
+                ].map((fact) => (
+                  <li
+                    key={fact}
+                    className="rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm font-medium text-white/80"
+                  >
+                    {fact}
+                  </li>
+                ))}
+              </ul>
             </AnimateOnScroll>
-            <AnimateOnScroll delay={150} className="lg:col-span-6">
-              <div className="relative overflow-hidden rounded-3xl border border-white/10 aspect-[16/11]">
+            <AnimateOnScroll delay={150} className="lg:col-span-6 lg:pt-2">
+              <div className="relative overflow-hidden rounded-3xl border border-white/10 aspect-[4/3]">
                 <Image
-                  src="/projects/alkor-villa.jpg"
-                  alt="Vexloft'un geliştirdiği CMS ile yönetilen Alkor Cephe Sistemleri projesi"
+                  src="/images/hakkimizda-ikili-ekip.jpg"
+                  alt="Aynı masada kod üzerinde birlikte çalışan iki yazılımcı"
                   fill
                   sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover"
+                  className="object-cover object-[60%_50%]"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#060a14]/60 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#060a14]/70 via-transparent to-transparent" />
+                <p className="absolute bottom-5 left-6 text-sm font-semibold text-white/85">
+                  İki kişi, tek masa, uçtan uca ürün.
+                </p>
               </div>
             </AnimateOnScroll>
           </div>
@@ -105,7 +132,9 @@ export default function HakkimizdaPage(): React.ReactElement {
             <AnimateOnScroll className="mb-12">
               <h2
                 className="text-3xl md:text-4xl font-extrabold text-white"
-                style={{ fontFamily: "var(--font-plus-jakarta), system-ui, sans-serif" }}
+                style={{
+                  fontFamily: "var(--font-plus-jakarta), system-ui, sans-serif",
+                }}
               >
                 Nasıl çalışıyoruz?
               </h2>
@@ -116,13 +145,19 @@ export default function HakkimizdaPage(): React.ReactElement {
                   <div className="card-surface rounded-3xl p-8 h-full transition-colors duration-300">
                     <span
                       className="block text-5xl font-extrabold gradient-text opacity-30 mb-6"
-                      style={{ fontFamily: "var(--font-plus-jakarta), system-ui, sans-serif" }}
+                      style={{
+                        fontFamily:
+                          "var(--font-plus-jakarta), system-ui, sans-serif",
+                      }}
                     >
                       {value.number}
                     </span>
                     <h3
                       className="text-xl font-bold text-white mb-3"
-                      style={{ fontFamily: "var(--font-plus-jakarta), system-ui, sans-serif" }}
+                      style={{
+                        fontFamily:
+                          "var(--font-plus-jakarta), system-ui, sans-serif",
+                      }}
                     >
                       {value.title}
                     </h3>

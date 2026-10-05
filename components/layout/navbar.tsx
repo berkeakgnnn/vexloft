@@ -11,6 +11,7 @@ import {
 } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Logo } from "@/components/logo";
+import { ScrollToTop } from "@/components/shared/scroll-to-top";
 
 const navLinks = [
   { href: "/#projeler", label: "Projeler" },
@@ -54,6 +55,7 @@ export function Navbar(): React.ReactElement {
 
   return (
     <>
+      <ScrollToTop />
       <motion.header
         initial={{ y: -80, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}

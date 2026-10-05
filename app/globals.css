@@ -37,7 +37,10 @@ body {
   z-index: 1;
 }
 
-.noise-bg > * {
+/* Lift content above the noise layer — but leave fixed elements (navbar,
+   mobile menu, scroll-to-top) alone, or this unlayered rule overrides
+   Tailwind's `fixed` and the navbar scrolls away with the page. */
+.noise-bg > *:not(.fixed) {
   position: relative;
   z-index: 2;
 }
