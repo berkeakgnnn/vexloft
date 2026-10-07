@@ -3,7 +3,10 @@ import type { Metadata } from "next";
 import { pageMetadata } from "@/lib/metadata";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer";
-import { WebProjectCard, type WebProject } from "@/components/web-projelerimiz/web-project-card";
+import {
+  WebProjectCard,
+  type WebProject,
+} from "@/components/web-projelerimiz/web-project-card";
 
 export const metadata: Metadata = pageMetadata(
   "Projelerimiz",
@@ -88,6 +91,24 @@ const projects: WebProject[] = [
     },
   },
   {
+    id: "sizzle",
+    name: "Sizzle Street",
+    description:
+      "Sıcacık bir sokak lezzetleri düellosu. Gece pazarından ocak ve malzeme al, tezgâhına diz; 20 saniyelik akşam kalabalığı kendiliğinden oynanıyor ve müşteri en lezzetli tezgâha yürüyor. Gerçek oyuncuların tezgâhlarına karşı asenkron düello, herkese aynı Bugünün Pazarı ve altı hayvan şef. Web sürümü tarayıcıda oynanabiliyor.",
+    badge: "iOS Oyun",
+    status: "building",
+    tags: ["React Native", "Expo", "Fastify", "PostgreSQL", "TR / EN"],
+    href: "https://sizzle.vexloft.com",
+    visual: {
+      kind: "phones",
+      images: [
+        "/projects/sizzle/1.jpg",
+        "/projects/sizzle/2.jpg",
+        "/projects/sizzle/3.jpg",
+      ],
+    },
+  },
+  {
     id: "alkor-cms",
     name: "Alkor CMS",
     description:
@@ -128,14 +149,16 @@ export default function WebProjelerimizPage(): React.ReactElement {
               </div>
               <h1
                 className="m-0 font-extrabold text-[40px] md:text-[76px] leading-[1.02] tracking-[-0.035em] text-white"
-                style={{ fontFamily: "var(--font-plus-jakarta), system-ui, sans-serif" }}
+                style={{
+                  fontFamily: "var(--font-plus-jakarta), system-ui, sans-serif",
+                }}
               >
                 Projelerimiz
               </h1>
               <p className="m-0 text-[15.5px] md:text-[19px] leading-[1.65] text-slate-400 max-w-[620px] text-pretty">
-                Kendi ürünlerimiz ve birlikte çalıştığımız markalar için kurduğumuz
-                platformlar. Hepsi yayında ya da yayına hazırlanıyor — vitrinde yalnızca
-                gerçekten yaptığımız işler var.
+                Kendi ürünlerimiz ve birlikte çalıştığımız markalar için
+                kurduğumuz platformlar. Hepsi yayında ya da yayına hazırlanıyor
+                — vitrinde yalnızca gerçekten yaptığımız işler var.
               </p>
             </div>
           </div>
@@ -152,7 +175,12 @@ export default function WebProjelerimizPage(): React.ReactElement {
             </div>
 
             {rest.map((project, i) => (
-              <WebProjectCard key={project.id} project={project} index={3 + i} layout="reversed" />
+              <WebProjectCard
+                key={project.id}
+                project={project}
+                index={3 + i}
+                layout="reversed"
+              />
             ))}
           </div>
 

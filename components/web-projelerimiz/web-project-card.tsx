@@ -58,7 +58,10 @@ function StatusChip({ status }: { status: WebProject["status"] }) {
   return (
     <span
       className={`${monoLabel} inline-flex items-center gap-[7px] text-cyan-300 border`}
-      style={{ background: "rgba(6,182,212,.1)", borderColor: "rgba(6,182,212,.4)" }}
+      style={{
+        background: "rgba(6,182,212,.1)",
+        borderColor: "rgba(6,182,212,.4)",
+      }}
     >
       <span className="block h-1.5 w-1.5 rounded-full bg-cyan-300 vex-pulse" />
       Geliştiriliyor
@@ -76,13 +79,24 @@ function Tag({ children }: { children: ReactNode }) {
 
 /** Browser chrome around a wide web screenshot. The shot is taller than its
  *  window, so hover slides it up — it reads as the page actually scrolling. */
-function BrowserFrame({ image, url, alt }: { image: string; url: string; alt: string }) {
+function BrowserFrame({
+  image,
+  url,
+  alt,
+}: {
+  image: string;
+  url: string;
+  alt: string;
+}) {
   return (
     <div className="rounded-2xl overflow-hidden border border-white/[0.12] bg-[#111827] shadow-[0_50px_80px_-50px_rgba(0,0,0,.95)]">
       <div className="flex items-center gap-3.5 px-4 py-3 bg-[#151c2e] border-b border-white/[0.07]">
         <div className="flex gap-[7px]">
           {[0, 1, 2].map((i) => (
-            <span key={i} className="block h-2.5 w-2.5 rounded-full bg-slate-700" />
+            <span
+              key={i}
+              className="block h-2.5 w-2.5 rounded-full bg-slate-700"
+            />
           ))}
         </div>
         <div className="flex-1 h-[22px] rounded-md bg-white/5 flex items-center px-2.5 font-mono text-[11px] text-slate-500 truncate">
@@ -106,7 +120,13 @@ function BrowserFrame({ image, url, alt }: { image: string; url: string; alt: st
 }
 
 /** Three phones, the middle one raised and wider. They lift together on hover. */
-function PhoneTrio({ images, alt }: { images: [string, string, string]; alt: string }) {
+function PhoneTrio({
+  images,
+  alt,
+}: {
+  images: [string, string, string];
+  alt: string;
+}) {
   return (
     <div className="flex gap-3 sm:gap-4 justify-center items-end pt-2">
       {images.map((src, i) => {
@@ -141,7 +161,13 @@ function PhotoBleed({ image, alt }: { image: string; alt: string }) {
   return (
     <div className="h-[200px] md:h-[330px] overflow-hidden">
       <div className="relative h-full transition-transform duration-1000 ease-[cubic-bezier(.22,1,.36,1)] group-hover:scale-[1.06]">
-        <Image src={image} alt={alt} fill sizes="(max-width: 768px) 100vw, 640px" className="object-cover" />
+        <Image
+          src={image}
+          alt={alt}
+          fill
+          sizes="(max-width: 768px) 100vw, 640px"
+          className="object-cover"
+        />
       </div>
     </div>
   );
@@ -152,7 +178,9 @@ function Cta({ project }: { project: WebProject }) {
     return (
       <div className="flex items-center gap-2.5 font-semibold text-[14.5px] text-cyan-300">
         {project.ctaNote ?? "Yakında"}
-        <span className="font-normal text-[13.5px] text-slate-600">· link henüz yok</span>
+        <span className="font-normal text-[13.5px] text-slate-600">
+          · link henüz yok
+        </span>
       </div>
     );
   }
@@ -163,7 +191,13 @@ function Cta({ project }: { project: WebProject }) {
   );
 }
 
-function Meta({ project, titleClass }: { project: WebProject; titleClass: string }) {
+function Meta({
+  project,
+  titleClass,
+}: {
+  project: WebProject;
+  titleClass: string;
+}) {
   return (
     <>
       <div className="flex flex-wrap gap-2 items-center">
@@ -172,7 +206,9 @@ function Meta({ project, titleClass }: { project: WebProject; titleClass: string
       </div>
       <h2
         className={titleClass}
-        style={{ fontFamily: "var(--font-plus-jakarta), system-ui, sans-serif" }}
+        style={{
+          fontFamily: "var(--font-plus-jakarta), system-ui, sans-serif",
+        }}
       >
         {project.name}
       </h2>
@@ -246,7 +282,11 @@ export function WebProjectCard({
 
   const visual =
     project.visual.kind === "browser" ? (
-      <BrowserFrame image={project.visual.image} url={project.visual.url} alt={alt} />
+      <BrowserFrame
+        image={project.visual.image}
+        url={project.visual.url}
+        alt={alt}
+      />
     ) : project.visual.kind === "phones" ? (
       <PhoneTrio images={project.visual.images} alt={alt} />
     ) : (
@@ -260,8 +300,10 @@ export function WebProjectCard({
       <Shell
         project={project}
         index={index}
-        className={`${CARD_BASE} grid gap-10 lg:gap-[72px] items-center p-8 md:p-16 hover:border-indigo-500/45 hover:shadow-[0_40px_90px_-50px_rgba(67,56,202,.9)] ${
-          reversed ? "lg:grid-cols-[1.1fr_0.9fr]" : "lg:grid-cols-[0.86fr_1.14fr]"
+        className={`${CARD_BASE} grid grid-cols-1 gap-10 lg:gap-[72px] items-center p-8 md:p-16 hover:border-indigo-500/45 hover:shadow-[0_40px_90px_-50px_rgba(67,56,202,.9)] ${
+          reversed
+            ? "lg:grid-cols-[1.1fr_0.9fr]"
+            : "lg:grid-cols-[0.86fr_1.14fr]"
         }`}
         style={{
           background: reversed

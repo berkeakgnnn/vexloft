@@ -54,6 +54,19 @@ export const showcaseProjects: ShowcaseProject[] = [
     glow: "rgba(234, 179, 8, 0.28)",
   },
   {
+    id: "sizzle",
+    name: "Sizzle Street",
+    category: "Mobil oyun + site",
+    description:
+      "Sokak lezzetleri düellosu. Tezgâhını diz, 20 saniyelik akşam kalabalığı kendiliğinden oynasın; müşteri en lezzetli tezgâha yürür.",
+    url: "https://sizzle.vexloft.com",
+    domain: "sizzle.vexloft.com",
+    desktop: "/showcase/sizzle-desktop.jpg",
+    mobile: "/showcase/sizzle-mobile.jpg",
+    accent: "#ffc857",
+    glow: "rgba(255, 122, 61, 0.40)",
+  },
+  {
     id: "pacopilot",
     name: "PA Copilot",
     category: "Mobil uygulama + site",

@@ -5,9 +5,28 @@
 
 ---
 
+## 2026-10-08 — Sizzle Street vitrine eklendi (dal: feat/sizzle-street)
+
+**Yapıldı**
+
+- Ana sayfa vitrinine (`components/home/projects.ts`) ve `/web-projelerimiz`'e
+  Sizzle Street eklendi; link https://sizzle.vexloft.com.
+- Telefon üçlüsü canlı web sürümünden (sslip önizleme) Playwright ile 390×844
+  çekildi; giriş yapılmadı. Ana sayfa görselleri yeni landing'den çekildi.
+- `web-project-card.tsx` split/reversed düzenine `grid-cols-1` eklendi.
+
+**Öğrenilenler**
+
+- Telefon üçlüsü split/reversed kartta ilk kez kullanıldı: ızgaranın tek
+  örtük sütunu min-content'e göre genişleyip mobilde açıklama metnini kartın
+  dışına taşırıyordu. `grid-cols-1` (minmax(0,1fr)) çözüyor.
+
+---
+
 ## 2026-08-27 (2) — Vitrin yeniden tasarımı uygulandı
 
 **Yapıldı**
+
 - Claude Design "Projeler Vitrini" tasarımı `components/web-projelerimiz/` ve
   `app/web-projelerimiz/page.tsx`'e uygulandı.
 - Üç çerçeve tipi: `browser` (tarayıcı çubuğu + geniş ekran görüntüsü),
@@ -19,6 +38,7 @@
 - Alkor ekran görüntüsü canlı siteden 1440×1100 yeniden çekildi.
 
 **Öğrenilenler**
+
 - Tasarım dosyasındaki teknoloji etiketleri gerçek değildi (BarberBook'a Stripe,
   Velora'ya Shopify, Alkor'a Laravel/Vue yazılmıştı). Tasarım görsel dili için
   kaynak, **içerik için değil** — etiketler projelerin gerçek stack'iyle
@@ -36,6 +56,7 @@
 ## 2026-08-27 — Projeler vitrini: BarberBook, Zamlandı, Velora güncellemesi
 
 **Yapıldı**
+
 - `/web-projelerimiz` → başlık "Projelerimiz" (URL korundu, footer linki de).
 - BarberBook eklendi, görseli canlı siteden 21/9 oranında çekildi.
 - Zamlandı eklendi; üç tanıtım ekranı siyah bant + kağıt zemin üzerinde
@@ -45,6 +66,7 @@
 - Kart karartma degradesi hem üstte hem altta güçlendirildi.
 
 **Öğrenilenler**
+
 - Kart deseni **fotoğraf için** tasarlanmış. Velora'nın çikolata fotoğrafında
   harika çalışıyor; BarberBook gibi metin dolu bir ekran görüntüsünde başlık ve
   açıklama, görselin kendi yazılarının üstüne biniyor. Ekran görüntüsü ile
@@ -56,6 +78,7 @@
   Tanıtım ekranları (`tanitim-ekran*.png`) tam ekran ve vitrin için çok daha güçlü.
 
 **Vazgeçilenler**
+
 - Zamlandı için ayrı "Mobil Projelerimiz" sayfası: tek projeyle sayfa boş
   duracaktı ve menüyü uzatıyordu. Tek vitrin sayfası tercih edildi.
 - Görselleri kartın arkasına koyup üzerine yazı yazma düzenini şimdilik
@@ -73,5 +96,5 @@
   showcase'leri; ASTRA ve PA Copilot eklendi; iletişim e-postası güncellendi.
 - **2026-04-13** — `/web-projelerimiz` sayfası ve iletişim formu eklendi.
 
-*TODO: doğrula — bu satırlar commit mesajlarından türetildi, o session'ların
-kararları ve takıldığı noktalar kayıtlı değil.*
+_TODO: doğrula — bu satırlar commit mesajlarından türetildi, o session'ların
+kararları ve takıldığı noktalar kayıtlı değil._
