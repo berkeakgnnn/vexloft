@@ -109,6 +109,24 @@ const projects: WebProject[] = [
     },
   },
   {
+    id: "astra",
+    name: "ASTRA",
+    description:
+      "Antika bir yıldız atlası gibi çizilmiş 2–5 dakikalık sinerji roguelike. 5×5 gökyüzüne sembol diz; her sembol komşusunu dönüştürüyor, çarpıyor ya da yeniden tetikliyor. Takımyıldızı tamamla, kuralları değiştiren Kozmik Yasalar bağla. Herkese aynı Günün Gökyüzü, seri ve liderlik tablosu. iOS'ta App Store incelemesinde, Android sürümü Google Play'e hazırlanıyor.",
+    badge: "iOS + Android Oyun",
+    status: "building",
+    tags: ["React Native", "Expo", "Fastify", "PostgreSQL", "TR / EN"],
+    href: "https://astra.vexloft.com",
+    visual: {
+      kind: "phones",
+      images: [
+        "/projects/astra/1.jpg",
+        "/projects/astra/2.jpg",
+        "/projects/astra/3.jpg",
+      ],
+    },
+  },
+  {
     id: "alkor-cms",
     name: "Alkor CMS",
     description:

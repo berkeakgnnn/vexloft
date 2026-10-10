@@ -43,9 +43,9 @@ export const showcaseProjects: ShowcaseProject[] = [
   {
     id: "astra",
     name: "ASTRA",
-    category: "Mobil oyun + site",
+    category: "iOS + Android oyun + site",
     description:
-      "Yıldız atlası gibi çizilmiş 2–5 dakikalık sinerji roguelike. 5×5 gökyüzü, takımyıldızlar, günlük ortak gökyüzü.",
+      "Yıldız atlası gibi çizilmiş 2–5 dakikalık sinerji roguelike. 5×5 gökyüzü, takımyıldızlar, günlük ortak gökyüzü. iOS ve Android'de.",
     url: "https://astra.vexloft.com",
     domain: "astra.vexloft.com",
     desktop: "/showcase/astra-desktop.jpg",
