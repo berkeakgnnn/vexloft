@@ -61,6 +61,21 @@ const projects: WebProject[] = [
     visual: { kind: "photo", image: "/projects/velora.jpg" },
   },
   {
+    id: "loc",
+    name: "Loc",
+    description:
+      "Konum tabanlı sosyal harita. Gittiğin mekânı seçip uygulama içi kamerayla anlık bir kare bırakıyorsun; kare o mekânın üstünde 24 saat yaşıyor, sonra kayboluyor. Çevrendekiler kareni görüp istek atıyor, sohbet ancak iki taraf da kabul edince açılıyor. Canlı konum takibi yok: paylaşılan şey bulunduğun nokta değil, gittiğin yer. Antalya'da kapalı beta; iOS ve Android için hazırlanıyor.",
+    badge: "iOS + Android Uygulama",
+    status: "building",
+    tags: ["React Native", "Expo", "Fastify", "PostGIS", "MapLibre", "TR / EN"],
+    href: "https://loc.vexloft.com",
+    visual: {
+      kind: "browser",
+      image: "/projects/loc.jpg",
+      url: "loc.vexloft.com",
+    },
+  },
+  {
     id: "queenspalace",
     name: "Queens Palace",
     description:
