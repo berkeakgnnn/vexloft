@@ -15,19 +15,6 @@ export interface ShowcaseProject {
 
 export const showcaseProjects: ShowcaseProject[] = [
   {
-    id: "loc",
-    name: "Loc",
-    category: "iOS + Android uygulama + site",
-    description:
-      "Antalya'dan başlayan sosyal harita. Gittiğin mekâna anlık bir kare bırak; kare o mekânın üstünde 24 saat yaşar. Konumun kimseye gösterilmez. iOS ve Android için.",
-    url: "https://loc.vexloft.com",
-    domain: "loc.vexloft.com",
-    desktop: "/showcase/loc-desktop.jpg",
-    mobile: "/showcase/loc-mobile.jpg",
-    accent: "#ff4fa8",
-    glow: "rgba(224, 0, 122, 0.38)",
-  },
-  {
     id: "queenspalace",
     name: "Queens Palace",
     category: "Mobil oyun + site",
@@ -52,6 +39,19 @@ export const showcaseProjects: ShowcaseProject[] = [
     mobile: "/showcase/animyst-mobile.jpg",
     accent: "#e879f9",
     glow: "rgba(217, 70, 239, 0.42)",
+  },
+  {
+    id: "loc",
+    name: "Loc",
+    category: "iOS + Android uygulama + site",
+    description:
+      "Antalya'dan başlayan sosyal harita. Gittiğin mekâna anlık bir kare bırak; kare o mekânın üstünde 24 saat yaşar. Konumun kimseye gösterilmez. iOS ve Android için.",
+    url: "https://loc.vexloft.com",
+    domain: "loc.vexloft.com",
+    desktop: "/showcase/loc-desktop.jpg",
+    mobile: "/showcase/loc-mobile.jpg",
+    accent: "#ff4fa8",
+    glow: "rgba(224, 0, 122, 0.38)",
   },
   {
     id: "astra",
