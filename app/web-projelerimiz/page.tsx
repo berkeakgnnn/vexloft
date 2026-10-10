@@ -127,6 +127,24 @@ const projects: WebProject[] = [
     },
   },
   {
+    id: "pacopilot",
+    name: "PA Copilot",
+    description:
+      "Havayolu pilotları için yolcu anonsu yardımcısı. Uçuşu bir kez girin; boarding'den divert'e 10 anons tipi İngilizce, Türkçe ve Almanca hazır, büyük yazılı teleprompter'dan okunuyor. Cihaz üstü doğal sesle prova, tamamen çevrimdışı. iOS'ta App Store incelemesinde, Android sürümü Google Play'e hazırlanıyor.",
+    badge: "iOS + Android Uygulama",
+    status: "building",
+    tags: ["React Native", "Expo", "On-device TTS", "EN / TR / DE"],
+    href: "https://pacopilot.vexloft.com",
+    visual: {
+      kind: "phones",
+      images: [
+        "/projects/pacopilot/1.jpg",
+        "/projects/pacopilot/2.jpg",
+        "/projects/pacopilot/3.jpg",
+      ],
+    },
+  },
+  {
     id: "alkor-cms",
     name: "Alkor CMS",
     description:

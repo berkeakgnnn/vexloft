@@ -69,9 +69,9 @@ export const showcaseProjects: ShowcaseProject[] = [
   {
     id: "pacopilot",
     name: "PA Copilot",
-    category: "Mobil uygulama + site",
+    category: "iOS + Android uygulama + site",
     description:
-      "Pilotlar için anons yardımcısı. Uçuşu bir kez girin; anons İngilizce, Türkçe ve Almanca hazır. Tamamen çevrimdışı.",
+      "Pilotlar için anons yardımcısı. Uçuşu bir kez girin; anons İngilizce, Türkçe ve Almanca hazır. Tamamen çevrimdışı. iOS ve Android için.",
     url: "https://pacopilot.vexloft.com",
     domain: "pacopilot.vexloft.com",
     desktop: "/showcase/pacopilot-desktop.jpg",
