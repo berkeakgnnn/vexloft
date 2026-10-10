@@ -56,9 +56,9 @@ export const showcaseProjects: ShowcaseProject[] = [
   {
     id: "sizzle",
     name: "Sizzle Street",
-    category: "Mobil oyun + site",
+    category: "iOS + Android oyun + site",
     description:
-      "Sokak lezzetleri düellosu. Tezgâhını diz, 20 saniyelik akşam kalabalığı kendiliğinden oynasın; müşteri en lezzetli tezgâha yürür.",
+      "Sokak lezzetleri düellosu. Tezgâhını diz, 20 saniyelik akşam kalabalığı kendiliğinden oynasın; müşteri en lezzetli tezgâha yürür. iOS ve Android'de.",
     url: "https://sizzle.vexloft.com",
     domain: "sizzle.vexloft.com",
     desktop: "/showcase/sizzle-desktop.jpg",

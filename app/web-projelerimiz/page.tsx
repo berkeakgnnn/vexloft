@@ -94,8 +94,8 @@ const projects: WebProject[] = [
     id: "sizzle",
     name: "Sizzle Street",
     description:
-      "Sıcacık bir sokak lezzetleri düellosu. Gece pazarından ocak ve malzeme al, tezgâhına diz; 20 saniyelik akşam kalabalığı kendiliğinden oynanıyor ve müşteri en lezzetli tezgâha yürüyor. Gerçek oyuncuların tezgâhlarına karşı asenkron düello, herkese aynı Bugünün Pazarı ve altı hayvan şef. Web sürümü tarayıcıda oynanabiliyor.",
-    badge: "iOS Oyun",
+      "Sıcacık bir sokak lezzetleri düellosu. Gece pazarından ocak ve malzeme al, tezgâhına diz; 20 saniyelik akşam kalabalığı kendiliğinden oynanıyor ve müşteri en lezzetli tezgâha yürüyor. Gerçek oyuncuların tezgâhlarına karşı asenkron düello, herkese aynı Bugünün Pazarı ve altı hayvan şef. iOS'ta App Store incelemesinde, Android sürümü Google Play'e hazırlanıyor.",
+    badge: "iOS + Android Oyun",
     status: "building",
     tags: ["React Native", "Expo", "Fastify", "PostgreSQL", "TR / EN"],
     href: "https://sizzle.vexloft.com",
