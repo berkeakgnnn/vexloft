@@ -50,8 +50,8 @@ export const showcaseProjects: ShowcaseProject[] = [
     domain: "loc.vexloft.com",
     desktop: "/showcase/loc-desktop.jpg",
     mobile: "/showcase/loc-mobile.jpg",
-    accent: "#ff4fa8",
-    glow: "rgba(224, 0, 122, 0.38)",
+    accent: "#c8ff2e",
+    glow: "rgba(200, 255, 46, 0.32)",
   },
   {
     id: "astra",
