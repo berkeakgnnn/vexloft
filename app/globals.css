@@ -4,6 +4,13 @@ html {
   scroll-behavior: smooth;
 }
 
+/* Font families come from @fontsource-variable (imported in app/layout.tsx).
+   The variable names stay the same so existing var(--font-*) usages keep working. */
+:root {
+  --font-plus-jakarta: "Plus Jakarta Sans Variable", system-ui, sans-serif;
+  --font-inter: "Inter Variable", system-ui, sans-serif;
+}
+
 @theme inline {
   --color-background: #060a14;
   --color-foreground: #ffffff;
@@ -29,7 +36,7 @@ body {
 
 /* Noise texture overlay */
 .noise-bg::before {
-  content: '';
+  content: "";
   position: fixed;
   inset: 0;
   background: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
@@ -56,21 +63,42 @@ body {
 /* Gradient line separator */
 .gradient-line {
   height: 1px;
-  background: linear-gradient(90deg, transparent, #4338ca, #7c3aed, #06b6d4, transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    #4338ca,
+    #7c3aed,
+    #06b6d4,
+    transparent
+  );
   opacity: 0.4;
 }
 
 /* Blob float animations */
 @keyframes float-slow {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(30px, -20px) scale(1.05); }
-  66% { transform: translate(-20px, 15px) scale(0.98); }
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -20px) scale(1.05);
+  }
+  66% {
+    transform: translate(-20px, 15px) scale(0.98);
+  }
 }
 
 @keyframes float-medium {
-  0%, 100% { transform: translate(0, 0) scale(1); }
-  33% { transform: translate(-25px, 20px) scale(1.03); }
-  66% { transform: translate(20px, -25px) scale(0.97); }
+  0%,
+  100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(-25px, 20px) scale(1.03);
+  }
+  66% {
+    transform: translate(20px, -25px) scale(0.97);
+  }
 }
 
 .blob-float-slow {
@@ -91,7 +119,9 @@ body {
 /* Primary gradient pill button */
 .btn-gradient {
   background: linear-gradient(135deg, #4338ca, #7c3aed);
-  transition: transform 0.2s ease, box-shadow 0.3s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.3s ease;
   box-shadow: 0 8px 32px rgba(99, 102, 241, 0.25);
 }
 
@@ -131,31 +161,63 @@ body {
 
 /* Loading screen animations */
 @keyframes loadingLogoIn {
-  0% { opacity: 0; transform: scale(0.8); }
-  100% { opacity: 1; transform: scale(1); }
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
 @keyframes loadingTextIn {
-  0% { opacity: 0; transform: translateY(8px); }
-  100% { opacity: 1; transform: translateY(0); }
+  0% {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes loadingOverlayOut {
-  0% { opacity: 1; }
-  100% { opacity: 0; pointer-events: none; }
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    pointer-events: none;
+  }
 }
 
 @keyframes circularReveal {
-  0% { clip-path: circle(100% at 50% 50%); }
-  100% { clip-path: circle(0% at 50% 50%); }
+  0% {
+    clip-path: circle(100% at 50% 50%);
+  }
+  100% {
+    clip-path: circle(0% at 50% 50%);
+  }
 }
 
 /* Showcase: "in development" chip — a slow pulse, not a blinking alarm */
 @keyframes vexPulse {
-  0%, 100% { opacity: 1; transform: scale(1); }
-  50% { opacity: 0.35; transform: scale(0.7); }
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.35;
+    transform: scale(0.7);
+  }
 }
-.vex-pulse { animation: vexPulse 2s ease-in-out infinite; }
+.vex-pulse {
+  animation: vexPulse 2s ease-in-out infinite;
+}
 @media (prefers-reduced-motion: reduce) {
-  .vex-pulse { animation: none; }
+  .vex-pulse {
+    animation: none;
+  }
 }

@@ -78,7 +78,7 @@ export function HomeHero(): React.ReactElement {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-400 opacity-70" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-cyan-400" />
             </span>
-            6 ürün şu an canlıda
+            {showcaseProjects.length} ürün · uygulama + site
           </motion.p>
           <motion.h1
             initial={{ opacity: 0, y: 30 }}

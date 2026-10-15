@@ -7,11 +7,19 @@ import { Footer } from "@/components/layout/footer";
 import { getActiveBusinesses } from "@/lib/api";
 import type { PublicMenu } from "@/lib/api";
 
-export const metadata: Metadata = pageMetadata(
-  "QR Menü Projelerimiz",
-  "Kafe, restoran ve barlar için hazırladığımız temalı, çok dilli dijital QR menüler. Canlı örnekleri inceleyin.",
-  "/qr-projelerimiz",
-);
+// While the menu API returns nothing the page is an empty shell, so keep it
+// out of the index until there is real content to show.
+export async function generateMetadata(): Promise<Metadata> {
+  const base = pageMetadata(
+    "QR Menü Projelerimiz",
+    "Kafe, restoran ve barlar için hazırladığımız temalı, çok dilli dijital QR menüler. Canlı örnekleri inceleyin.",
+    "/qr-projelerimiz",
+  );
+  const businesses = await getActiveBusinesses();
+  return businesses.length > 0
+    ? base
+    : { ...base, robots: { index: false, follow: true } };
+}
 
 const API_URL = process.env.NEXT_PUBLIC_API_URL || "";
 
@@ -51,7 +59,10 @@ interface BusinessCardProps {
   index: number;
 }
 
-function BusinessCard({ business, index }: BusinessCardProps): React.ReactElement {
+function BusinessCard({
+  business,
+  index,
+}: BusinessCardProps): React.ReactElement {
   const { theme } = business;
   const heroImage = resolveImage(theme.heroImage);
 
@@ -112,7 +123,9 @@ function BusinessCard({ business, index }: BusinessCardProps): React.ReactElemen
             {/* Business name */}
             <h2
               className="text-xl font-extrabold text-white leading-tight"
-              style={{ fontFamily: "var(--font-plus-jakarta), system-ui, sans-serif" }}
+              style={{
+                fontFamily: "var(--font-plus-jakarta), system-ui, sans-serif",
+              }}
             >
               {business.name}
             </h2>
@@ -160,7 +173,9 @@ export default async function QrProjelerimizPage(): Promise<React.ReactElement> 
             </span>
             <h1
               className="text-4xl sm:text-5xl md:text-6xl font-extrabold text-white leading-tight"
-              style={{ fontFamily: "var(--font-plus-jakarta), system-ui, sans-serif" }}
+              style={{
+                fontFamily: "var(--font-plus-jakarta), system-ui, sans-serif",
+              }}
             >
               QR Projelerimiz
             </h1>
@@ -176,7 +191,11 @@ export default async function QrProjelerimizPage(): Promise<React.ReactElement> 
           {businesses.length > 0 ? (
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
               {businesses.map((business, index) => (
-                <BusinessCard key={business.id} business={business} index={index} />
+                <BusinessCard
+                  key={business.id}
+                  business={business}
+                  index={index}
+                />
               ))}
             </div>
           ) : (

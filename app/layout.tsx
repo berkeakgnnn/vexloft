@@ -1,6 +1,11 @@
 import type { Metadata } from "next";
-import { Plus_Jakarta_Sans, Inter } from "next/font/google";
+// Self-hosted fonts (bundled from node_modules): builds never depend on
+// Google Fonts being reachable, and latin-ext covers ş, ğ, ı, İ.
+import "@fontsource-variable/plus-jakarta-sans";
+import "@fontsource-variable/inter";
 import "./globals.css";
+import { GoogleAnalytics } from "@/components/analytics/google-analytics";
+import { CookieConsent } from "@/components/analytics/cookie-consent";
 import {
   SITE_DESCRIPTION,
   SITE_EMAIL,
@@ -8,19 +13,6 @@ import {
   SITE_TAGLINE,
   SITE_URL,
 } from "@/lib/site";
-
-const plusJakarta = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  variable: "--font-plus-jakarta",
-  weight: ["400", "500", "600", "700", "800"],
-  display: "swap",
-});
-
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
 
 const defaultTitle = `${SITE_NAME} | ${SITE_TAGLINE}`;
 
@@ -126,7 +118,7 @@ export default function RootLayout({
   return (
     <html
       lang="tr"
-      className={`${plusJakarta.variable} ${inter.variable} h-full antialiased`}
+      className="h-full antialiased"
     >
       <body className="min-h-full flex flex-col bg-[#060a14] text-white">
         <script
@@ -136,6 +128,8 @@ export default function RootLayout({
           }}
         />
         {children}
+        <CookieConsent />
+        <GoogleAnalytics />
       </body>
     </html>
   );

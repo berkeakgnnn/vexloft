@@ -5,6 +5,32 @@
 
 ---
 
+## 2026-10-15 — Google Analytics, SEO düzeltmeleri, yerel fontlar, form API'si
+
+**Yapıldı**
+
+- GA4 hesabı/mülkü açıldı (`G-7PYF1QJDEC`), Vercel'e `NEXT_PUBLIC_GA_ID`
+  eklendi. `components/analytics/`: KVKK çerez onayı + onay sonrası gtag.
+  Veri paylaşım seçenekleri kapalı, veri saklama 14 ay.
+- Canonical/sitemap origin `https://www.vexloft.com`; apex → www Vercel'de
+  307'den 308'e çekildi.
+- `next/font/google` → `@fontsource-variable/*` (yerel, latin-ext dahil).
+- `/qr-projelerimiz` menü yokken `noindex` + sitemap dışı.
+- İletişim formu `app/api/contact/route.ts`'e (Resend REST, düz metin, honeypot)
+  taşındı. Resend henüz kurulmadı (Vercel'de şart kabulü + Natro DNS bekliyor).
+- Hero'daki sabit "6 ürün şu an canlıda" metni vitrin sayısından hesaplanıyor.
+
+**Öğrenilenler**
+
+- Eski form https sayfadan http backend'e istek atıyordu; tarayıcı karışık
+  içerik diye engelliyordu — form canlıda hiç çalışmamış olabilir.
+- `next/font/google` yalnız `latin` alt kümesiyle yükleniyordu; ş/ğ/İ sistem
+  fontuna düşüyordu.
+- Vercel apex yönlendirmesinin varsayılanı 307; `vercel api` ile
+  `redirectStatusCode: 308` verildi.
+
+---
+
 ## 2026-10-08 — Sizzle Street vitrine eklendi (dal: feat/sizzle-street)
 
 **Yapıldı**

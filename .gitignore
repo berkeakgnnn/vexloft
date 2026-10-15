@@ -2,3 +2,5 @@ node_modules/
 .next/
 .superpowers/
 .next-old-*/
+.vercel
+.env*

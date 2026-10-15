@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useRef, useState } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 const SERVICE_OPTIONS = [
   { value: "web", label: "Web Platformu" },
@@ -20,8 +21,6 @@ interface FormState {
   message: string;
 }
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL ?? "";
-
 export function ContactForm(): React.ReactElement {
   const [form, setForm] = useState<FormState>({
     name: "",
@@ -32,6 +31,7 @@ export function ContactForm(): React.ReactElement {
   });
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
+  const honeypotRef = useRef<HTMLInputElement>(null);
 
   function handleChange(
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -47,7 +47,8 @@ export function ContactForm(): React.ReactElement {
     setErrorMessage("");
 
     try {
-      const res = await fetch(`${API_URL}/contact`, {
+      // Same-origin route handler (app/api/contact) sends the email.
+      const res = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -56,6 +57,7 @@ export function ContactForm(): React.ReactElement {
           phone: form.phone || undefined,
           serviceType: form.serviceType,
           message: form.message,
+          company: honeypotRef.current?.value ?? "",
         }),
       });
 
@@ -64,6 +66,7 @@ export function ContactForm(): React.ReactElement {
         throw new Error(data?.error || "Bir hata oluştu.");
       }
 
+      trackEvent("generate_lead", { service_type: form.serviceType });
       setStatus("success");
       setForm({ name: "", email: "", phone: "", serviceType: "", message: "" });
     } catch (err) {
@@ -104,6 +107,17 @@ export function ContactForm(): React.ReactElement {
 
   return (
     <form onSubmit={handleSubmit} className="space-y-6">
+      {/* Spam trap: hidden from people and screen readers, bots fill it */}
+      <input
+        ref={honeypotRef}
+        type="text"
+        name="company"
+        tabIndex={-1}
+        autoComplete="off"
+        aria-hidden="true"
+        className="absolute -left-[9999px] h-0 w-0 opacity-0"
+      />
+
       {/* Ad */}
       <div>
         <label htmlFor="name" className="block text-xs font-semibold tracking-[4px] uppercase text-gray-500 mb-2">
