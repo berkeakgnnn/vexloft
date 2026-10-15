@@ -23,29 +23,32 @@
   (Vercel env `NEXT_PUBLIC_GA_ID`, yalnız Production). Çerez onayı (KVKK)
   verilmeden GA yüklenmez. Olaylar: `generate_lead`, `contact_email_click`,
   `contact_phone_click`. Veri saklama 14 ay.
+- **İletişim formu** → `app/api/contact/route.ts` → Resend (team "vexloftstudio",
+  alan adı `vexloft.com` doğrulandı, bölge eu-west-1) → vexloftstudio@gmail.com.
+  Gönderen `form@vexloft.com`, "Yanıtla" formu dolduran kişiye gider. Vercel env:
+  `RESEND_API_KEY` (anahtar adı `vexloft-site`, yalnız gönderim), `CONTACT_FROM_EMAIL`.
+  DNS (Natro): `resend._domainkey` TXT, `send` + `rsend` CNAME, `_dmarc` TXT.
+- **Google Search Console** — alan adı mülkü `vexloft.com` (vexloft@gmail.com),
+  Natro'daki `ut2o4r7ilnyn` CNAME ile doğrulandı (**silme**, doğrulama düşer).
+  `https://www.vexloft.com/sitemap.xml` gönderildi. Natro kök (`@`) için ikinci
+  TXT kaydı eklemeye izin vermediği için CNAME yöntemi kullanıldı.
 
 ## Yarım kalanlar
 
-- [ ] **İletişim formu mail atamıyor (Resend kurulmadı).** Kod hazır:
-      `app/api/contact/route.ts`. Eksikler: 1. Vercel'de Resend entegrasyonunun şartlarını kabul et:
-      https://vercel.com/heronnn9s-projects/~/integrations/accept-terms/resend
-      sonra `vercel integration add resend/resend-email` (env `RESEND_API_KEY`). 2. Resend'de `vexloft.com` alan adını ekle; verdiği DNS kayıtlarını
-      **Natro**'ya gir (nameserver Natro'da, Vercel'de değil). 3. Vercel env: `CONTACT_FROM_EMAIL="Vexloft <form@vexloft.com>"`.
-      Anahtar yokken form 503 + "vexloftstudio@gmail.com'a yazın" mesajı döner.
 - [ ] `/qr-projelerimiz`: panel backend'i (sslip.io) 404 dönüyor. Menü gelmediği
       sürece sayfa `noindex` ve sitemap'te yok — backend dönünce otomatik açılır.
 - [ ] `.env.local` git'te takip ediliyor (içinde yalnız public API URL'i var).
       `.gitignore` artık `.env*` içeriyor ama dosya hâlâ takipte.
 - [ ] GA'da `generate_lead` ve `contact_email_click` ilk veri gelince
-      "Önemli etkinlik" olarak işaretlenmeli.
-- [ ] Google Search Console doğrulaması + sitemap gönderimi yapılmadı.
+      Yönetici → Etkinlikler'de yıldızla "Önemli etkinlik" yapılmalı (GA4 yeni
+      arayüzü, hiç görülmemiş bir etkinliği önceden işaretletmiyor).
 - [ ] Zamlandı yayına çıkınca kartın `href`'i App Store linkiyle değişmeli.
 - [ ] Test altyapısı yok.
 
 ## Bir sonraki somut adım
 
-1. Resend kurulumu (yukarıdaki 3 adım) → formu canlıda test et.
-2. Search Console: domain doğrula, `https://www.vexloft.com/sitemap.xml` gönder.
+1. 1-2 hafta sonra Search Console → Sayfa sayısı / Performans raporlarına bak;
+   indekslenmeyen sayfa varsa nedenine göre düzelt.
 
 ## Aktif tuzaklar
 

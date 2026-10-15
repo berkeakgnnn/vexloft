@@ -5,6 +5,25 @@
 
 ---
 
+## 2026-10-15 (2) — Resend ve Search Console kuruldu
+
+**Yapıldı**
+
+- Resend (team "vexloftstudio") alan adı `vexloft.com` eklendi ve doğrulandı;
+  DKIM/SPF/DMARC kayıtları Natro'ya girildi. Vercel env: `RESEND_API_KEY`,
+  `CONTACT_FROM_EMAIL`. Canlı formdan test maili vexloftstudio@gmail.com'a ulaştı.
+- Search Console alan adı mülkü CNAME ile doğrulandı, sitemap gönderildi.
+
+**Öğrenilenler**
+
+- Vercel Marketplace üzerinden Resend, hesapta zaten bir Resend team varsa
+  ücretli plan istiyor — mevcut hesabı doğrudan kullanmak ücretsiz.
+- Natro DNS panelinde kök alan adına (`@`) yeni TXT eklenemiyor ("09-Unable
+  to add record"); Google doğrulamasında CNAME seçeneği bunu aşıyor.
+- Resend hesabını Loc uygulaması da kullanıyor; ücretsiz kota (3.000/ay) ortak.
+
+---
+
 ## 2026-10-15 — Google Analytics, SEO düzeltmeleri, yerel fontlar, form API'si
 
 **Yapıldı**
