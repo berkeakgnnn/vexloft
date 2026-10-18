@@ -6,6 +6,7 @@ import "@fontsource-variable/inter";
 import "./globals.css";
 import { GoogleAnalytics } from "@/components/analytics/google-analytics";
 import { CookieConsent } from "@/components/analytics/cookie-consent";
+import { Umami } from "@/components/analytics/umami";
 import {
   SITE_DESCRIPTION,
   SITE_EMAIL,
@@ -116,10 +117,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html
-      lang="tr"
-      className="h-full antialiased"
-    >
+    <html lang="tr" className="h-full antialiased">
       <body className="min-h-full flex flex-col bg-[#060a14] text-white">
         <script
           type="application/ld+json"
@@ -130,6 +128,7 @@ export default function RootLayout({
         {children}
         <CookieConsent />
         <GoogleAnalytics />
+        <Umami />
       </body>
     </html>
   );
