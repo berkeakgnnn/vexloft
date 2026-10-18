@@ -23,6 +23,11 @@
   (Vercel env `NEXT_PUBLIC_GA_ID`, yalnız Production). Çerez onayı (KVKK)
   verilmeden GA yüklenmez. Olaylar: `generate_lead`, `contact_email_click`,
   `contact_phone_click`. Veri saklama 14 ay.
+- **Umami** (2026-10-18) — kendi sunucumuz, tüm Vexloft siteleri tek panelde:
+  `https://analiz.vexloft.com` (kullanıcı `vexloft`). Çerezsiz, IP saklamaz, onay
+  beklemez; GA'nın yanında bandı reddedenleri de sayar. Bileşen
+  `components/analytics/umami.tsx`. Bağlı: vexloft, Loc, ASTRA, Sizzle, PA Copilot,
+  Zamlandı, 5Clues.
 - **İletişim formu** → `app/api/contact/route.ts` → Resend (team "vexloftstudio",
   alan adı `vexloft.com` doğrulandı, bölge eu-west-1) → vexloftstudio@gmail.com.
   Gönderen `form@vexloft.com`, "Yanıtla" formu dolduran kişiye gider. Vercel env:
@@ -34,6 +39,13 @@
   TXT kaydı eklemeye izin vermediği için CNAME yöntemi kullanıldı.
 
 ## Yarım kalanlar
+
+- [ ] **Umami — AniMyst ve Queens Palace (Berke):** iki sitenin `<head>`'ine aşağıdaki
+      satırı ekle (repoları Fatih'in makinesinde yok; siteler panelde zaten kayıtlı).
+      Çerezsiz olduğu için çerez bandı gerekmez; gizlilik sayfası varsa tek cümle ekle:
+      _"Bu web sitesinde ziyaret sayısı, açılan sayfa, gelinen site, ülke ve cihaz
+      türünü kendi sunucumuzdaki Umami ile sayarız. Çerez kullanılmaz, IP adresin
+      saklanmaz."_ - AniMyst: `<script defer src="https://analiz.vexloft.com/script.js" data-website-id="4769df00-5f1b-4ca1-9e42-ec9eba0293c8"></script>` - Queens Palace: `<script defer src="https://analiz.vexloft.com/script.js" data-website-id="3aab4940-6c80-4be8-81e4-e8ca7270be9d"></script>`
 
 - [ ] `/qr-projelerimiz`: panel backend'i (sslip.io) 404 dönüyor. Menü gelmediği
       sürece sayfa `noindex` ve sitemap'te yok — backend dönünce otomatik açılır.
