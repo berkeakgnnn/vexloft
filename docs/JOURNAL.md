@@ -5,6 +5,22 @@
 
 ---
 
+## 2026-10-19 — AniMyst ve Queens Palace Umami'ye bağlandı
+
+**Yapıldı**
+
+- `aniguess-landing` (`2ad12a6`) ve `queens-palace-landing` (`6c36d16`)
+  layout'una Umami script'i (`next/script`, afterInteractive) eklendi; gizlilik
+  sayfalarına EN "Website Analytics (Umami)" bölümü + KVKK paragrafına TR cümle.
+  İki sitede de canlıda script yükleniyor.
+
+**Öğrenilenler**
+
+- Edit sonrası çalışan biçimlendirici hook, Queens Palace dosyalarını çift
+  tırnağa çevirip baştan yazıyor; minimal diff için düzenleme script ile yapıldı.
+
+---
+
 ## 2026-10-15 (2) — Resend ve Search Console kuruldu
 
 **Yapıldı**
