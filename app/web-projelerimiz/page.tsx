@@ -61,6 +61,21 @@ const projects: WebProject[] = [
     visual: { kind: "photo", image: "/projects/velora.jpg" },
   },
   {
+    id: "denta7",
+    name: "Denta7",
+    description:
+      "Kepez'deki ağız ve diş sağlığı polikliniği için iki dilli tanıtım sitesi. Tedaviler tek tek anlatılıyor, ilk ziyaretin beş adımı ve sık sorulanlar hazır; implant sayfasında 3D diş modeli var. Hasta formdan ya da WhatsApp'tan randevu talebi bırakıyor.",
+    badge: "Kurumsal Web",
+    status: "live",
+    tags: ["Next.js 16", "Three.js", "TR / EN", "Randevu Formu", "SEO"],
+    href: "https://www.denta7.com",
+    visual: {
+      kind: "browser",
+      image: "/projects/denta7-site.jpg",
+      url: "denta7.com",
+    },
+  },
+  {
     id: "queenspalace",
     name: "Queens Palace",
     description:

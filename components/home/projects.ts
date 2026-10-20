@@ -41,6 +41,19 @@ export const showcaseProjects: ShowcaseProject[] = [
     glow: "rgba(217, 70, 239, 0.42)",
   },
   {
+    id: "denta7",
+    name: "Denta7",
+    category: "Klinik web sitesi",
+    description:
+      "Kepez'deki ağız ve diş sağlığı polikliniği için TR/EN site. Tedaviler, ilk ziyaret adımları, 3D implant anlatımı ve randevu talebi.",
+    url: "https://www.denta7.com",
+    domain: "denta7.com",
+    desktop: "/showcase/denta7-desktop.jpg",
+    mobile: "/showcase/denta7-mobile.jpg",
+    accent: "#d9b77e",
+    glow: "rgba(45, 120, 100, 0.40)",
+  },
+  {
     id: "loc",
     name: "Loc",
     category: "iOS + Android uygulama + site",
