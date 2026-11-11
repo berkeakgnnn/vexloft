@@ -109,7 +109,7 @@ const projects: WebProject[] = [
     id: "loc",
     name: "Loc",
     description:
-      "Konum tabanlı sosyal harita. Gittiğin mekânı seçip uygulama içi kamerayla anlık bir kare bırakıyorsun; kare o mekânın üstünde 24 saat yaşıyor, sonra kayboluyor. Çevrendekiler kareni görüp istek atıyor, sohbet ancak iki taraf da kabul edince açılıyor. Canlı konum takibi yok: paylaşılan şey bulunduğun nokta değil, gittiğin yer. Antalya'da kapalı beta; iOS ve Android için hazırlanıyor.",
+      "Konum tabanlı sosyal harita. Gittiğin mekânı seçip uygulama içi kamerayla anlık bir kare bırakıyorsun; kare o mekânın üstünde 24 saat kalıyor, sonra haritadan kalkıyor. Kareni görenler istek atıyor, sohbet ancak iki taraf da kabul edince açılıyor. Canlı konum takibi yok: paylaşılan şey bulunduğun nokta değil, gittiğin mekân. Antalya'da kapalı betada (iOS'ta TestFlight, Android'de Google Play iç test); mağazalarda henüz yok.",
     badge: "iOS + Android Uygulama",
     status: "building",
     tags: ["React Native", "Expo", "Fastify", "PostGIS", "MapLibre", "TR / EN"],

@@ -58,13 +58,13 @@ export const showcaseProjects: ShowcaseProject[] = [
     name: "Loc",
     category: "iOS + Android uygulama + site",
     description:
-      "Antalya'dan başlayan sosyal harita. Gittiğin mekâna anlık bir kare bırak; kare o mekânın üstünde 24 saat yaşar. Konumun kimseye gösterilmez. iOS ve Android için.",
+      "Antalya'dan başlayan sosyal harita. Gittiğin mekânda bir kare bırakırsın, kare haritada o mekânın üstünde 24 saat kalır. Canlı konum paylaşılmaz. iOS ve Android'de kapalı beta.",
     url: "https://loc.vexloft.com",
     domain: "loc.vexloft.com",
     desktop: "/showcase/loc-desktop.jpg",
     mobile: "/showcase/loc-mobile.jpg",
-    accent: "#c8ff2e",
-    glow: "rgba(200, 255, 46, 0.32)",
+    accent: "#3dd6de",
+    glow: "rgba(0, 124, 137, 0.45)",
   },
   {
     id: "astra",
