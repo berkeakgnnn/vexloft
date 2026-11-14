@@ -54,6 +54,19 @@ export const showcaseProjects: ShowcaseProject[] = [
     glow: "rgba(45, 120, 100, 0.40)",
   },
   {
+    id: "surekli-tiyatro",
+    name: "Sürekli Tiyatro",
+    category: "Tiyatro sitesi + CMS",
+    description:
+      "Antalya'daki Sürekli Tiyatro'nun sitesi ve yönetim paneli. Oyunlar, gösterim takvimi, koltuk durumu ve Biletinial bilet bağlantıları; atölyelere başvuru formu. Tiyatro hepsini kendi panelinden güncelliyor.",
+    url: "https://sureklitiyatro.com",
+    domain: "sureklitiyatro.com",
+    desktop: "/showcase/surekli-tiyatro-desktop.jpg",
+    mobile: "/showcase/surekli-tiyatro-mobile.jpg",
+    accent: "#e9c11a",
+    glow: "rgba(233, 193, 26, 0.35)",
+  },
+  {
     id: "loc",
     name: "Loc",
     category: "iOS + Android uygulama + site",

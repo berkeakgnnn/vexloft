@@ -76,6 +76,27 @@ const projects: WebProject[] = [
     },
   },
   {
+    id: "surekli-tiyatro",
+    name: "Sürekli Tiyatro",
+    description:
+      "Antalya'daki aile tiyatrosu için site ve yönetim paneli. Repertuvar, gösterim takvimi ve her gösterimin koltuk durumu tek yerde; bilet Biletinial'dan, soru WhatsApp'tan. Atölyelere siteden başvuruluyor. Tiyatro oyun, tarih, haber ve sayfa metinlerini kod bilmeden panelden yönetiyor.",
+    badge: "Kurumsal Web",
+    status: "live",
+    tags: [
+      "Next.js 16",
+      "Payload CMS",
+      "Gösterim Takvimi",
+      "Başvuru Formu",
+      "SEO",
+    ],
+    href: "https://sureklitiyatro.com",
+    visual: {
+      kind: "browser",
+      image: "/projects/surekli-tiyatro-site.jpg",
+      url: "sureklitiyatro.com",
+    },
+  },
+  {
     id: "queenspalace",
     name: "Queens Palace",
     description:
